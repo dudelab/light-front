@@ -1,42 +1,101 @@
-# Readme
+# Light-front
 
-## Sommario
+Micro Component Loading System
 
-[Tipi di componenti](#tipi-di-componenti) | 
-[Come aggiungere un nuovo componente](#come-aggiungere-un-nuovo-componente) | 
-[Linee guida](#linee-guida) | 
-[Dipendenze](#dipendenze)
-
-## Tipi di componenti
-
-- Statico --> 'footer'
-- Dinamico --> 'hero' o 'kpi-1'
-
-## Come aggiungere un nuovo componente
-
-### Per tutti i componenti
-
-1. creare una cartella col nome del nuovo componente (tutto minuscolo, separato da '-'
-2. creare un file .js, un .css e un .html col nome del nuovo componente (uguale alla cartella)
-3. aggiornare la variabile 'COMPONENTS' del file script.js con una nuova chiave con "nome-componente": "path+filename(senza estensione)" del nuovo componente
-4. nella pagina in cui si vuole utilizzare il componente, aggiungere un div con l'attributo data-component="nome-componente"
-6. creare l'html e il css del nuovo componente.
-
-### Solo per i componenti dinamici
-
-6. creare un file json con i dati necessari al nuovo componente nella cartella /data
-7. aggiornare il file endpoints.js aggiungendo la nuova 'api' con il percorso del file json
-8. nella pagina in cui stiamo utilizzando il componente (x es. home.html) aggiorniamo il div relativo con l'attributo data-endpoint="json-key", dove il valore dev'essere la chiave del nuovo elemento che abbiamo aggiunto in endpoints.js
-9. popolare di contenuti dinamici l'html del componente con la sintassi {{ nome }}, {{ titolo }} eccetera.
-10. se è necessario eseguire del javascript dopo che il componente è stato montato, aggiungere una funzione di questo tipo nel .js del componente:
-`function populateSingleCardSlider($component, data) {
-  console.log('single card slider')
-  console.log(data)
-}`
-Il nome della funzione è importante per il funzionamento.
+---
 
 
-## Linee guida
+## 1. Basic Usage
+
+Add components to your page using the `data-component` attribute:
+
+```html
+<div data-component="header"></div>
+<div data-component="hero"></div>
+<div data-component="footer"></div>
+```
+
+## 2. Components Structure
+
+To create a new component:
+
+First, register your component in the COMPONENTS object:
+
+```javascript
+const COMPONENTS = {
+    // Existing components...
+    "header": "/components",
+    
+    // Add your new component
+    "my-component": "/components"
+};
+```
+
+Then create three files in your components directory:
+
+```
+componentName/
+├── componentName.html  # Component's HTML template
+├── componentName.css   # Component's styles
+└── componentName.js    # Component's behavior/logic
+```
+
+## 3. Passing Data
+
+You can pass data to components in two ways:
+
+```html
+<!-- Using data-object -->
+<div data-component="card" data-object='{"title": "Hello", "description": "World"}'></div>
+
+<!-- Using data-endpoint -->
+<div data-component="news" data-endpoint="/api/news"></div>
+```
+
+## 4. Special Features
+
+The system includes several special features for dynamic content:
+
+```html
+<!-- Template Variables -->
+<h1>{{ title }}</h1>
+
+<!-- Conditional Rendering -->
+<div v-if="isVisible">This shows conditionally</div>
+
+<!-- Lists/Loops -->
+<div v-for="item in items">
+    <p>{{ item.name }}</p>
+</div>
+```
+
+## 5. Component Registry
+
+Add lifecycle hooks to your components in their JS files:
+
+```javascript
+ComponentRegistry.register('my-component', {
+    beforeMount($element, data) {
+        // Runs before component is added to page
+    },
+    mounted($element, data) {
+        // Runs after component is added to page
+    },
+    beforeDestroy($element, data) {
+        // Runs before component is removed
+    }
+});
+```
+
+## Benefits
+
+* Break down your website into reusable pieces
+* Load components dynamically
+* Pass data easily between components
+* Keep your code organized and maintainable
+
+
+## Linee guida per lo sviluppo
 
 - codice semantico
 - accessibilità
