@@ -1,0 +1,129 @@
+<header class="header">
+    <div class="container">
+        <!-- Logo -->
+        <a href="{{logo.url}}" class="logo">
+            <img src="{{logo.image}}" alt="{{logo.alt}}">
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="nav">
+            <ul class="menu">
+                <li v-for="item in mainMenu" 
+                    class="menu-item {{item.isActive ? 'active' : ''}}"
+                    data-id="{{item.id}}">
+                    <a href="{{item.url}}">
+                        <span class="plus">+</span>
+                        {{item.label}}
+                    </a>
+                    
+                    <!-- Submenu - Only rendered if hasSubmenu is true -->
+                    <div v-if="item.hasSubmenu" class="submenu">
+                        <div class="submenu-wrapper">
+                            <div class="submenu-intro">
+                                <h2 class="submenu-title">{{item.submenu.intro.title}}</h2>
+                                <p class="submenu-subtitle">{{item.submenu.intro.subtitle}}</p>
+                                <a href="{{item.submenu.intro.cta.url}}" class="submenu-cta">
+                                    {{item.submenu.intro.cta.label}}
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            
+                            <div class="submenu-content">
+                                <div v-for="category in item.submenu.categories" class="submenu-category">
+                                    <span class="category-tag tag-chip">{{category.name}}</span>
+                                    <div class="submenu-grid">
+                                        <a v-for="subitem in category.items" 
+                                           href="{{subitem.url}}" 
+                                           class="submenu-item">
+                                            <span>{{subitem.label}}</span>
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Right Icons -->
+        <div class="icons">
+            <button class="cta-button">
+                <i class="fas {{icons.cta.icon}}" aria-label="{{icons.cta.ariaLabel}}"></i>
+            </button>
+            <div class="options">
+                <a class="search-button" href="{{icons.search.url}}">
+                    <i class="fas {{icons.search.icon}}" aria-label="{{icons.search.ariaLabel}}"></i>
+                </a>
+                <div class="language-selector">
+                    <i class="fas fa-globe"></i>
+                    <span>{{languages.current}}</span>
+                    <ul class="language-dropdown">
+                        <li v-for="lang in languages.options" 
+                            data-lang="{{lang.code}}">
+                            {{lang.flag}} {{lang.label}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu">
+        <ul>
+            <li v-for="item in mainMenu" class="menu-item">
+                <a href="{{item.url}}">+ {{item.label}}</a>
+                
+                <div v-if="item.hasSubmenu" class="submenu">
+                    <!-- Add intro section -->
+                    <div class="submenu-intro">
+                        <h2 class="submenu-title">{{item.submenu.intro.title}}</h2>
+                        <p class="submenu-subtitle">{{item.submenu.intro.subtitle}}</p>
+                        <a href="{{item.submenu.intro.cta.url}}" class="submenu-cta">
+                            {{item.submenu.intro.cta.label}}
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+    
+                    <!-- Categories with arrows in links -->
+                    <div v-for="category in item.submenu.categories">
+                        <div class="submenu-category tag-chip">{{category.name}}</div>
+                        <ul>
+                            <li v-for="subitem in category.items">
+                                <a href="{{subitem.url}}">
+                                    <span>{{subitem.label}}</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        
+        <div class="mobile-extra">
+            <button class="cta-button">
+                <i class="fas {{icons.cta.icon}}" aria-label="{{icons.cta.ariaLabel}}"></i>
+            </button>
+            <button class="search-button">
+                <i class="fas {{icons.search.icon}}" aria-label="{{icons.search.ariaLabel}}"></i>
+            </button>
+            <div class="language-selector">
+                <i class="fas fa-globe"></i>
+                <span>{{languages.current}}</span>
+                <ul class="language-dropdown">
+                    <li v-for="lang in languages.options" data-lang="{{lang.code}}">
+                        {{lang.flag}} {{lang.label}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

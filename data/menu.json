@@ -1,0 +1,172 @@
+{
+  "logo": {
+    "url": "/",
+    "image": "/assets/images/logo.png",
+    "alt": "MADE Logo"
+  },
+  "mainMenu": [
+    {
+      "id": "servizi",
+      "label": "Servizi",
+      "url": "#",
+      "isActive": true,
+      "hasSubmenu": true,
+      "submenu": {
+        "intro": {
+          "title": "Servizi",
+          "subtitle": "Excepteur sint occaecat cupidatat non proident. Sint cupidatat non proident. Excepteur sint occaecat non proident.",
+          "cta": {
+            "label": "Scopri tutti i servizi",
+            "url": "#"
+          }
+        },
+        "categories": [
+          {
+            "name": "Consulenza",
+            "items": [
+              {
+                "label": "Applicare l'intelligenza artificiale",
+                "url": "#"
+              },
+              {
+                "label": "Integrare e potenziare la cyber security",
+                "url": "#"
+              },
+              {
+                "label": "Implementare soluzioni digitali",
+                "url": "#"
+              },
+              {
+                "label": "Progettare il futuro digitale",
+                "url": "#"
+              },
+              {
+                "label": "Ottimizzare con sostenibilità",
+                "url": "#"
+              },
+              {
+                "label": "Supporto per investire nell'innovazione",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "Formazione",
+            "items": [
+              {
+                "label": "Formare le competenze",
+                "url": "#"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "tech",
+      "label": "Tecnologie e Processi",
+      "url": "#",
+      "isActive": false,
+      "hasSubmenu": true,
+      "submenu": {
+        "intro": {
+          "title": "Tecnologie e Processi",
+          "subtitle": "Excepteur sint occaecat cupidatat non proident. Sint cupidatat non proident. Excepteur sint occaecat non proident.",
+          "cta": {
+            "label": "Scopri tutte le Tecnologie e i Processi",
+            "url": "#"
+          }
+        },
+        "categories": [
+          {
+            "name": "Consulenza",
+            "items": [
+              {
+                "label": "Applicare l'intelligenza artificiale",
+                "url": "#"
+              },
+              {
+                "label": "Integrare e potenziare la cyber security",
+                "url": "#"
+              },
+              {
+                "label": "Implementare soluzioni digitali",
+                "url": "#"
+              },
+              {
+                "label": "Progettare il futuro digitale",
+                "url": "#"
+              },
+              {
+                "label": "Ottimizzare con sostenibilità",
+                "url": "#"
+              },
+              {
+                "label": "Supporto per investire nell'innovazione",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "Formazione",
+            "items": [
+              {
+                "label": "Formare le competenze",
+                "url": "#"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "blog",
+      "label": "Progetti e Blog",
+      "url": "#",
+      "isActive": false
+    },
+    {
+      "id": "made4future",
+      "label": "Made 4 Future",
+      "url": "#",
+      "isActive": false
+    },
+    {
+      "id": "about",
+      "label": "Chi Siamo",
+      "url": "#",
+      "isActive": false
+    }
+  ],
+  "icons": {
+    "cta": {
+      "icon": "fa-paper-plane",
+      "ariaLabel": "Invia"
+    },
+    "search": {
+      "icon": "fa-search",
+      "ariaLabel": "Cerca",
+      "url": "search.html"
+    }
+  },
+  "languages": {
+    "current": "ITA",
+    "options": [
+      {
+        "code": "it",
+        "label": "Italiano",
+        "flag": "🇮🇹"
+      },
+      {
+        "code": "en",
+        "label": "English",
+        "flag": "🇬🇧"
+      },
+      {
+        "code": "fr",
+        "label": "Français",
+        "flag": "🇫🇷"
+      }
+    ]
+  }
+}

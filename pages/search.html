@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/js/components.js"></script>
+
+    <style>
+        .section-wrapper {
+            height: 400px;
+        }
+
+        @media (min-width: 1024px) {
+            .section-wrapper {
+                height: calc(100vh - 64px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div data-component="header"></div>
+        <div class="section-wrapper">
+            <h1>Seach Page</h1>
+        </div>
+        <div data-component="footer"></div>
+    </div>
+</body>
+</html>

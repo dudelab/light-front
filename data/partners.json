@@ -1,0 +1,44 @@
+{
+    "partners": [
+        {
+            "name": "Ibm",
+            "url": "https://google.com",
+            "image": "/assets/images/partners/image_ibm.png"
+        },
+        {
+            "name": "Hyperlean",
+            "url": "https://canvas.com",
+            "image": "/assets/images/partners/image_hyperlean.png"
+        },
+        {
+            "name": "Fondazione ergo",
+            "url": "https://tomshw.it",
+            "image": "/assets/images/partners/image_fondazione_ergo.png"
+        },
+        {
+            "name": "Fincons group",
+            "url": "https://google.com",
+            "image": "/assets/images/partners/image_fincons.png"
+        },
+        {
+            "name": "FasThink",
+            "url": "https://amazon.com",
+            "image": "/assets/images/partners/image_fasthink.png"
+        },
+        {
+            "name": "Fanuc",
+            "url": "https://yahoo.com",
+            "image": "/assets/images/partners/image_fancuc.png"
+        },
+        {
+            "name": "Engisoft",
+            "url": "https://canvas.com",
+            "image": "/assets/images/partners/image_engisoft.png"
+        },
+        {
+            "name": "Csmt",
+            "url": "https://askjeeves.com",
+            "image": "/assets/images/partners/image_csmt.png"
+        }
+    ]
+}

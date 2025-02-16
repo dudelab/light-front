@@ -1,0 +1,139 @@
+.kpi-1 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  min-height: 300px;
+  margin: 120px 0;
+  color: white;
+  line-height: 1.4;
+  background-size: cover;
+  background-position: center;
+  gap: 24px;
+}
+
+.kpi-1-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.kpi-1-title {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.kpi-1-text {
+  font-size: 18px;
+  font-weight: 300;
+  margin: 0;
+}
+
+.kpi-1-button {
+  background-color: var(--light-text-2);
+  color: #000;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  border: none;/*
+  width: 186px;
+  height: 36px;*/
+  padding: 8px 12px;
+}
+
+.kpi-1-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.kpi-1-card {
+  background-color: var(--bg-dark-3);
+  display: flex;
+  flex-direction: column;
+  padding: 30px 25px;
+  width: 100%;
+  gap: 30px;
+  border-radius: var(--radius-lg);
+  border: 1px solid #101870;
+}
+
+.kpi-1-card-value {
+  font-family: 'Monoska', sans-serif;
+  font-size: 58px;
+  font-weight: 400;
+  margin: 0;
+  line-height: 0.8;
+}
+
+.kpi-1-card-label {
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0;
+}
+
+
+
+@media (min-width: 768px){
+  .kpi-1-cards{
+    display: grid;
+    gap: 1.3rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .kpi-1 {
+    flex-direction:row;
+    align-items: start;
+    gap: 36px;
+    display: grid;
+    gap: 1.5em;
+    grid-template-columns: 1fr 65%;
+  }
+
+  .kpi-1-content{
+    margin-top: 3px;
+    gap: 1.2rem;
+  }
+
+  .kpi-1-title{
+    font-size: 36px;
+  }
+
+  .kpi-1-text{
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .kpi-1-button{
+    padding: 4px 12px;
+    font-size: 10px;
+    width: fit-content;
+    height: auto;
+  }
+
+  .kpi-1-card{
+    padding: 18px;
+    gap: 1.2rem;
+  }
+
+  .kpi-1-card-value{
+    font-size: 45px;
+    line-height: 1;
+  }
+
+  .kpi-1-card-label{
+    font-size: 13.5px;
+  }
+
+}
+
+
+
+

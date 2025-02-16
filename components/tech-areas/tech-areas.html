@@ -1,0 +1,38 @@
+<div class="tech-areas">
+    <div class="head">
+        <div class="title">{{title}}</div>
+        <div class="subtitle"> {{ subtitle }}</div>
+    </div>
+    <div class="container">
+       <!-- <div data-component="tech-item" v-for="item in items" data-object='{ "id": "{{item.id}}", "name": "{{item.name}}", "link":"{{item.link}}", "description":"{{item.description}}", "tags"={{item.tags}}, 
+          "image":"{{item.image}}" }'></div>-->
+          
+          <div class="tech-item" v-for="item in items">
+            <div class="i-head">
+                <div class="name-container">
+                            <div class="id">{{item.id}}</div>
+                            <div class="name">{{item.name}}</div>
+                    </div>
+                    <div class="link-container">
+                        <a href="{{item.link}}" class="link"><i class="fa-solid fa-arrow-up rotate-45"></i></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="text">
+                        <div class="description">{{item.description}}</div>
+                        <div class="tags" >
+                            <span class="tag" v-for="tag in item.tags">
+                                <span>{{tag.label}} </span>
+                                <div style="color:#3E5177;margin:0 8px 0 8px">•</div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="image" style="background-image: url({{item.image}});"></div>
+                </div>
+            </div>
+            
+        </div>
+    <div class="footer">
+        <a class="link" href="{{link}}">Esplora tutte le aree <i class="fas fa-arrow-up rotate-45"></i></a>
+    </div>
+</div>

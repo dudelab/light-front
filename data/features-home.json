@@ -1,0 +1,61 @@
+{
+    "title": "Ecco come possiamo aiutarti",
+    "subtitle": "Trasformiamo la tua azienda con innovazioni concrete e sostenibili, ottimizzando processi e risultati per un futuro competitivo.",
+    "features": [
+    {
+        "title": "Applicare",
+        "description": "l'intelligenza artificiale",
+        "image": "/assets/images/features/ai.png",
+        "tag": "Consulenza",
+        "link": "/ai"
+    },
+    {
+        "title": "Implementare",
+        "description": "soluzioni digitali",
+        "image": "/assets/images/features/implementare.png",
+        "tag": "Consulenza",
+        "link": "/digital-solutions"
+    },
+    {
+        "title": "Ottimizzare",
+        "description": "con sostenibilità",
+        "image": "/assets/images/features/ottimizzare.png",
+        "tag": "Consulenza",
+        "link": "/sustainability"
+    },
+    {
+        "title": "Integrare e potenziare",
+        "description": "la cyber security",
+        "image": "/assets/images/features/integrare.png",
+        "tag": "Consulenza",
+        "link": "/cyber-security"
+    },
+    {
+        "title": "Progettare",
+        "description": "il futuro digitale",
+        "image": "/assets/images/features/progettare.png",
+        "tag": "Consulenza",
+        "link": "/digital-future"
+    },
+    {
+        "title": "Supporto",
+        "description": "per investire nell'innovazione",
+        "image": "/assets/images/features/supporto.png",
+        "tag": "Consulenza",
+        "link": "/innovation-investment"
+    },
+    {
+        "title": "Formare",
+        "description": "le competenze",
+        "image": "/assets/images/features/formare.png",
+        "tag": "Formazione",
+        "link": "/training"
+    },
+    {
+        "title": "Tutti i servizi",
+        "description": "l'intelligenza artificiale",
+        "link": "/services"
+    }
+]
+
+}

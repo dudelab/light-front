@@ -1,0 +1,222 @@
+.footer {
+  background: var(--primary-color);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  margin: 1em var(--radius-xl) 0;
+  padding: 1.2em;
+}
+
+.footer p {
+  color: var(--a-color);
+}
+.footer .top {
+  display: grid;
+  gap: 6rem;
+  margin-bottom: 1em;
+}
+
+.footer-logo img {
+  max-width: 269px;
+}
+.footer-logo p {
+  font-size: 19px;
+  margin-top: 26px;
+}
+
+
+.footer-content {
+  display: grid;
+  gap: 2rem;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+.footer-links h4 {
+  color: var(--p-color);
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 0;
+}
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1em;
+}
+
+.footer-coda {
+  border-top: 1px solid var(--dark-text-3);
+  font-weight: 400;
+  padding-top: 1em;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.6em;
+}
+.footer-coda p {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1;
+  margin-block: 0.8em;
+}
+.footer-social {
+  display: grid;
+  grid-template-columns: 24px 24px 24px;
+  gap: 1.6em;
+  align-items: center;
+}
+
+/* ## Newsletter */
+/* ------------------------------------------------------------------------ */
+  .footer-newsletter {
+    background: var(--bg-light);
+    color: var(--dark-text-2);
+    padding: 1.3rem;
+    border-radius: var(--radius-lg);
+    margin: 0 auto;
+    width: 100%;
+  }
+
+    .footer-newsletter h3 {
+      color: var(--dark-text);
+      font-size: 26px;
+      font-weight: 600;
+      margin: 0 0 5px;
+    }
+    .footer-newsletter p {
+      color: var(--dark-text-3);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .newsletter-form {
+      background: var(--bg-dark);
+      border-radius: var(--radius-md);
+      padding: 1.1em;
+      display: flex;
+      flex-direction: column;
+      gap: .9em;
+    }
+
+    .newsletter-form input {
+      background: transparent;
+      border: none;
+      border-radius: var(--radius-xs);
+      color: var(--p-color);
+      font-size: 18px;
+      font-weight: 500;
+      padding: .5em;
+      width: 100%;
+    }
+
+    .newsletter-button {
+      border-radius: var(--radius-xs);
+      cursor: pointer;
+      font-size: 18px;
+      padding: 9px;
+      width: 100%;
+    }
+
+    .newsletter-privacy {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+      font-weight: 400;
+      margin-top: 10px;
+    }
+    .newsletter-privacy a {
+      color: var(--dark-text-3);
+      font-size: 14px;
+      font-weight: 400;
+      text-decoration: underline;
+    }
+
+    /* custom Checkbox */
+    .newsletter-privacy input {
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: center;
+      font-size: 2rem;
+      padding: 0;
+      margin: 0;
+      border: 1px solid var(--dark-text);
+      border-radius: var(--radius-xs);
+    }
+
+    .newsletter-privacy input::before {
+      content: "";
+      width: 1.15rem;
+      height: 1.15rem;
+      clip-path: polygon(28% 38%, 41% 53%, 75% 24%, 86% 38%, 40% 78%, 15% 50%);
+      margin: -1px;
+      transform: scale(0);
+      background-color: var(--dark-text);
+      transition: all .1s ease-out;
+    }
+
+    .newsletter-privacy input:checked::before {
+      transform: scale(1);
+    }
+
+    .newsletter-privacy input:hover {
+      border-color: var(--dark-text-3);
+    }
+    .newsletter-privacy input:hover::before {
+      background-color: var(--dark-text-3);
+    }
+
+
+@media (min-width: 1024px) {
+  .footer {
+    padding: 4rem;
+  }
+  .footer-newsletter {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr 350px;
+    padding: 2.8rem;
+  }
+  .footer-newsletter p {
+    margin: 10px 0 0;
+  }
+  .newsletter-form {
+    display: grid;
+    gap: .5em;
+    grid-template-columns: 1fr 100px;
+    align-items: center;
+    padding: .5em;
+  }
+
+  .footer-content {
+    grid-template-columns: 338px 1fr;
+    gap: 1rem;
+  }
+  .footer-links {
+    grid-template-columns: auto auto auto;
+    gap: 1.5rem;
+  }
+
+  .footer-coda {
+    grid-template-columns: 1fr 118px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer {
+    padding: 4rem 8rem;
+  }
+  .footer-content {
+    gap: 5rem;
+  }
+}
+
+

@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@font-face {
+  font-family: 'Monoska'; /* Name your font family */
+  src: url('../../assets/fonts/Monoska.ttf'); /* Locate the .ttf file within your directory*/
+}
+
+:root {
+  /* 🎨 Colors */
+  --primary-color: #101870;
+  --secondary-color: #0C092F;
+  --accent-color: #1D1E35;
+  --utility-color: #B2CCFF;
+  --cta-color: #1532EF;
+  --border-color: #2E50FA;
+  --border-color-2: #586E99;
+
+  --positive-color: #21BA45;
+  --negative-color: #C10015;
+  --warning-color: #F2C037;
+  --info-color: #31CCEC;
+
+  --h-color: #F9FAFB;
+  --p-color: #98A3BA;
+  --a-color: #D1D5DE;
+  --label-color: #F6F7F8;
+  --value-color: #CACED6;
+  
+  --gray-text-700: #314161;
+  --dark-text: #141C2B;
+  --dark-text-2: #1E293E;
+  --dark-text-3: #314161;
+  --light-text: #84ADFF;
+  --light-text-2: #D1E0FF;
+  --light-text-3: #F4F5F6;
+
+  --bg-light: #b2ccff;
+  --bg-dark: #0C092F;
+  --bg-dark-2: #090C13;
+  --bg-dark-3: #110D45;
+
+  /* Radii */
+  --radius-xl: 16px;
+  --radius-lg: 14px;
+  --radius-md: 10px;
+  --radius-sm: 8px;
+  --radius-xs: 5px;
+  --radius-rounded: 9999px;
+}
+
+/* ## Helper classes */
+/* ------------------------------------------------------------------------ */
+.primary-bg {
+  background-color: var(--primary-color);
+}
+.primary-text {
+  color: var(--primary-color);
+}
+.cta-bg {
+  background-color: var(--cta-color);
+}
+.rotate-45 {
+  transform: rotate(45deg) translate(2px);
+}
+
+.bg-white{
+background-color: white;
+}
+
+.text-white{
+  color: white;
+}
+.text-black{  /*non è black ma simile */
+color: #314161;
+}
+
+.text-gray-700{
+  color: var(--gray-text-700);
+}
+.text-dark{
+  color: var(--dark-text);
+}
+.text-semibold{
+  font-weight: 600;
+}
+.h-color{
+  color: var(--h-color);
+}
+.label-color{
+  color: var(--label-color);
+}
+.value-color{
+  color: var(--value-color);
+}
+.border-color-2{
+  border-color: var(--border-color-2);
+}
+
+/* ## Defaults */
+/* ------------------------------------------------------------------------ */
+* {
+  box-sizing: border-box;
+}
+body {
+  background: var(--bg-light);
+  /* background: var(--secondary-color); */
+  
+  color: var(--a-color);
+  /* font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif; */
+  font-family: Manrope, 'Open Sans', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+img {
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--h-color);
+}
+
+a {
+  color: var(--a-color);
+  font-family: Manrope, 'Open Sans', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  
+  display: inline-block;
+}
+a:hover {
+  color: var(--p-color);
+}
+
+p {
+  color: var(--p-color);
+}
+input {
+  font-family: Manrope, 'Open Sans', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+/* ## Layout */
+/* ------------------------------------------------------------------------ */
+.wrapper {
+  background: var(--secondary-color);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: relative;
+  max-width: 1400px;
+  margin: 0;
+}
+
+.section-wrapper {
+  max-width: 93%;
+  margin: 0 auto;
+}
+
+.section-wrapper-small {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    padding-inline: 16px;
+  }
+  .wrapper {
+    margin: 16px auto;
+  }
+  
+  .section-wrapper {
+    padding: 0;
+  }
+
+  .section-wrapper-small {
+    padding: 0;
+  }
+}
+
+/* ## Utility classes */
+/* ------------------------------------------------------------------------ */
+.work-in-progress {
+  position: relative !important;
+}
+
+.work-in-progress::after {
+  content: "🚧";  /* alternatives: 🚧 ⚠️ ⌛ ✎ ⚙️ */
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  color: #ff3333;  /* bright red if we use text as content */
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1.1;
+  text-shadow: 6px 6px 15px rgba(255, 255, 255, 0.3), -6px -6px 15px rgba(255, 255, 255, 0.3);
+  z-index: 999;
+  pointer-events: none;
+}
+.work-in-progress.under-construction::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  opacity: .8;
+}
+.work-in-progress.under-construction::after {
+  content: "🚧";  /* alternatives: 🚧 ⚠️ ⌛ ✎ ⚙️ */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #ff3333;  /* bright red if we use text as content */
+  font-size: 200px;
+  text-shadow: 6px 6px 15px rgba(0, 0, 0, 0.5), -6px -6px 15px rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.1;
+}
+
+/* ## Elements styles */
+/* ------------------------------------------------------------------------ */
+.cta-btn {
+  background-color: var(--cta-color);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-rounded);
+  color: white;
+  font-weight: 300;
+  font-size: 13px;
+  padding: 8px 26px;
+  text-align: center;
+  text-decoration: none;
+  
+  display: flex;
+  gap: .5em;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+
+.tag-chip {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--border-color-2);
+  color: var(--light-text);
+  border-radius: var(--radius-rounded);
+  padding: 2px 10px;
+  font-size: 12px;
+  width: fit-content;
+}
+
+.component-error { /* an empty div with 'error loading component' inside */
+  background: var(--border-color-2);
+  background: var(--bg-dark-2);
+  border: 6px solid var(--cta-color);
+  font-size: 28px;
+  font-weight: bold;
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  padding: 4em;
+  margin: 3em;
+  min-height: 200px;
+  text-align: center;
+}

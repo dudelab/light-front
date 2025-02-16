@@ -1,0 +1,12 @@
+<div class="logo-strip">
+  <p class="description">
+    Collaboriamo con aziende leader e partner d'eccellenza per trasformare le sfide in opportunità.
+  </p>
+  <div class="items">
+    <div class="item" v-for="partner in partners">
+      <a class="url" href="{{partner.url}}">
+        <img class="image" src="{{partner.image}}" alt="{{partner.name}}">
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,122 @@
+{
+    "title": "Un viaggio nel nostro Competence Center",
+    "subtitle": "Immergiti nelle nostre 8 aree tecnologiche attraverso innovazione, tecnologie e processi all’avanguardia.",
+    "link": "/technologies",
+    "items": [
+        {
+            "id": "01",
+            "name": "AI",
+            "link": "/ai",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+            "tags": [
+                {
+                    "label": "Intelligenza artificiale"
+                }
+            ],
+            "image": "/assets/images/technologies/ai.png"
+        },
+        {
+            "id": "02",
+            "name": "Sviluppo di Prodotto",
+            "link": "/sviluppo",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+            "tags": [
+                {
+                    "label": "Gemello Digitale"
+                },
+                {
+                    "label": "Virtual Design"
+                },
+                {
+                    "label": "Visual commissioning"
+                },
+                {
+                    "label": "Digital Backbone"
+                }
+            ],
+            "image": "/assets/images/technologies/sviluppo.png"
+        }
+        
+
+    ],
+    "otherItems":[
+        {
+            "id": "03",
+            "name": "Infrastrutture connesse",
+            "link": "/infrastrutture",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+            "tags": [
+                {
+                    "label":"5G"
+                },
+                {
+                    "label":"Cloud ibrido"
+                },
+                {
+                    "label":"Big Data Analytics"
+                },
+                {
+                    "label":"Cyber security industriale"
+                }
+            ],
+            "image": "/assets/images/technologies/infrastrutture.png"
+        },
+        {
+            "id": "04",
+            "name": "Prodotto intelligente",
+            "link": "/prodotto",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+            "tags": [{"label":"IoT - Smart connected products"}],
+            "image": "/assets/images/technologies/prodotto.png"
+        },
+        {
+            "id": "05",
+            "name": "Logistica",
+            "link": "/logistica",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+            "tags": [{"label":"Logistica 4.0"}],
+            "image": "/assets/images/technologies/logistica.png"
+        },
+        {
+            "id": "06",
+            "name": "Manutenzione",
+            "link": "/manutenzione",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+            "tags": [{"label": "Manutenzione Smart"}],
+            "image": "/assets/images/technologies/manutenzione.png"
+        },
+        {
+            "id": "07",
+            "name": "Produzione Smart",
+            "link": "/produzione",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+            "tags": [
+                {
+                    "label":"Robotica Collaborativa"
+                },
+                {
+                    "label":"Manifattura additiva"
+                },
+                {
+                    "label":"Monitoraggio e controllo"
+                },
+                {
+                    "label":"Produzione snella 4.0"
+                },
+                {
+                    "label":"Sistemi di assistenza all' operatore"
+                }
+            ],
+            "image": "/assets/images/technologies/produzione.png"
+        },
+        {
+            "id": "08",
+            "name": "Qualità",
+            "link": "/qualita",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+            "tags": [{"label":"Qualità 4.0"}],
+            "image": "/assets/images/technologies/qualita.png"
+        }
+        
+    ]
+}

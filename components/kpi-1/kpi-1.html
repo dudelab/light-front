@@ -1,0 +1,17 @@
+<div class="kpi-1">
+  <div class="kpi-1-content">
+      <h2 class="kpi-1-title">{{ title }}</h2>
+      <p class="kpi-1-text">{{ text }}</p>
+      <a class="kpi-1-button cta-btn" v-if="cta.link" href="{{cta.link}}">
+        {{ cta.text }}
+      </a>
+  </div>
+  <div class="kpi-1-cards">
+      <div v-for="card in cards">
+        <div class="kpi-1-card">
+          <p class="kpi-1-card-value text-white">{{ card.value }}</p>
+          <p class="kpi-1-card-label text-white">{{ card.label }}</p>
+        </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+[
+  {
+      "title": "Lancio del Nuovo Smartphone XYZ",
+      "description": "Il nuovo smartphone XYZ è stato presentato oggi con caratteristiche rivoluzionarie.",
+      "image": "/assets/images/apple.jpeg",
+      "tags": ["tech", "mobile"]
+  },
+  {
+      "title": "Edison Annuncia Nuova Batteria",
+      "description": "Tesla ha annunciato una nuova tecnologia di batteria che migliora l'autonomia del 30%.",
+      "image": "/assets/images/tablet.png",
+      "tags": ["tech", "auto"]
+  },
+  {
+      "title": "Il Ritorno della NASA sulla Luna",
+      "description": "La NASA ha ottenuto il via libera per la sua missione lunare nel 2026.",
+      "image": "/assets/images/newyork.jpeg",
+      "tags": ["space", "science"]
+  }
+]

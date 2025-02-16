@@ -1,0 +1,35 @@
+.logo-strip {
+  margin-block: 40px;
+}
+.logo-strip .description {
+  display: flex;
+  justify-content: center;
+  margin: 4em 0 3em;
+}
+.logo-strip .items {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  padding-inline: 20px;
+  overflow-x: auto;
+  scrollbar-color: var(--bg-light) var(--primary-color);
+  scrollbar-width: thin;
+}
+
+.logo-strip .items .items-inner {
+  display: flex;
+  align-items: center;
+}
+.logo-strip .image {
+  min-width: 100px;
+}
+
+@media screen and (min-width: 1024px) {
+  .logo-strip .items{
+    gap: 2em;
+    grid-template-columns: repeat(8, auto);
+    justify-content: center;
+  }
+}

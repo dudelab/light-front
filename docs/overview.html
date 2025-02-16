@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component System Documentation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --background: #ffffff;
+            --text: #1f2937;
+            --code-bg: #1e1e1e;
+            --border: #e5e7eb;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: #1f2937;
+                --text: #f3f4f6;
+                --border: #374151;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--background);
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--text);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .code-block {
+            background: var(--code-bg);
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        pre {
+            margin: 0 !important;
+            padding: 1rem !important;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+        }
+
+        .note {
+            background: rgba(59, 130, 246, 0.1);
+            padding: 1rem;
+            border-left: 4px solid var(--primary);
+            margin: 1rem 0;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Component Loading System</h1>
+        
+        <div class="section">
+            <h2>1. Basic Usage</h2>
+            <p>Add components to your page using the <code>data-component</code> attribute:</p>
+            <div class="code-block">
+                <pre><code class="language-html">&lt;div data-component="header"&gt;&lt;/div&gt;
+&lt;div data-component="hero"&gt;&lt;/div&gt;
+&lt;div data-component="footer"&gt;&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>2. Components Structure</h2>
+            <p>To create a new component:</p>
+            
+            <p>First, register your component in the COMPONENTS object:</p>
+            <div class="code-block">
+                <pre><code class="language-javascript">const COMPONENTS = {
+    // Existing components...
+    "header": "/components",
+    
+    // Add your new component
+    "my-component": "/components"
+};</code></pre>
+            </div>
+
+            <p>Then create three files in your components directory:</p>
+            <div class="code-block">
+                <pre><code class="language-text">componentName/
+├── componentName.html  # Component's HTML template
+├── componentName.css   # Component's styles
+└── componentName.js    # Component's behavior/logic</code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3. Passing Data</h2>
+            <p>You can pass data to components in two ways:</p>
+            <div class="code-block">
+                <pre><code class="language-html">&lt;!-- Using data-object --&gt;
+&lt;div data-component="card" data-object='{"title": "Hello", "description": "World"}'&gt;&lt;/div&gt;
+
+&lt;!-- Using data-endpoint --&gt;
+&lt;div data-component="news" data-endpoint="/api/news"&gt;&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>4. Special Features</h2>
+            <p>The system includes several special features for dynamic content:</p>
+            <div class="code-block">
+                <pre><code class="language-html">&lt;!-- Template Variables --&gt;
+&lt;h1&gt;{{ title }}&lt;/h1&gt;
+
+&lt;!-- Conditional Rendering --&gt;
+&lt;div v-if="isVisible"&gt;This shows conditionally&lt;/div&gt;
+
+&lt;!-- Lists/Loops --&gt;
+&lt;div v-for="item in items"&gt;
+    &lt;p&gt;{{ item.name }}&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>5. Component Registry</h2>
+            <p>Add lifecycle hooks to your components in their JS files:</p>
+            <div class="code-block">
+                <pre><code class="language-javascript">ComponentRegistry.register('my-component', {
+    beforeMount($element, data) {
+        // Runs before component is added to page
+    },
+    mounted($element, data) {
+        // Runs after component is added to page
+    },
+    beforeDestroy($element, data) {
+        // Runs before component is removed
+    }
+});</code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="note">
+                <h2>Benefits</h2>
+                <ul>
+                    <li>Break down your website into reusable pieces</li>
+                    <li>Load components dynamically</li>
+                    <li>Pass data easily between components</li>
+                    <li>Keep your code organized and maintainable</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+</body>
+</html>

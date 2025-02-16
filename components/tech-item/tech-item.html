@@ -1,0 +1,20 @@
+<div class="tech-item">
+    <div class="i-head">
+        <div class="name-container">
+                <div class="id">{{id}}</div>
+                <div class="name">{{name}}</div>
+        </div>
+        <div class="link-container">
+            <a href="{{link}}" class="link"><i class="fa-solid fa-arrow-up rotate-45"></i></a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="text">
+            <div class="description">{{description}}</div>
+            <div class="tags" v-for="tag in tags">
+                <span class="tag">{{tag}}</span><div style="color:#3E5177;margin:0 8px 0 8px">•</div>
+            </div>
+        </div>
+        <div class="image" style="background-image: url({{image}});"></div>
+    </div>
+</div>

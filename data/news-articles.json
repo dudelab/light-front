@@ -1,0 +1,64 @@
+{
+    "title": "Esplora il Blog di MADE4.0",
+    "types": [
+        {
+            "name": "Articoli",
+            "link": "/articoli",
+            "items": [
+                {
+                    "description": "Transizione 5.0: Calabrò al MADE Competence Center anticipa l’emendamento del Governo alla legge di bilancio",
+                    "image": "/assets/images/articles/art1.png",
+                    "tag": "Innovazione",
+                    "imageTag": ["Report", "Nome del Settore"],
+                    "date": "24/02/25 - 18:30",
+                    "type": "Articoli",
+                    "link": "/articoli/1"
+                },
+                {
+                    "description": "Strategia i4.0 nel settore manifatturiero italiano:  il piano strategico e operativo di trasformazione digitale di Fan Motors Italia",
+                    "image": "/assets/images/articles/art2.png",
+                    "tag": "Sostenibilità",
+                    "imageTag": ["Whitepaper", "Nome del Settore"],
+                    "date": "24/02/25 - 18:30",
+                    "type": "Articoli",
+                    "link": "/articoli/2"
+                },
+                {
+                    "description": "Come mettere in pratica concretamente il Lean Manufacturing​",
+                    "image": "/assets/images/articles/art3.png",
+                    "tag": "Innovazione",
+                    "imageTag": ["Strategy Guide", "Nome del Settore"],
+                    "date": "24/02/25 - 18:30",
+                    "type": "Articoli",
+                    "link": "/articoli/3"
+                },
+                {
+                    "description": "Transizione 5.0: Calabrò al MADE Competence Center anticipa l’emendamento del Governo alla legge di bilancio",
+                    "image": "/assets/images/articles/art4.png",
+                    "tag": "Innovazione",
+                    "imageTag": ["Infographic", "Nome del Settore"],
+                    "date": "24/02/25 - 18:30",
+                    "type": "Articoli",
+                    "link": "/articoli/4"
+                }
+            ]
+        },
+        {
+            "name": "News",
+            "link": "/news",
+            "items": [
+                {
+                    "description": "Transizione 5.0: Calabrò al MADE Competence Center anticipa l’emendamento del Governo alla legge di bilancio",
+                    "image": "/assets/images/articles/art1.png",
+                    "tag": "Innovazione",
+                    "imageTag": ["Report", "Nome del Settore"],
+                    "date": "24/02/25 - 18:30",
+                    "type": "News",
+                    "link": "/news/1"
+                }
+            ]
+        }
+    ]
+
+}
+

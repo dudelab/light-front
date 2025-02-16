@@ -1,0 +1,26 @@
+{
+  "title": "Oltre i numeri: il nostro impatto reale",
+  "text": "Scopri i traguardi raggiunti e la visione innovativa che ha guidato MADE4.0 fin dal primo momento.",
+  "cta": {
+      "text": "Leggi la nosta storia",
+      "link": "story.html"
+  },
+  "cards": [
+    {
+      "label": "Partners",
+      "value": "47"
+    },
+    {
+      "label": "Investiti in tecnologia",
+      "value": "€7 MIL"
+    },
+    {
+      "label": "Clienti",
+      "value": "1300"
+    },
+    {
+      "label": "Cluster tecnologici",
+      "value": "8"
+    }
+  ]
+}

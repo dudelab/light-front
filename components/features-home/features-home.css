@@ -1,0 +1,201 @@
+.features-home {
+  display: flex;
+  flex-direction: column;
+  margin: 80px 0;
+  gap: 40px;
+}
+
+.features-home .header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.features-home .title {
+  color: var(--h-color);
+  font-weight: 400;
+  font-size: 24px;
+  margin: 0 0 6px;
+}
+
+.features-home .subtitle {
+  font-size: 16px;
+  margin: 0 0 8px;
+  color: var(--p-color);
+}
+
+.features-home .carousel-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.features-home .features-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding-bottom: 20px;
+  padding-right: 40px;
+  margin-right: -40px;
+}
+
+.features-home .features-container::-webkit-scrollbar {
+  display: none;
+}
+
+.features-home .card {
+  position: relative;
+  flex: 0 0 80%;
+  scroll-snap-align: start;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  height: 260px;
+  padding: 25px;
+  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  
+  /* Background setup */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Dark overlay for better text readability */
+.features-home .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Gradient overlay */
+.features-home .card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(rgba(23, 26, 43, 0.7), rgba(23, 26, 43, 0.7)),
+    url('../../assets/images/features/gradient.png') center/cover;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover state - show solid gradient */
+.features-home .card:hover::after {
+  background: linear-gradient(
+    to bottom right,
+    /* var(--cta-color), */
+    var(--primary-color),
+    var(--secondary-color),
+    var(--secondary-color),
+    var(--primary-color)
+    /* var(--cta-color) */
+  );
+}
+
+/* Ensure content stays above overlays */
+.features-home .card .actions,
+.features-home .card .content {
+  position: relative;
+  z-index: 3;
+}
+
+.features-home .actions {
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.features-home .tags {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.features-home .tag {
+  cursor: default;
+  background-color: var(--bg-dark);
+  border: 1.5px solid var(--border-color);
+  border-radius: 9999px;
+  color: var(--light-text);
+  font-size: 14.5px;
+  padding: 2px 10px;
+}
+
+.features-home .link {
+  color: var(--h-color);
+  font-size: 22px;
+  font-weight: lighter;
+  pointer-events: none;
+}
+
+.features-home .content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1;
+}
+
+.features-home .content .title {
+  font-size: 32px;
+  color: var(--h-color);
+  font-weight: 500;
+}
+
+.features-home .content .description {
+  color: var(--utility-color);
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.features-home .controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.features-home .controls .prev,
+.features-home .controls .next {
+  background-color: var(--dark-text);
+  color: white;
+  border: 1px solid var(--border-color-2);
+  padding: 10px 16.5px;
+  cursor: pointer;
+  border-radius: 9999px;
+  font-size: 15px;
+  font-weight: 100;
+}
+
+@media (min-width: 768px) {
+  .features-home .features-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-right: 0;
+    padding-right: 0;
+  }
+  
+  .features-home .controls {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .features-home .features-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+    margin-right: 0;
+  }
+  
+  .features-home .last-item {
+    grid-column: span 2;
+  }
+}
