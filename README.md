@@ -4,6 +4,14 @@ Micro Component Loading System
 
 ---
 
+## Summary
+[Basic Usage](#basic-usage) | 
+[Components Structure](#components-structure) | 
+[Passing Data](#passing-data) | 
+[Special Features](#specialfeatures) | 
+[component-registry](#component-registry) | 
+[Benefits](#benefits)
+
 
 ## 1. Basic Usage
 
