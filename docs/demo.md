@@ -1,7 +1,5 @@
 # DEMO - MADE "Static" Website
 
-- Registrare la call?
-
 ## Intro
 
 Vedremo la homepage a fine meeting, ma un grande sforzo in questa prima settimana è stato dedicato alla creazione del sistema per gestire i componenti. Questo sistema risponde direttamente alle esigenze del progetto: avere un sito statico ma con predisposizione per componenti dinamici e riutilizzabili.
