@@ -1,15 +1,10 @@
-// # USAGE:
-// Add 'animate' class to wrapper to activate the component animation
-// you can adjust the config to change the animated component appearance (this won't have any effect without the 'animate' class on the wrapper)
-// you can pass a config to overwrite the default one via the data-config='{ "key": "value" }' attribute on the wrapper
-
 ComponentRegistry.register('logo-strip', {
-    mounted($element, data) {
+    mounted(element, data) {
         // Default configuration
         const config = {
             speed: 1,
             height: '50px',
-            size: .7,
+            size: 0.7,
             spacing: 30,
             ...data.config  // Override defaults with any provided config
         };
@@ -19,11 +14,11 @@ ComponentRegistry.register('logo-strip', {
         let isAnimating = false;
 
         // Only initialize canvas animation if the 'animate' class is present
-        if (!$element.hasClass('animate')) return;
+        if (!element.classList.contains('animate')) return;
 
-        const logoStrip = $element.find(".items")[0];
+        const logoStrip = element.querySelector(".items");
         if (!logoStrip) return;
-        $(logoStrip).css("height", config.height)
+        logoStrip.style.height = config.height;
 
         // Store original HTML before we replace it
         const originalHTML = logoStrip.innerHTML;
@@ -115,44 +110,46 @@ ComponentRegistry.register('logo-strip', {
         }
 
         function draw(timestamp) {
-            if (!lastTime) {
-                lastTime = timestamp;
-            }
-
+            if (!lastTime) lastTime = timestamp;
             const elapsed = timestamp - lastTime;
             lastTime = timestamp;
-
-            // Ensure smooth animation with max frame time
+        
+            // Ensure smooth animation speed
             const movement = Math.min(elapsed, 16.667) * ((config.speed * 60) / 1000);
-
+        
+            // Clear the canvas completely before redrawing
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
+        
             const dpr = window.devicePixelRatio || 1;
             const yOffset = ((canvas.height / dpr) - items[0].height) / 2;
-            
+        
             items.forEach(item => {
+                // Draw the image at its current position
                 ctx.drawImage(item.img, item.x, yOffset, item.width, item.height);
-                
+        
                 if (!isPaused) {
+                    // Move the item left
                     item.x -= movement;
+        
+                    // If the image moves completely out of view, reposition it at the right
                     if (item.x + item.width < 0) {
-                        item.x += totalWidth;
+                        // Find the rightmost image
+                        const rightmostItem = items.reduce((a, b) => (a.x > b.x ? a : b));
+                        item.x = rightmostItem.x + rightmostItem.width + config.spacing;
                     }
                 }
             });
-
-            // Only continue animation if element still has animate class
-            if ($element.hasClass('animate')) {
+        
+            if (element.classList.contains('animate')) {
                 requestAnimationFrame(draw);
             } else {
-                // If animate class is removed, revert to original HTML
                 logoStrip.innerHTML = originalHTML;
                 isAnimating = false;
             }
         }
 
         // Event Listeners
-        canvas.addEventListener("mousemove", (event) => {
+        function handleMouseMove(event) {
             const rect = canvas.getBoundingClientRect();
             const dpr = window.devicePixelRatio || 1;
             
@@ -183,33 +180,47 @@ ComponentRegistry.register('logo-strip', {
             } else {
                 canvas.onclick = null;
             }
-        });
+        }
 
-        canvas.addEventListener("mouseenter", () => {
+        function handleMouseEnter() {
             isPaused = true;
             lastTime = 0;
-        });
+        }
 
-        canvas.addEventListener("mouseleave", () => {
+        function handleMouseLeave() {
             isPaused = false;
             lastTime = 0;
-        });
+        }
+
+        canvas.addEventListener("mousemove", handleMouseMove);
+        canvas.addEventListener("mouseenter", handleMouseEnter);
+        canvas.addEventListener("mouseleave", handleMouseLeave);
 
         // Store cleanup info
-        canvas._cleanup = {
+        this._cleanup = {
             resize: resizeCanvas,
-            originalHTML: originalHTML
+            originalHTML: originalHTML,
+            mousemove: handleMouseMove,
+            mouseenter: handleMouseEnter,
+            mouseleave: handleMouseLeave
         };
     },
 
-    beforeDestroy($element, data) {
-        const canvas = $element.find("canvas")[0];
-        if (canvas?._cleanup) {
-            window.removeEventListener("resize", canvas._cleanup.resize);
+    beforeDestroy(element) {
+        if (this._cleanup) {
+            window.removeEventListener("resize", this._cleanup.resize);
+            
+            const canvas = element.querySelector("canvas");
+            if (canvas) {
+                canvas.removeEventListener("mousemove", this._cleanup.mousemove);
+                canvas.removeEventListener("mouseenter", this._cleanup.mouseenter);
+                canvas.removeEventListener("mouseleave", this._cleanup.mouseleave);
+            }
+            
             // Restore original HTML
-            const logoStrip = $element.find(".items")[0];
+            const logoStrip = element.querySelector(".items");
             if (logoStrip) {
-                logoStrip.innerHTML = canvas._cleanup.originalHTML;
+                logoStrip.innerHTML = this._cleanup.originalHTML;
             }
         }
     }

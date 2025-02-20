@@ -1,7 +1,7 @@
-// Component paths configuration
 const COMPONENTS = {
     "news": "/components/_test-components",
     "news-filtered": "/components/_test-components",
+    
     "header": "/components",
     "footer": "/components",
     "hero": "/components",
@@ -15,65 +15,55 @@ const COMPONENTS = {
     "tech-areas": "/components",
     "tech-item": "/components"
 };
-
-document.addEventListener('DOMContentLoaded', () => {
-    loadAllComponents(document.body);
+$(document).ready(function () {
+    loadAllComponents($('body'))
 });
 
 const loadedScripts = new Set();
 const loadedStyles = new Set();
 
-function loadAllComponents(component, data) {
-    Array.from(component.children).forEach(child => {
-        const componentName = child.getAttribute("data-component");
+function loadAllComponents($component, data) {
+    $component.children().each((_, child) => {
+        const $child = $(child);
+
+        const componentName = $child.attr("data-component");
 
         if (componentName) {
+           
+            // const componentName = $child.prop("tagName").toLowerCase();
+            // if (!Object.keys(COMPONENTS).includes(componentName)) return;
             const fullPath = getComponentFullPath(componentName);
+
             loadScript(`${fullPath}.js`, () => {
-                mountComponentSafely(componentName, child, data);
+                mountComponentSafely(componentName, $child, data);
             });
+
             loadCSS(`${fullPath}.css`);
             return;
-        }
-        
-        if (child.children.length) loadAllComponents(child, data);
+        };
+        if ($child.children().length) loadAllComponents($child, data);
     });
 }
 
-const getComponentFullPath = (name) => `${COMPONENTS[name]}/${name}/${name}`;
-
+const getComponentFullPath = (name) => `${COMPONENTS[name]}/${name}/${name}`
 function loadScript(src, callback = () => {}) {
-    if (loadedScripts.has(src)) return callback();
+    if (loadedScripts.has(src)) return callback(); // Skip if already loaded
 
-    const script = document.createElement('script');
-    script.src = src;
-    script.onload = () => {
-        callback();
-        loadedScripts.add(src);
-    };
-    script.onerror = callback;
-    document.head.appendChild(script);
+    $.getScript(src)
+        .done(callback)
+        .fail(callback);
+
+    loadedScripts.add(src);
 }
-
-function loadCSS(href) {
-    if (loadedStyles.has(href)) return;
-    if (document.querySelector(`link[href="${href}"]`)) return;
-
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = href;
-    document.head.appendChild(link);
-    loadedStyles.add(href);
-}
+const loadCSS = (href) => !$(`link[href="${href}"]`).length && $("<link>", { rel: "stylesheet", type: "text/css", href }).appendTo("head");
 
 async function loadTemplate(path, callback) {
     try {
         const response = await fetch(`${path}.html`);
-        if (!response.ok) throw new Error(`Error loading ${path}`);
+        if (!response.ok) throw new Error(`Errore nel caricamento di ${path}`);
         callback(await response.text());
     } catch (error) {
-        // console.error(`Error fetching template '${path}':`, error);
+        // console.error(`Errore nel recupero del template '${path}':`, error);
     }
 }
 
@@ -82,10 +72,7 @@ function mountComponentSafely(...args) {
         return mountComponent(...args);
     } catch (error) {
         console.error(`Failed to mount component:`, error);
-        const div = document.createElement('div');
-        div.className = 'component-error';
-        div.textContent = 'Component failed to load';
-        return div;
+        return $(`<div class="component-error">Component failed to load</div>`);
     }
 }
 
@@ -113,14 +100,15 @@ const componentObserver = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
         mutation.removedNodes.forEach((node) => {
             if (node.nodeType === Node.ELEMENT_NODE) {
-                const instance = node.dataset.componentInstance;
+                const $node = $(node);
+                const instance = $node.data("componentInstance");
                 if (instance) {
                     instance.callHook(LIFECYCLE.BEFORE_DESTROY);
                 }
                 
                 // Check removed children components too
-                node.querySelectorAll('[data-component]').forEach(child => {
-                    const childInstance = child.dataset.componentInstance;
+                $node.find("[data-component]").each(function() {
+                    const childInstance = $(this).data("componentInstance");
                     if (childInstance) {
                         childInstance.callHook(LIFECYCLE.BEFORE_DESTROY);
                     }
@@ -130,18 +118,18 @@ const componentObserver = new MutationObserver((mutations) => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
+$(document).ready(() => {
     componentObserver.observe(document.body, {
         childList: true,
         subtree: true
     });
 });
 
-async function mountComponent(componentName, context, parentData) {
-    const container = context;
-    let objectAttr = container.getAttribute("data-object");
-    const configAttr = container.getAttribute("data-config");
-    let endpoint = container.getAttribute("data-endpoint");
+async function mountComponent(componentName, $context, parentData) {
+    const $container = $context;
+    let objectAttr = $container.attr("data-object");
+    const configAttr = $container.attr("data-config");
+    let endpoint = $container.attr("data-endpoint");
     let data = null;
 
     // Get component definition from registry or use empty component
@@ -150,13 +138,13 @@ async function mountComponent(componentName, context, parentData) {
     // Create new instance for this mount
     const instance = {
         ...componentDef,
-        element: null,
+        $element: null,
         data: null,
         
         // Method to call lifecycle hooks
         callHook: function(hookName) {
             if (typeof this[hookName] === 'function') {
-                this[hookName](this.element, this.data);
+                this[hookName](this.$element, this.data);
             }
         }
     };
@@ -200,51 +188,49 @@ async function mountComponent(componentName, context, parentData) {
     }
     instance.data = data;
 
-    const nestedComponents = Array.from(container.querySelectorAll('[data-component]'));
-    nestedComponents.forEach(comp => comp.remove()); // Detach nested components
+    const nestedComponents = $container.find("[data-component]").detach();
     const fullPath = getComponentFullPath(componentName);
 
     loadTemplate(fullPath, async (template) => {
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = template;
-        const component = tempDiv.firstElementChild;
+        const $component = $(template);
         
         // Preserve classes from the original container
-        const originalClasses = container.getAttribute('class');
+        const originalClasses = $container.attr('class');
         if (originalClasses) {
-            component.classList.add(...originalClasses.split(' '));
+            $component.addClass(originalClasses);
         }
         
         // Compile the main template with its data
         if (data) {
-            compileComponent(component, data);
+            compileComponent($component, data);
         }
         
         // Then append nested components
-        nestedComponents.forEach(comp => component.appendChild(comp));
-        container.replaceWith(component);
+        $component.append(nestedComponents);
+        $container.replaceWith($component);
         
         // Store references
-        instance.element = component;
-        component.dataset.componentInstance = JSON.stringify(instance);
+        instance.$element = $component;
+        $component.data("componentInstance", instance);
         
         if (data) {
-            component.dataset.componentData = JSON.stringify(data);
+            $component.data("componentData", data);
         }
         
         // Call mounted hook
         instance.callHook(LIFECYCLE.MOUNTED);
         
         // Process nested components with the current component's data
-        loadAllComponents(component, data);
+        loadAllComponents($component, data);
     });
 
     return instance;
 }
 
-function compileComponent(component, data) {
-    processVIf(component, data);
-    processVFor(component, data);
+
+function compileComponent($component, data) {
+    processVIf($component, data);
+    processVFor($component, data);
 
     const evaluateExpression = (expr, data) => {
         // First try array access with method
@@ -278,18 +264,20 @@ function compileComponent(component, data) {
         return getNestedValue(data, expr);
     };
 
-    function processElement(el) {
+    $component.add($component.find("*")).each(function() {
+        let $el = $(this);
+
         // Text Content Replacement
-        el.innerHTML = el.innerHTML.replace(/\{\{\s*(.*?)\s*\}\}/g, (_, expr) => {
+        $el.html($el.html().replace(/\{\{\s*(.*?)\s*\}\}/g, (_, expr) => {
             const value = evaluateExpression(expr.trim(), data);
             if (value === undefined || value === null) return _;
             return typeof value === 'object' ? JSON.stringify(value) : value;
-        });
+        }));
 
         // Attributes Replacement
-        Array.from(el.attributes).forEach(attr => {
-            if (attr.specified && attr.value.includes("{{") && attr.name !== "style") {
-                el.setAttribute(attr.name, attr.value.replace(/\{\{\s*(.*?)\s*\}\}/g, (_, expr) => {
+        $.each(this.attributes, function() {
+            if (this.specified && this.value.includes("{{") && this.name !== "style") {
+                $el.attr(this.name, this.value.replace(/\{\{\s*(.*?)\s*\}\}/g, (_, expr) => {
                     const value = evaluateExpression(expr.trim(), data);
                     if (value === undefined || value === null) return _;
                     return typeof value === 'object' ? JSON.stringify(value) : value;
@@ -298,60 +286,61 @@ function compileComponent(component, data) {
         });
 
         // Styles Replacement
-        const inlineStyle = el.getAttribute("style");
-        if (inlineStyle && (inlineStyle.includes("[") || inlineStyle.includes("{{"))) {
-            el.setAttribute("style", inlineStyle
+        let inlineStyle = $el.attr("style");
+        if (inlineStyle?.includes("[") || inlineStyle?.includes("{{")) {
+            $el.attr("style", inlineStyle
                 .replace(/\[\s*(.*?)\s*\]/g, (_, key) => getNestedValue(data, key.trim()) || "")
                 .replace(/\{\{\s*(.*?)\s*\}\}/g, (_, key) => getNestedValue(data, key.trim()) || "")
             );
         }
-    }
-
-    // Process the component and all its children
-    processElement(component);
-    component.querySelectorAll('*').forEach(processElement);
+    });
 }
 
 const getNestedValue = (obj, key) => key.split(".").reduce((o, k) => (o && o[k] !== undefined ? o[k] : undefined), obj);
 
-function processVIf(component, data) {
-    component.querySelectorAll('[v-if]').forEach(el => {
-        const condition = el.getAttribute("v-if").trim();
+function processVIf($component, data) {
+    $component.find("[v-if]").each(function () {
+        const $el = $(this);
+        let condition = $el.attr("v-if").trim();
 
         try {
             let conditionFunction = new Function('data', `with(data) { return ${condition} }`);
             let result = conditionFunction(data);
 
-            if (!result) el.remove();
+            if (!result) $el.remove();
         } catch (error) {
             // console.error(`❌ Error evaluating v-if condition: "${condition}"`, error);
         }
     });
 }
 
-function processVFor(component, data) {
-    component.querySelectorAll('[v-for]').forEach(parent => {
-        const vForAttr = parent.getAttribute("v-for");
+
+function processVFor($component, data) {
+    $component.find("[v-for]").each(function () {
+        const $parent = $(this);
+        const vForAttr = $parent.attr("v-for");
 
         if (vForAttr) {
             const [itemName, listName] = vForAttr.split(" in ").map(s => s.trim());
-            const list = getNestedValue(data, listName);
+            const list = getNestedValue(data, listName); // Get array from JSON
 
             if (Array.isArray(list)) {
-                const fragment = document.createDocumentFragment();
+                let newHtml = "";
 
                 list.forEach(item => {
-                    const tempElement = parent.cloneNode(true);
-                    const itemData = { ...data, [itemName]: item };
+                    let $tempElement = $parent.clone();
+                    let itemData = { ...data, [itemName]: item };
 
-                    compileComponent(tempElement, itemData);
-                    fragment.appendChild(tempElement);
+                    compileComponent($tempElement, itemData);
+                    newHtml += $tempElement.prop("outerHTML");
                 });
 
-                parent.replaceWith(fragment);
+                $parent.replaceWith(newHtml);
             } else {
                 console.warn(`v-for error: "${listName}" is not an array`);
             }
         }
     });
 }
+
+
