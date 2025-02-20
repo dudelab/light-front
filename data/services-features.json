@@ -1,0 +1,20 @@
+{
+    "title": "Qualche motivo per lavorare con noi",
+    "features": [
+        {
+            "icon": "/assets/icons/puzzle.png",
+            "subject": "Realizziamo innovazioni concrete",
+            "paragraph": "Dalla teoria alla pratica: applichiamo concretamente le tecnologie dell’Industria 4.0 e 5.0 per ottenere risultati tangibili e trasformare le idee in soluzioni reali."
+        },
+        {
+            "icon": "/assets/icons/building.png",
+            "subject": "Collaboriamo e potenziamo l’industria.",
+            "paragraph": "Collaboriamo con leader e PMI: sviluppiamo soluzioni innovative, adattate alle sfide e opportunità specifiche del settore."
+        },
+        {
+            "icon": "/assets/icons/trophy.png",
+            "subject": "Facilitiamo finanziamenti e riconoscimenti.",
+            "paragraph": "Competence Center riconosciuto: accediamo a finanziamenti per rendere la trasformazione digitale accessibile e sostenibile economicamente."
+        }
+    ]
+}

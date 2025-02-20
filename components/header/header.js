@@ -1,88 +1,100 @@
-(function() {
+if (typeof ComponentRegistry !== 'undefined') {
     ComponentRegistry.register('header', {
-        beforeMount(element, data) { 
-            this.data = data; 
+        beforeMount(element, data) {
+            this.data = data;
         },
-
         mounted(element, data) {
-            this.element = element;
-
-            // Mobile menu toggle
-            const menuToggle = this.element.querySelector('.menu-toggle');
-            const mobileMenu = this.element.querySelector('.mobile-menu');
-            menuToggle?.addEventListener('click', () => {
-                mobileMenu?.classList.toggle('show');
-            });
-
-            // Menu items
-            const menuItems = this.element.querySelectorAll('.menu-item > a');
-            menuItems.forEach(item => {
-                item.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const parent = e.currentTarget.parentElement;
-                    
-                    // Remove active/open from all menu items
-                    this.element.querySelectorAll('.menu-item').forEach(item => {
-                        item.classList.remove('active', 'open');
-                    });
-
-                    // Add active/open to clicked item if not already open
-                    if (!parent.classList.contains('open')) {
-                        parent.classList.add('active', 'open');
-                    }
-                });
-            });
-
-            // Language selector
-            const selector = this.element.querySelector('.language-selector');
-            selector?.addEventListener('click', (e) => {
-                e.stopPropagation();
-                selector.classList.toggle('open');
-            });
-
-            // Language dropdown items
-            const languageItems = this.element.querySelectorAll('.language-dropdown li');
-            const selectorSpan = selector?.querySelector('span');
-            languageItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    if (selectorSpan) {
-                        selectorSpan.textContent = item.textContent;
-                    }
-                });
-            });
-
-            // Click outside handlers
-            const handleOutsideClick = (e) => {
-                // Close menu items if clicked outside
-                if (!e.target.closest('.menu-item')) {
-                    this.element.querySelectorAll('.menu-item').forEach(item => {
-                        item.classList.remove('active', 'open');
-                    });
-                }
-
-                // Close language selector if clicked outside
-                if (!e.target.closest('.language-selector') && selector) {
-                    selector.classList.remove('open');
-                }
-            };
-
-            document.addEventListener('click', handleOutsideClick);
-
-            // Store event listeners for cleanup
-            this._cleanup = () => {
-                menuToggle?.removeEventListener('click', () => {});
-                menuItems.forEach(item => item.removeEventListener('click', () => {}));
-                selector?.removeEventListener('click', () => {});
-                languageItems.forEach(item => item.removeEventListener('click', () => {}));
-                document.removeEventListener('click', handleOutsideClick);
-            };
-        },
-
-        beforeDestroy() {
-            // Clean up all event listeners
-            if (this._cleanup) {
-                this._cleanup();
-            }
+            initHeader(element, data);
         }
     });
+}
+
+(function() {
+    function initHeader(element, data) {
+        const $element = $(element);
+
+        // Helper functions for menu state management
+        const closeMenuItems = () => $element.find('.menu-item').removeClass('active open');
+        const closeLanguageSelector = () => $element.find('.language-selector').removeClass('open');
+        const closeMobileMenu = () => $element.find('.mobile-menu').removeClass('show');
+        
+        const openMenuItem = ($item) => $item.addClass('active open');
+        const openLanguageSelector = () => $element.find('.language-selector').addClass('open');
+        const openMobileMenu = () => $element.find('.mobile-menu').addClass('show');
+        
+        const toggleMobileMenu = () => {
+            const $mobileMenu = $element.find('.mobile-menu');
+            closeMenuItems();
+            closeLanguageSelector();
+            
+            if ($mobileMenu.hasClass('show')) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
+        };
+        
+        // Mobile menu toggle
+        $element.find('.menu-toggle').on('click', toggleMobileMenu);
+        
+        // Menu items - both desktop and mobile
+        $element.find('.menu-item > a').on('click', (e) => {
+            e.preventDefault();
+            const $parent = $(e.currentTarget).parent();
+            
+            // If has submenu, toggle it
+            if ($parent.find('.submenu').length > 0) {
+                if (!$parent.hasClass('open')) {
+                    closeLanguageSelector();
+                    closeMenuItems();
+                    openMenuItem($parent);
+                } else {
+                    closeMenuItems();
+                }
+            }
+        });
+        
+        // Language selector
+        const $selector = $element.find('.language-selector');
+        $selector.on('click', (e) => {
+            e.stopPropagation();
+            if (!$selector.hasClass('open')) {
+                closeMenuItems();
+                openLanguageSelector();
+            } else {
+                closeLanguageSelector();
+            }
+        });
+        
+        $element.find('.language-dropdown li').on('click', (e) =>
+            $selector.find('span').text($(e.currentTarget).text()));
+        
+        // Click outside
+        $(document).on('click', e => {
+            const $target = $(e.target);
+            if (!$target.closest('.menu-item').length) {
+                closeMenuItems();
+            }
+            if (!$target.closest('.language-selector').length) {
+                closeLanguageSelector();
+            }
+            if (!$target.closest('.mobile-menu').length && !$target.closest('.menu-toggle').length) {
+                closeMobileMenu();
+            }
+        });
+
+        // Store cleanup function
+        element._cleanup = () => {
+            $element.find('.menu-toggle, .menu-item > a, .language-selector, .language-dropdown li').off();
+            $(document).off('click');
+        };
+    }
+
+    // Initialize all headers on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.header').forEach(element => initHeader(element));
+    });
+
+    // Expose initialization function for dynamic usage
+    window.initHeader = initHeader;
 })();

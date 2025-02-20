@@ -35,5 +35,17 @@ const API_ENDPOINTS = {
 
     "technologies": ENV === "development"
         ? "/data/technologies.json"
-        : "https://api.miosito.com/technologies"
+        : "https://api.miosito.com/technologies",
+
+    "services-hero": ENV === "development"
+        ? "/data/services-hero.json"
+        : "https://api.miosito.com/services-hero",
+
+    "services-features": ENV === "development"
+        ? "/data/services-features.json"
+        : "https://api.miosito.com/services-features",
+    
+    "services-testimonials": ENV === "development"
+        ? "/data/services-testimonials.json"
+        : "https://api.miosito.com/services-testimonials"
 };

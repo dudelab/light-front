@@ -1,0 +1,23 @@
+<div class="blog-card">
+  <div class="card-item-image" style="background-image: url('{{ image }}')">
+      <div class="card-item-image-tags">
+          <span v-for="tag in imageTag" class="card-item-image-tag">{{ tag }}</span>
+      </div>
+  </div>
+  <div class="card-item-infos">
+      <div class="card-item-tag-container">
+          <div class="card-item-date-c" v-if="date">
+              <div class="card-item-date">
+                  <i class="fa-solid fa-calendar"></i> {{ date }}
+              </div>
+          </div>
+          <div class="card-item-tags">
+              <span v-if="tag" class="card-item-tag">{{ tag }}</span>
+          </div>
+      </div>
+      <div class="card-item-title">{{ description }}</div>
+      <a class="card-item-link" href="{{ link }}">
+          Leggi <i class="fa-solid fa-arrow-up rotate-45"></i>
+      </a>
+  </div>
+</div>

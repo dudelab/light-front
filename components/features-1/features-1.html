@@ -1,0 +1,12 @@
+<div class="features-1">
+    <div class="title">{{title}}</div>
+    <div class="content">
+        <div class="feature" v-for="feature in features">
+            <div class="icon" style="background-image: url({{feature.icon}});"></div>
+            <div style="display: flex; gap:12px; flex-direction: column;">
+                <div class="subject">{{feature.subject}}</div>
+                <div class="paragraph">{{feature.paragraph}}</div>
+            </div>
+        </div>
+    </div>
+</div>

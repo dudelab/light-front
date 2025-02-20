@@ -1,0 +1,31 @@
+{
+    "title": "La voce di chi ha lavorato con noi",
+    "testimonials": [
+        {
+            "company": "/assets/images/testimonials/fincons.png",
+            "image": "/assets/images/testimonials/person-1.png",
+            "name": "Sara Moretti",
+            "roles": ["Fondatrice", "Goodwell"],
+            "cit": "Grazie a MADE, abbiamo potuto implementare soluzioni digitali avanzate a costi contenuti, grazie al supporto dei co-finanziamenti pubblici.",
+            "percentage": "20%",
+            "description": "Riduzione dei costi operativi",
+            "link": {
+                "label": "Scopri il progetto",
+                "ref": "/explore"
+            }
+        },
+        {
+            "company": "/assets/images/testimonials/fanuc.png",
+            "image": "/assets/images/testimonials/person-1.png",
+            "name": "Giuseppe Ferrari",
+            "roles": ["Responsabile innovazione", "Goodwell"],
+            "cit": "Abbiamo deciso di affidarci a MADE per la nostra trasformazione digitale, e l’esperienza è stata decisamente positiva. ",
+            "percentage": "20%",
+            "description": "Riduzione dei costi operativi",
+            "link": {
+                "label": "Scopri il progetto",
+                "ref": "/explore"
+            }
+        }
+    ]
+}

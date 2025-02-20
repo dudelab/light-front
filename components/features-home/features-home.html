@@ -11,8 +11,8 @@
          href="{{ feature.link }}"
          style="background-image: url({{feature.image}})">
         <div class="actions">
-          <div class="tags" v-if="feature.tag">
-            <span class="tag">{{ feature.tag }}</span>
+          <div class="tags">
+            <span class="tag" v-if="feature.tag">{{ feature.tag }}</span>
           </div>
           <div class="link">
             <i class="fa-solid fa-arrow-up rotate-45" aria-label="Go to detail page"></i>

@@ -1,21 +1,60 @@
-<div class="single-card-slider-card "> <!--  div azzurro -->
-  <h4 class="title text-black"></h4>
-  <div class="single-card-slider-div-time bg-white">
-    <p>Hai tempo fino:</p>
-    <img class="single-card-slider-image-divider" src="/assets/images/divider.png" alt="">
-    <p class="single-card-slider-date text-white"></p>
+<div class="single-card-slider">
+  <!-- <div class="single-card-slider"> -->
+    <div class="title h-color">{{title}}</div>
+    <div >{{subtitle}}</div>
+    <!-- <div class="single-card-slider-content">
+    </div> -->
+      <div class="cards" v-for="card in cards">  <!--  //div for  -->
+        <!-- slot for cards -->
+        <div class="card "> <!--  div azzurro -->
+          <div class="title-card text-black"> {{card.title}} </div>
+          <div class="div-time bg-white ">
+            <p class="primary-text">Hai tempo fino:</p>
+            <img class="image-divider" src="/assets/images/divider.png" alt="">
+            <div class="div-time">
+              <div class="days d-flex-vertical">
+                <p class="primary-text">12</p>
+                <p class="primary-text">days</p>
+              </div>
+              <div class="hours">
+                <p class="primary-text">23</p>
+                <p class="primary-text">hrs</p>
+              </div>
+              <div class="minutes">
+                <p class="primary-text">55</p>
+                <p class="primary-text">min</p>
+              </div>
+            </div>
+          </div>
+          
+            <img class="image" src="/assets/images/single-card-slider/VISORI CON OPERATORE 6.JPG" alt="">
+            <div class="card-item-div bg-white">
+              <!-- prevedeere assenza di tag??? -->
+              <!-- {card.tags_card.length()!=0 ?
+                "<div class="d-flex-orizzontal div-tag-card">
+                  <div v-for="tag in card.tags_card">
+                    <span><i class={{tag.class_icon}}></i>{{tag.text_tag}}</span>
+                  </div>
+                </div>"
+                :
+                ""
+              } -->
+              <div class="div-information">
+              <div class="div-tag-card">
+                <div class="div-for-tags" v-for="tag in card.tags_card">
+                  <span class="tag-card"><i class={{tag.class_icon}}></i>{{tag.text_tag}}</span><br>
+                </div>
+              </div>
+              <h4 class="title-card text-dark">{{card.title_card}}</h4>
+              <p class="text-card text-gray-700 ">{{card.text_card}}</p>
+              </div>
+              <div class="div-button">
+                <a class=" button-announcement" href={{card.url_announcement}} >{{card.text_announcement}}<i class="fa-solid fa-arrow-up rotate-45" aria-label="Go to detail page"></i></a>
+                <a class="button-details border-color-2" href={{card.url_details}} >{{card.text_details}}<i class="fa-solid fa-arrow-up rotate-45" aria-label="Go to detail page"></i></a>
+              </div>
+            </div>
+          <!-- </div> -->
+        </div>
+      </div>
+  <!-- </div> -->
   </div>
-  <div>
-    <img class="single-card-slider-image" src="/assets/images/single-card-slider/VISORI CON OPERATORE 6.JPG" alt="">
-    <div class="card-item-div bg-white">
-      <span class="contact-box-tag">Hai bisongo di più informazioni?</span>
-      <h4 class="title-card text-dark"></h4>
-      <p class="text-card text-gray-700 "></p>
-      <a class="single-card-slider-button-announcement" href="#" ></a>
-      <!-- <div class="single-card-slider-button-announcement prevBtn"><i class="fa-solid fa-chevron-left"></i></div> -->
-      <div class="prevBtn"><i class="fa-solid fa-chevron-left"></i></div>
-      <a class="single-card-slider-button-details" href="#" ></a> 
-
-    </div>
-  </div>
-</div>

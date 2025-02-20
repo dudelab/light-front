@@ -1,38 +1,64 @@
-ComponentRegistry.register('logo-strip', {
-    mounted(element, data) {
-        // Default configuration
-        const config = {
-            speed: 1,
-            height: '50px',
-            size: 0.7,
-            spacing: 30,
-            ...data.config  // Override defaults with any provided config
-        };
+// # USAGE:
+// Add 'animate' class to wrapper to activate the component animation
+// you can adjust the config to change the animated component appearance (this won't have any effect without the 'animate' class on the wrapper)
+// you can pass a config to overwrite the default one via the data-config='{ "key": "value" }' attribute on the wrapper
+
+if (typeof ComponentRegistry !== 'undefined') {
+    ComponentRegistry.register('logo-strip', {
+        mounted(element, data) {
+            initLogoStrip(element);
+        }
+    });
+}
+
+(function() {
+    // Default configuration
+    const defaultConfig = {
+        speed: 1,
+        height: '50px',
+        size: 0.7,
+        spacing: 30
+    };
+
+    function initLogoStrip(wrapper) {
+        // Check if element should be animated
+        if (!wrapper?.classList?.contains('animate')) return;
+
+        // Get or parse configuration
+        let config = {...defaultConfig};
+        const configAttr = wrapper.getAttribute('data-config');
+        if (configAttr) {
+            try {
+                const customConfig = JSON.parse(configAttr);
+                config = {...config, ...customConfig};
+            } catch (e) {
+                console.warn('Invalid config format, using defaults');
+            }
+        }
 
         let isPaused = false;
         let lastTime = 0;
         let isAnimating = false;
 
-        // Only initialize canvas animation if the 'animate' class is present
-        if (!element.classList.contains('animate')) return;
-
-        const logoStrip = element.querySelector(".items");
+        // Find the items container
+        const logoStrip = wrapper.querySelector('.items');
         if (!logoStrip) return;
+        
         logoStrip.style.height = config.height;
 
-        // Store original HTML before we replace it
+        // Store original HTML
         const originalHTML = logoStrip.innerHTML;
 
         // Create canvas
-        const canvas = document.createElement("canvas");
-        const ctx = canvas.getContext("2d");
-        logoStrip.innerHTML = "";
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        logoStrip.innerHTML = '';
         logoStrip.appendChild(canvas);
 
-        canvas.style.width = "100%";
-        canvas.style.height = "100%";
-        canvas.style.display = "block";
-        canvas.style.overflow = "hidden";
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+        canvas.style.display = 'block';
+        canvas.style.overflow = 'hidden';
 
         function resizeCanvas() {
             const dpr = window.devicePixelRatio || 1;
@@ -42,14 +68,34 @@ ComponentRegistry.register('logo-strip', {
             ctx.scale(dpr, dpr);
         }
 
-        window.addEventListener("resize", resizeCanvas);
+        window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
 
         let items = [];
         let totalWidth = 0;
 
-        // Load all images first
-        const imagePromises = data.partners.map(partner => {
+        // Function to extract items from static HTML
+        function getItemsFromHTML() {
+            const tempContainer = document.createElement('div');
+            tempContainer.innerHTML = originalHTML;
+            
+            return Array.from(tempContainer.querySelectorAll('.item')).map(item => {
+                const img = item.querySelector('img');
+                const link = item.querySelector('a');
+                return {
+                    image: img.src,
+                    url: link ? link.href : null,
+                    name: img.alt
+                };
+            });
+        }
+
+        // Get items either from data attribute or static HTML
+        const partnersAttr = wrapper.getAttribute('data-partners');
+        const partners = partnersAttr ? JSON.parse(partnersAttr) : getItemsFromHTML();
+
+        // Load all images
+        const imagePromises = partners.map(partner => {
             return new Promise((resolve, reject) => {
                 const img = new Image();
                 img.onload = () => resolve({ img, url: partner.url });
@@ -60,7 +106,6 @@ ComponentRegistry.register('logo-strip', {
             });
         });
 
-        // Wait for all images to load before starting
         Promise.all(imagePromises)
             .then(loadedItems => {
                 items = loadedItems.map(item => ({
@@ -78,7 +123,6 @@ ComponentRegistry.register('logo-strip', {
             })
             .catch(error => {
                 console.error('Error loading images:', error);
-                // On error, revert to original HTML
                 logoStrip.innerHTML = originalHTML;
             });
 
@@ -111,36 +155,30 @@ ComponentRegistry.register('logo-strip', {
 
         function draw(timestamp) {
             if (!lastTime) lastTime = timestamp;
+
             const elapsed = timestamp - lastTime;
             lastTime = timestamp;
-        
-            // Ensure smooth animation speed
+
             const movement = Math.min(elapsed, 16.667) * ((config.speed * 60) / 1000);
-        
-            // Clear the canvas completely before redrawing
+
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
+            
             const dpr = window.devicePixelRatio || 1;
             const yOffset = ((canvas.height / dpr) - items[0].height) / 2;
-        
+            
             items.forEach(item => {
-                // Draw the image at its current position
                 ctx.drawImage(item.img, item.x, yOffset, item.width, item.height);
-        
+                
                 if (!isPaused) {
-                    // Move the item left
                     item.x -= movement;
-        
-                    // If the image moves completely out of view, reposition it at the right
                     if (item.x + item.width < 0) {
-                        // Find the rightmost image
                         const rightmostItem = items.reduce((a, b) => (a.x > b.x ? a : b));
                         item.x = rightmostItem.x + rightmostItem.width + config.spacing;
                     }
                 }
             });
-        
-            if (element.classList.contains('animate')) {
+
+            if (wrapper.classList.contains('animate')) {
                 requestAnimationFrame(draw);
             } else {
                 logoStrip.innerHTML = originalHTML;
@@ -149,24 +187,20 @@ ComponentRegistry.register('logo-strip', {
         }
 
         // Event Listeners
-        function handleMouseMove(event) {
+        canvas.addEventListener('mousemove', (event) => {
             const rect = canvas.getBoundingClientRect();
             const dpr = window.devicePixelRatio || 1;
             
-            // Get click position in canvas coordinates
             const x = event.clientX - rect.left;
             const y = event.clientY - rect.top;
             
-            // Convert to scaled canvas coordinates
             const canvasX = x * (canvas.width / (rect.width * dpr));
             const canvasY = y * (canvas.height / (rect.height * dpr));
             
-            // Use the same yOffset calculation as in the draw function
             const yOffset = ((canvas.height / dpr) - items[0].height) / 2;
             
-            canvas.style.cursor = "default";
+            canvas.style.cursor = 'default';
             
-            // Find logo under cursor
             const clickedItem = items.find(item => 
                 canvasX >= item.x && 
                 canvasX <= item.x + item.width &&
@@ -174,54 +208,38 @@ ComponentRegistry.register('logo-strip', {
                 canvasY <= yOffset + item.height
             );
             
-            if (clickedItem) {
-                canvas.style.cursor = "pointer";
-                canvas.onclick = () => window.open(clickedItem.url, "_blank");
+            if (clickedItem && clickedItem.url) {
+                canvas.style.cursor = 'pointer';
+                canvas.onclick = () => window.open(clickedItem.url, '_blank');
             } else {
                 canvas.onclick = null;
             }
-        }
+        });
 
-        function handleMouseEnter() {
+        canvas.addEventListener('mouseenter', () => {
             isPaused = true;
             lastTime = 0;
-        }
+        });
 
-        function handleMouseLeave() {
+        canvas.addEventListener('mouseleave', () => {
             isPaused = false;
             lastTime = 0;
-        }
+        });
 
-        canvas.addEventListener("mousemove", handleMouseMove);
-        canvas.addEventListener("mouseenter", handleMouseEnter);
-        canvas.addEventListener("mouseleave", handleMouseLeave);
-
-        // Store cleanup info
-        this._cleanup = {
-            resize: resizeCanvas,
-            originalHTML: originalHTML,
-            mousemove: handleMouseMove,
-            mouseenter: handleMouseEnter,
-            mouseleave: handleMouseLeave
-        };
-    },
-
-    beforeDestroy(element) {
-        if (this._cleanup) {
-            window.removeEventListener("resize", this._cleanup.resize);
-            
-            const canvas = element.querySelector("canvas");
-            if (canvas) {
-                canvas.removeEventListener("mousemove", this._cleanup.mousemove);
-                canvas.removeEventListener("mouseenter", this._cleanup.mouseenter);
-                canvas.removeEventListener("mouseleave", this._cleanup.mouseleave);
-            }
-            
-            // Restore original HTML
-            const logoStrip = element.querySelector(".items");
+        // Store cleanup function
+        wrapper._cleanup = () => {
+            window.removeEventListener('resize', resizeCanvas);
             if (logoStrip) {
-                logoStrip.innerHTML = this._cleanup.originalHTML;
+                logoStrip.innerHTML = originalHTML;
             }
-        }
+        };
     }
-});
+
+    // Initialize all logo strips on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.logo-strip').forEach(initLogoStrip);
+    });
+
+    // Expose initialization function for dynamic usage
+    window.initLogoStrip = initLogoStrip;
+})();

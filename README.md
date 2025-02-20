@@ -83,13 +83,13 @@ Add lifecycle hooks to your components in their JS files:
 
 ```javascript
 ComponentRegistry.register('my-component', {
-    beforeMount($element, data) {
+    beforeMount(element, data) {
         // Runs before component is added to page
     },
-    mounted($element, data) {
+    mounted(element, data) {
         // Runs after component is added to page
     },
-    beforeDestroy($element, data) {
+    beforeDestroy(element, data) {
         // Runs before component is removed
     }
 });

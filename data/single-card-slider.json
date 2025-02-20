@@ -1,13 +1,24 @@
 {
+  "image": "/assets/images/partners/image_ibm.png",
+  "tags_image": ["Aperto"],
   "title":"Opportunità da cogliere al volo",
   "subtitle": "Non perdere le ultime occasioni di finanziamento, verifica i bandi in scadenza.",
   "cards": [
     {
         "title": "Bando europeo in scadenza",
-        "time": "13/02/2025",
-        "tags_card": ["Apertura candidature - 30/01/2024","Chiusura candidature - 30/01/2025"],
-        "image": "/assets/images/partners/image_ibm.png",
-        "tags_image": ["Aperto"],
+        "time": {
+          "days":"999",
+          "hours":"24",
+          "minutes":"60"
+        },
+        "tags_card": [
+          {
+            "class_icon": "fa-regular fa-flag",
+            "text_tag":"Apertura candidature - 30/01/2024"},
+          {
+            "class_icon": "fa-solid fa-hourglass",
+            "text_tag":"Chiusura candidature - 30/01/2025"}
+        ],
         "title_card": "project x",
         "text_card": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta sequi reprehenderit tempora quidem delectus esse temporibus quas blanditiis sit accusantium, fuga dolores, perspiciatis minus ullam laboriosam. Commodi asperiores quae a.",
         "text_announcement": "Partecipa al bando",

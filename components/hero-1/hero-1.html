@@ -1,0 +1,18 @@
+<div class="hero-1">
+    <div class="content">
+        <div class="text">
+            <div class="title">{{title}}</div>
+            <div class="subtitle">{{subtitle}}</div>
+        </div>
+        <a class="button" href="{{cta.link}}">
+            {{cta.label}}
+        </a>
+    </div>
+    <div class="image" style="background-image: url('{{image}}');">
+        <div class="tags" >
+            <span class="tag" v-for="(tag, index) in tags">
+                {{tag}}<span v-if="index < tags.length - 1">,</span>
+            </span>
+        </div>
+    </div>
+</div>

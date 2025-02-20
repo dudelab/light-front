@@ -7,11 +7,8 @@
       </a>
   </div>
   <div class="kpi-1-cards">
-      <div v-for="card in cards">
-        <div class="kpi-1-card">
-          <p class="kpi-1-card-value text-white">{{ card.value }}</p>
-          <p class="kpi-1-card-label text-white">{{ card.label }}</p>
-        </div>
-      </div>
+      <div data-component="kpi-1-card" v-for="card in cards" data-object='{ "value": "{{card.value}}", "label": "{{card.label}}" }'></div>
+
+      <!-- <div data-component="kpi-1-card" data-object='{"value": "100", "label": "Example"}'></div> -->
   </div>
 </div>

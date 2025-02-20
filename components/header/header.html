@@ -24,7 +24,7 @@
                                 <p class="submenu-subtitle">{{item.submenu.intro.subtitle}}</p>
                                 <a href="{{item.submenu.intro.cta.url}}" class="submenu-cta">
                                     {{item.submenu.intro.cta.label}}
-                                    <i class="fa-solid fa-arrow-right"></i>
+                                    <i class="fa-solid fa-arrow-up rotate-45"></i>
                                 </a>
                             </div>
                             
@@ -36,7 +36,9 @@
                                            href="{{subitem.url}}" 
                                            class="submenu-item">
                                             <span>{{subitem.label}}</span>
-                                            <i class="fa-solid fa-arrow-right"></i>
+                                            <span class="icon">
+                                                <i class="fa-solid fa-arrow-up rotate-45"></i>
+                                            </span>
                                         </a>
                                     </div>
                                 </div>
@@ -82,27 +84,31 @@
                 <a href="{{item.url}}">+ {{item.label}}</a>
                 
                 <div v-if="item.hasSubmenu" class="submenu">
-                    <!-- Add intro section -->
-                    <div class="submenu-intro">
-                        <h2 class="submenu-title">{{item.submenu.intro.title}}</h2>
-                        <p class="submenu-subtitle">{{item.submenu.intro.subtitle}}</p>
-                        <a href="{{item.submenu.intro.cta.url}}" class="submenu-cta">
-                            {{item.submenu.intro.cta.label}}
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-    
-                    <!-- Categories with arrows in links -->
-                    <div v-for="category in item.submenu.categories">
-                        <div class="submenu-category tag-chip">{{category.name}}</div>
-                        <ul>
-                            <li v-for="subitem in category.items">
-                                <a href="{{subitem.url}}">
-                                    <span>{{subitem.label}}</span>
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </a>
-                            </li>
-                        </ul>
+                    <div class="submenu-wrapper">
+                        <div class="submenu-intro">
+                            <h2 class="submenu-title">{{item.submenu.intro.title}}</h2>
+                            <p class="submenu-subtitle">{{item.submenu.intro.subtitle}}</p>
+                            <a href="{{item.submenu.intro.cta.url}}" class="submenu-cta">
+                                {{item.submenu.intro.cta.label}}
+                                <i class="fa-solid fa-arrow-up rotate-45"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="submenu-content">
+                            <div v-for="category in item.submenu.categories" class="submenu-category">
+                                <span class="category-tag tag-chip">{{category.name}}</span>
+                                <div class="submenu-grid">
+                                    <a v-for="subitem in category.items" 
+                                       href="{{subitem.url}}" 
+                                       class="submenu-item">
+                                        <span>{{subitem.label}}</span>
+                                        <span class="icon">
+                                            <i class="fa-solid fa-arrow-up rotate-45"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </li>

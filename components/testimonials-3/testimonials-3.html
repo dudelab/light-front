@@ -1,0 +1,33 @@
+<div class="testimonials-3">
+    <div class="title">{{title}}</div>
+    <div class="container">
+        <div class="testimonial" v-for="testimonial in testimonials">
+            <div class="subject">
+                <div class="company" style="background-image: url({{testimonial.company}});"></div>
+                <div class="profile-container">
+                    <div class="image" style="background-image: url({{testimonial.image}});"></div>
+                    <div class="profile">
+                        <div class="name">{{testimonial.name}}</div>
+                        <div class="roles">
+                            <div class="role" v-for="role in testimonial.roles">{{role}}, </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="cit-container">
+                    <div class="quote"></div>
+                    <div class="cit">{{testimonial.cit}}</div>
+                    <div class="quote rotate-180"></div>
+                </div>
+                <div class="foot">
+                    <div class="percentage-container">
+                        <div class="percentage">{{testimonial.percentage}}</div>
+                        <span class="description">{{testimonial.description}}</span>
+                    </div>
+                    <a class="link" href="{{testimonial.link.ref}}">{{testimonial.link.label}} <i class="fa-solid fa-arrow-up rotate-45"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

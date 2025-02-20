@@ -17,7 +17,7 @@
           "subtitle": "Excepteur sint occaecat cupidatat non proident. Sint cupidatat non proident. Excepteur sint occaecat non proident.",
           "cta": {
             "label": "Scopri tutti i servizi",
-            "url": "#"
+            "url": "services.html"
           }
         },
         "categories": [
@@ -82,15 +82,15 @@
             "name": "Consulenza",
             "items": [
               {
-                "label": "Applicare l'intelligenza artificiale",
+                "label": "Le nostre soluzioni innovative per  il futuro della tua azienda",
                 "url": "#"
               },
               {
-                "label": "Integrare e potenziare la cyber security",
+                "label": "Efficienza, Produttività, Competitività",
                 "url": "#"
               },
               {
-                "label": "Implementare soluzioni digitali",
+                "label": "Co-finanziamenti pubblici per i nostri servizi",
                 "url": "#"
               },
               {
@@ -102,7 +102,7 @@
                 "url": "#"
               },
               {
-                "label": "Supporto per investire nell'innovazione",
+                "label": "Desideri confrontarti con noi?",
                 "url": "#"
               }
             ]

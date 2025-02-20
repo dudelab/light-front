@@ -5,110 +5,91 @@
         },
         
         mounted(element, data) {
-            const container = element.querySelector('.cards-carousel-container');
-            const types = element.querySelector('.cards-carousel-types');
+            const $element = $(element)
+            const $container = $element.find('.cards-carousel-container');
+            const $types = $element.find('.cards-carousel-types');
             
             // Setup carousel navigation
-            this.setupCarouselNavigation(container, element);
+            this.setupCarouselNavigation($container, $element);
             
             // Setup type switching
-            this.setupTypeSwitch(element, types, data);
+            this.setupTypeSwitch($element, $types, data);
             
             // Initialize with first type's content
-            if (data?.types?.length > 0) {
+            if (data && data.types && data.types.length > 0) {
                 const firstType = data.types[0];
                 
                 // Mark first type as active
-                types.querySelector('.cards-carousel-type')?.classList.add('active');
+                $types.find('.cards-carousel-type').first().addClass('active');
                 
                 // Set initial loaded type
-                container.dataset.loadedType = firstType.name;
+                $container.data('loaded-type', firstType.name);
                 
                 // Load initial cards
-                this.updateCards(container, firstType.items);
+                this.updateCards($container, firstType.items);
             }
         },
         
-        setupCarouselNavigation(container, element) {
-            const prevBtn = element.querySelector('.prevBtn');
-            const nextBtn = element.querySelector('.nextBtn');
+        setupCarouselNavigation($container, $element) {
+            const $prevBtn = $element.find('.prevBtn');
+            const $nextBtn = $element.find('.nextBtn');
             
             const getCardWidth = () => {
-                const card = container.querySelector('.card-item');
-                return card.offsetWidth + 20; // Include gap
+                const $card = $container.find('.card-item').first();
+                return $card[0].offsetWidth + 20; // Include gap
             };
             
-            const handlePrevClick = () => {
+            $prevBtn.on('click', () => {
                 this.scrollAmount = Math.max(0, this.scrollAmount - getCardWidth());
-                this.animateScroll(container, this.scrollAmount);
-            };
+                $container.animate({ scrollLeft: this.scrollAmount }, 300);
+            });
             
-            const handleNextClick = () => {
-                const maxScroll = container.scrollWidth - container.clientWidth;
+            $nextBtn.on('click', () => {
+                const maxScroll = $container[0].scrollWidth - $container[0].clientWidth;
                 this.scrollAmount = Math.min(maxScroll, this.scrollAmount + getCardWidth());
-                this.animateScroll(container, this.scrollAmount);
-            };
-            
-            prevBtn?.addEventListener('click', handlePrevClick);
-            nextBtn?.addEventListener('click', handleNextClick);
-            
-            // Store event listeners for cleanup
-            this._cleanup = {
-                prevClick: handlePrevClick,
-                nextClick: handleNextClick
-            };
+                $container.animate({ scrollLeft: this.scrollAmount }, 300);
+            });
         },
         
-        setupTypeSwitch(element, types, data) {
-            const handleTypeClick = (e) => {
+        setupTypeSwitch($element, $types, data) {
+            const self = this;
+            
+            $types.on('click', '.cards-carousel-type', function(e) {
                 e.preventDefault();
-                const typeElement = e.target.closest('.cards-carousel-type');
-                if (!typeElement) return;
-                
-                const typeName = typeElement.textContent.trim();
-                const typeLink = typeElement.dataset.link;
+                const $type = $(this);
+                const typeName = $type.text().trim();
+                const typeLink = $type.data('link');
                 
                 // Update active state
-                types.querySelectorAll('.cards-carousel-type').forEach(el => {
-                    el.classList.remove('active');
-                });
-                typeElement.classList.add('active');
+                $types.find('.cards-carousel-type').removeClass('active');
+                $type.addClass('active');
                 
                 // Update "View All" link
-                const link = element.querySelector('.cards-carousel-link');
-                const linkText = element.querySelector('.cards-carousel-link .text');
-                if (link) link.href = typeLink;
-                if (linkText) linkText.textContent = `Tutti i ${typeName.toLowerCase()}`;
+                const $link = $element.find('.cards-carousel-link');
+                $link.attr('href', typeLink);
+                $link.find('.text').text(`Tutti i ${typeName.toLowerCase()}`);
                 
                 // Only reload if type changed
-                const container = element.querySelector('.cards-carousel-container');
-                if (container.dataset.loadedType === typeName) return;
+                const $container = $element.find('.cards-carousel-container');
+                if ($container.data('loaded-type') === typeName) return;
                 
                 // Update loaded type
-                container.dataset.loadedType = typeName;
+                $container.data('loaded-type', typeName);
                 
                 // Reset scroll
-                this.scrollAmount = 0;
-                container.scrollLeft = 0;
+                self.scrollAmount = 0;
+                $container.scrollLeft(0);
                 
                 // Find type data and update content
                 const typeData = data.types.find(t => t.name === typeName);
                 if (typeData) {
-                    this.updateCards(container, typeData.items);
+                    self.updateCards($container, typeData.items);
                 }
-            };
-            
-            types?.addEventListener('click', handleTypeClick);
-            
-            // Store event listener for cleanup
-            this._cleanup = {
-                ...this._cleanup,
-                typeClick: handleTypeClick
-            };
+            });
         },
         
-        updateCards(container, items) {
-            container.innerHTML = '';
+        updateCards($container, items) {
+            $container.empty();
             
             items.forEach(item => {
                 const cardHtml = `
@@ -142,51 +123,13 @@
                         </div>
                     </div>
                 `;
-                container.insertAdjacentHTML('beforeend', cardHtml);
+                $container.append(cardHtml);
             });
-        },
-        
-        // Custom scroll animation function to replace jQuery's animate
-        animateScroll(element, targetScroll, duration = 300) {
-            const start = element.scrollLeft;
-            const change = targetScroll - start;
-            const startTime = performance.now();
-
-            function easeInOutQuad(t) {
-                return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-            }
-
-            function animate(currentTime) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-
-                element.scrollLeft = start + change * easeInOutQuad(progress);
-
-                if (progress < 1) {
-                    requestAnimationFrame(animate);
-                }
-            }
-
-            requestAnimationFrame(animate);
         },
         
         beforeDestroy(element) {
             // Clean up event listeners
-            if (this._cleanup) {
-                const prevBtn = element.querySelector('.prevBtn');
-                const nextBtn = element.querySelector('.nextBtn');
-                const types = element.querySelector('.cards-carousel-types');
-                
-                if (prevBtn && this._cleanup.prevClick) {
-                    prevBtn.removeEventListener('click', this._cleanup.prevClick);
-                }
-                if (nextBtn && this._cleanup.nextClick) {
-                    nextBtn.removeEventListener('click', this._cleanup.nextClick);
-                }
-                if (types && this._cleanup.typeClick) {
-                    types.removeEventListener('click', this._cleanup.typeClick);
-                }
-            }
+            $(element).find('.prevBtn, .nextBtn, .cards-carousel-type').off();
         }
     });
 })();

@@ -1,55 +1,64 @@
 <div class="single-card-slider">
-<!-- <div class="single-card-slider"> -->
-  <h4 class="text-semibold h-color">{{title}}</h4>
-  <p>{{subtitle}}</p>
-  <!-- <div class="single-card-slider-content">
-  </div> -->
-    <div class="cards" v-for="card in cards">  <!--  //div for  -->
-      <!-- slot for cards -->
-      <div class="card "> <!--  div azzurro -->
-        <h4 class="title text-black"> {{card.title}} </h4>
-        <div class="div-time bg-white ">
-          <p class="primary-text">Hai tempo fino:</p>
-          <img class="image-divider" src="/assets/images/divider.png" alt="">
-          <div class="div-time">
-            <div class="days d-flex-vertical">
-              <p class="primary-text">12</p>
-              <p class="primary-text">days</p>
+  <div class="card" v-for="card in cards">
+    <div class="title_and_time"> <!-- top dario-->
+      <h4 class="title-card text-black"> {{card.title}} </h4> 
+      <div class="div-bianco primary-text">
+        <div class="">fiino a quando:</div>
+        <div class="divider"></div>
+        <!-- <img class="image-divider" src="/assets/images/divider.png" alt=""> div 1px bg  blu -->
+        <div class="time"> <!--div numeri da sviluppare--> <!-- grid 3 colonne  -->
+          <div class="days"> <!--div giorni da sviluppare-->
+            <div class="value">
+              {{card.time.days}}
             </div>
-            <div class="hours">
-              <p class="primary-text">23</p>
-              <p class="primary-text">hrs</p>
+            <div class="text">
+              days
             </div>
-            <div class="minutes">
-              <p class="primary-text">55</p>
-              <p class="primary-text">min</p>
+          </div>
+          <div class="hours"> <!--div ore da sviluppare-->
+            <div class="value">
+              {{card.time.hours}}
+            </div>
+            <div class="text">
+              hrs
+            </div>
+          </div>
+          <div class="minutes"> <!--div minuti da sviluppare-->
+            <div class="value">
+              {{card.time.minutes}}
+            </div>
+            <div class="text">
+              min
             </div>
           </div>
         </div>
-        <!-- <div class="div-information"> -->
-          <img class="image" src="/assets/images/single-card-slider/VISORI CON OPERATORE 6.JPG" alt="">
-          <div class="card-item-div bg-white">
-            <div v-for="tag in card.tags_card">
-              <span class="contact-box-tag">{{tag}}</span>
-            </div>
-            <!-- <div>
-
-            </div> -->
-            <h4 class="title-card text-dark">{{card.title_card}}</h4>
-            <p class="text-card text-gray-700 ">{{card.text_card}}</p>
-            <div class="div-button">
-              <a class=" button-announcement cta-btn" href={{card.url_announcement}} >{{card.text_announcement}}<i class="fa-solid fa-arrow-up rotate-45" aria-label="Go to detail page"></i></a>
-              <!-- <a class=" button-announcement cta-btn btn" href={{card.url_announcement}} >{{card.text_announcement}}</a> -->
-              <a class="button-details border-color-2" href={{card.url_details}} >{{card.text_details}}<i class="fa-solid fa-arrow-up rotate-45" aria-label="Go to detail page"></i></a>
-              <!-- <a class=" btn button-details" href={{card.url_details}} >{{card.text_details}}</a> -->
-            </div>
-          </div>
-        <!-- </div> -->
-      </div>
+      </div> 
     </div>
-<!-- </div> -->
-  
+    <!-- <div class="div-information-card"> da eliminare -->
+      <div class="div-information-card">
+        <div class="img">
+          <img class="image" src="/assets/images/single-card-slider/VISORI CON OPERATORE 6.JPG" alt="">
+        </div>
+        <div class="content">
+          <div>
+            <div class="div-tags-card">
+              <div class="div-v-for-tags" v-for="tag in card.tags_card">
+                <span class="tag-card"><i class={{tag.class_icon}}></i>{{tag.text_tag}}</span><br>
+              </div>
+            </div>
+            <h4 class="title-card text-dark">
+              project x
+            </h4>
+            <p class="text-gray-700">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi aliquam et ex sed, quaerat debitis, maxime magni expedita dolore, architecto adipisci. Facilis commodi sunt harum temporibus. Id, laborum! Magnam, nihil!
+            </p>
+          </div>
+          <div class="div-button">
+            <a class="button-announcement" href={{card.url_announcement}} >{{card.text_announcement}}<i class="fa-solid fa-arrow-up rotate-45" aria-label="Go to detail page"></i></a>
+            <a class="button-details" href={{card.url_details}} >{{card.text_details}}<i class="fa-solid fa-arrow-up rotate-45" aria-label="Go to detail page"></i></a>
+          </div>
+        </div>
+      </div>
 
-<!-- <a class="single-card-slider-button cta-btn" href="#" ></a>
-      <a class="single-card-slider-button" href="#" ></a> -->
+  </div>
 </div>

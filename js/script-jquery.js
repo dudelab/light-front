@@ -13,8 +13,16 @@ const COMPONENTS = {
     "cards-carousel": "/components",
     "single-card-slider": "/components",
     "tech-areas": "/components",
-    "tech-item": "/components"
+    "tech-item": "/components",
+    "blog-card": "/components",
+    "slider": "/components"
 };
+
+
+const TEMPLATE_REGEX = /\{\{\s*(.*?)\s*\}\}/g;
+const STYLE_REGEX = /\[\s*(.*?)\s*\]/g;
+
+
 $(document).ready(function () {
     loadAllComponents($('body'))
 });
@@ -156,7 +164,7 @@ async function mountComponent(componentName, $context, parentData) {
     if (objectAttr) {
         try {
             // First compile the data-object string to handle nested template variables
-            let processedAttr = objectAttr.replace(/\{\{\s*(.*?)\s*\}\}/g, (match, key) => {
+            let processedAttr = objectAttr.replace(TEMPLATE_REGEX, (match, key) => {
                 if (parentData) {
                     const value = evaluateExpression(key.trim(), parentData);
                     if (typeof value === "object" && value !== null) {
@@ -166,7 +174,6 @@ async function mountComponent(componentName, $context, parentData) {
                 }
                 return '""'; // Return empty string for undefined values
             });
-            
             data = JSON.parse(processedAttr.replace(/'/g, '"'));
         } catch (error) {
             console.error(`❌ Invalid data-object for ${componentName}:`, objectAttr, error);
@@ -232,43 +239,11 @@ function compileComponent($component, data) {
     processVIf($component, data);
     processVFor($component, data);
 
-    const evaluateExpression = (expr, data) => {
-        // First try array access with method
-        const arrayMethodMatch = expr.match(/^(\w+)\[(\d+)\]\.(\w+)\.(\w+)\((.*?)\)$/);
-        if (arrayMethodMatch) {
-            const [_, arrayName, index, property, method] = arrayMethodMatch;
-            const array = getNestedValue(data, arrayName);
-            if (Array.isArray(array) && array[index]) {
-                const value = array[index][property];
-                if (typeof value === 'string' && typeof String.prototype[method] === 'function') {
-                    return value[method]();
-                }
-            }
-            return undefined;
-        }
-
-        // Then try array access
-        const arrayMatch = expr.match(/^(\w+)\[(\d+)\](\.[\w]+)?$/);
-        if (arrayMatch) {
-            const [_, arrayName, index, property] = arrayMatch;
-            const array = getNestedValue(data, arrayName);
-            if (Array.isArray(array) && array[index]) {
-                return property 
-                    ? getNestedValue(array[index], property.slice(1)) 
-                    : array[index];
-            }
-            return undefined;
-        }
-
-        // Then try simple property access
-        return getNestedValue(data, expr);
-    };
-
     $component.add($component.find("*")).each(function() {
         let $el = $(this);
 
         // Text Content Replacement
-        $el.html($el.html().replace(/\{\{\s*(.*?)\s*\}\}/g, (_, expr) => {
+        $el.html($el.html().replace(TEMPLATE_REGEX, (_, expr) => {
             const value = evaluateExpression(expr.trim(), data);
             if (value === undefined || value === null) return _;
             return typeof value === 'object' ? JSON.stringify(value) : value;
@@ -277,7 +252,7 @@ function compileComponent($component, data) {
         // Attributes Replacement
         $.each(this.attributes, function() {
             if (this.specified && this.value.includes("{{") && this.name !== "style") {
-                $el.attr(this.name, this.value.replace(/\{\{\s*(.*?)\s*\}\}/g, (_, expr) => {
+                $el.attr(this.name, this.value.replace(TEMPLATE_REGEX, (_, expr) => {
                     const value = evaluateExpression(expr.trim(), data);
                     if (value === undefined || value === null) return _;
                     return typeof value === 'object' ? JSON.stringify(value) : value;
@@ -289,14 +264,22 @@ function compileComponent($component, data) {
         let inlineStyle = $el.attr("style");
         if (inlineStyle?.includes("[") || inlineStyle?.includes("{{")) {
             $el.attr("style", inlineStyle
-                .replace(/\[\s*(.*?)\s*\]/g, (_, key) => getNestedValue(data, key.trim()) || "")
-                .replace(/\{\{\s*(.*?)\s*\}\}/g, (_, key) => getNestedValue(data, key.trim()) || "")
+                .replace(STYLE_REGEX, (_, key) => getNestedValue(data, key.trim()) || "")
+                .replace(TEMPLATE_REGEX, (_, key) => getNestedValue(data, key.trim()) || "")
             );
         }
     });
 }
 
-const getNestedValue = (obj, key) => key.split(".").reduce((o, k) => (o && o[k] !== undefined ? o[k] : undefined), obj);
+const getNestedValue = (obj, key) => {
+    try {
+        return key.split(/[\.\[\]]/).filter(k => k).reduce((o, k) => (o && o[k] !== undefined ? o[k] : undefined), obj);
+    } catch (error) {
+        console.warn(`Error accessing key: "${key}"`, error);
+        return undefined;
+    }
+};
+
 
 function processVIf($component, data) {
     $component.find("[v-if]").each(function () {
@@ -322,20 +305,40 @@ function processVFor($component, data) {
 
         if (vForAttr) {
             const [itemName, listName] = vForAttr.split(" in ").map(s => s.trim());
-            const list = getNestedValue(data, listName); // Get array from JSON
+            const list = getNestedValue(data, listName);
 
             if (Array.isArray(list)) {
-                let newHtml = "";
-
+                const $container = $('<div></div>');
+                
                 list.forEach(item => {
                     let $tempElement = $parent.clone();
                     let itemData = { ...data, [itemName]: item };
-
+                    
+                    // Remove v-for attribute to prevent infinite processing
+                    $tempElement.removeAttr("v-for");
+                    
+                    // Special handling for data-object attributes with template syntax
+                    $tempElement.find('[data-object]').each(function() {
+                        const $this = $(this);
+                        const dataObjectAttr = $this.attr('data-object');
+                        
+                        if (dataObjectAttr.includes('{{')) {
+                            const expr = dataObjectAttr.match(/\{\{\s*(.*?)\s*\}\}/)[1].trim();
+                            const value = evaluateExpression(expr, itemData);
+                            if (value !== undefined && value !== null) {
+                                // Properly stringify the object and ensure single quotes
+                                const stringified = JSON.stringify(value).replace(/"/g, "'");
+                                $this.attr('data-object', stringified);
+                            }
+                        }
+                    });
+                    
+                    // Process other template variables
                     compileComponent($tempElement, itemData);
-                    newHtml += $tempElement.prop("outerHTML");
+                    $container.append($tempElement);
                 });
 
-                $parent.replaceWith(newHtml);
+                $parent.replaceWith($container.contents());
             } else {
                 console.warn(`v-for error: "${listName}" is not an array`);
             }
@@ -343,4 +346,35 @@ function processVFor($component, data) {
     });
 }
 
+// Helper function to evaluate expressions
+const evaluateExpression = (expr, data) => {
+    // First try array access with method
+    const arrayMethodMatch = expr.match(/^(\w+)\[(\d+)\]\.(\w+)\.(\w+)\((.*?)\)$/);
+    if (arrayMethodMatch) {
+        const [_, arrayName, index, property, method] = arrayMethodMatch;
+        const array = getNestedValue(data, arrayName);
+        if (Array.isArray(array) && array[index]) {
+            const value = array[index][property];
+            if (typeof value === 'string' && typeof String.prototype[method] === 'function') {
+                return value[method]();
+            }
+        }
+        return undefined;
+    }
 
+    // Then try array access
+    const arrayMatch = expr.match(/^(\w+)\[(\d+)\](\.[\w]+)?$/);
+    if (arrayMatch) {
+        const [_, arrayName, index, property] = arrayMatch;
+        const array = getNestedValue(data, arrayName);
+        if (Array.isArray(array) && array[index]) {
+            return property 
+                ? getNestedValue(array[index], property.slice(1)) 
+                : array[index];
+        }
+        return undefined;
+    }
+
+    // Then try simple property access
+    return getNestedValue(data, expr);
+};

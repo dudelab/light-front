@@ -1,29 +1,27 @@
-// // **Popola il contenuto della singleCardSlider**
-// function populateSingleCardSlider($singleCardSlider, data) {
+function getTimeRemaining(targetDate) {
+    const now = new Date();
+    const target = new Date(targetDate.split('/').reverse().join('-') + 'T00:00:00');
+    const timeDiff = target - now;
 
-//     // **Popola title, subtitle e text**
-//     $singleCardSlider.find(".single-card-slider-title").text(data.title || "").toggle(!!data.title);
-//     $singleCardSlider.find(".single-cardS-sider-subtitle").text(data.subtitle || "").toggle(!!data.subtitle);
+    if (timeDiff <= 0) {
+        return { days: 0, hours: 0, minutes: 0, expired: true };
+    }
 
-   
+    const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
 
-//     // carica il template della card
-//     loadTemplate("single-card-slider/components/card-item", function (template) {
-//         const $cards=$singleCardSlider.find(".single-card-slider-cards")
-//         const $card=$(template)
-//         data.cards.forEach((singlecard)=> {
-//             $card.find(".title").text(singlecard.title || "");
-//             $card.find(".title-card").text(singlecard.title_card || "");
-//             $card.find(".text-card").text(singlecard.text_card || "");
-//             $card.find(".single-card-slider-button-announcement").attr("href", singlecard.url_announcement || "");
-//             // $card.find(".single-card-slider-button-announcement").href(singlecard.url_announcement || "");
-
-//             $cards.append($card)
-//         })
-//     });
-// }
-
-function timeResponse(data){
-    console.log(data);
-    
+    return { days, hours, minutes, expired: false };
 }
+
+// Esempio d'uso con la data del JSON
+const jsonData = {
+    "cards": [
+        {
+            "time": "13/02/2025"
+        }
+    ]
+};
+
+const countdown = getTimeRemaining(jsonData.cards[0].time);
+console.log(`Mancano ${countdown.days} giorni, ${countdown.hours} ore e ${countdown.minutes} minuti.`);

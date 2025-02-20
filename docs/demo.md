@@ -104,7 +104,7 @@ Creare un nuovo componente è semplice e segue un pattern chiaro per garantire p
    - `my-new-component.html` → Struttura HTML del componente.
    - `my-new-component.css` → Stili specifici del componente (opzionale).
    - `my-new-component.js` → Logica JavaScript del componente (opzionale).
-3. Aggiungere il componente alla variabile `COMPONENTS` in `script.js`.
+3. Aggiungere il componente alla variabile `COMPONENTS` in `components.js`.
 
 ### 2. Usare il componente nella pagina
 Nel file HTML, basta scrivere:
