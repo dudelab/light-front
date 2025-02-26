@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 @font-face {
-  font-family: 'Monoska'; /* Name your font family */
-  src: url('../../assets/fonts/Monoska.ttf'); /* Locate the .ttf file within your directory*/
+  font-family: 'Monoska';
+  src: url('/assets/fonts/Monoska.ttf');
 }
 
 :root {
@@ -12,6 +12,7 @@
   --secondary-color: #0C092F;
   --accent-color: #1D1E35;
   --utility-color: #B2CCFF;
+  --utility-gray: #314161;
   --cta-color: #1532EF;
   --border-color: #2E50FA;
   --border-color-2: #586E99;
@@ -32,15 +33,12 @@
   --label-color: #F6F7F8;
   --value-color: #CACED6;
   
-  --gray-text-700: #314161;
   --dark-text: #141C2B;
   --dark-text-2: #1E293E;
-  --dark-text-3: #314161;
   --light-text: #84ADFF;
   --light-text-2: #D1E0FF;
   --light-text-3: #F4F5F6;
 
-  --bg-light: #b2ccff;
   --bg-dark: #0C092F;
   --bg-dark-2: #090C13;
   --bg-dark-3: #110D45;
@@ -49,8 +47,8 @@
   /* Radii */
   --radius-xl: 16px;
   --radius-lg: 14px;
-  --radius-md: 10px;
-  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-sm: 10px;
   --radius-xs: 5px;
   --radius-rounded: 9999px;
 }
@@ -80,12 +78,8 @@ background-color: white;
 .text-white{
   color: white;
 }
-.text-black{  /*non è black ma simile */
-color: #314161;
-}
-
-.text-gray-700{
-  color: var(--gray-text-700);
+.text-utility-gray{
+  color: var(--utility-gray);
 }
 .text-dark{
   color: var(--dark-text);
@@ -112,7 +106,7 @@ color: #314161;
   box-sizing: border-box;
 }
 body {
-  background: var(--bg-light);
+  background: var( --utility-color);
   /* background: var(--secondary-color); */
   
   color: var(--a-color);
@@ -167,6 +161,12 @@ input {
 .section-wrapper {
   max-width: 93%;
   margin: 0 auto;
+}
+
+.section-wrapper-medium{
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 0 1em;
 }
 
 .section-wrapper-small {
@@ -254,6 +254,24 @@ input {
   align-items: center;
   width: fit-content;
 }
+.cta-deep {
+  background: var(--text-color-brand-700);
+  border: 1px solid var(--border-color);
+  color: #fff;
+}
+.cta-outline {
+  background: #fff;
+  border: 1px solid var(--border-color-2);
+  color: var(--utility-gray);
+  box-shadow: 0px 0px 0px 1px rgba(10, 13, 18, 0.18) inset, 0px -2px 0px 0px rgba(10, 13, 18, 0.05) inset, 0px 1px 2px 0px rgba(10, 13, 18, 0.05);
+}
+.cta-btn.cta-dark {
+  border: 1px solid var(--border-color-2);
+  background: var(--dark-text);
+  box-shadow: 0px 0px 0px 1px rgba(12, 14, 18, 0.18) inset, 0px -2px 0px 0px rgba(12, 14, 18, 0.05) inset, 0px 1px 2px 0px rgba(255, 255, 255, 0.00);
+  color: var(--a-color);
+  width: 100%;
+}
 
 .tag-chip {
   background-color: var(--secondary-color);
@@ -280,3 +298,115 @@ input {
   min-height: 200px;
   text-align: center;
 }
+
+
+/* ## Standard carousel */
+/* ------------------------------------------------------------------------ */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 2.5em;
+  --current-slide: 0;
+}
+
+.carousel .slides {
+  display: flex;
+  transition: transform 0.5s;
+  transform: translateX(calc(-100% * var(--current-slide)));
+}
+
+.carousel .slide {
+  flex: 0 0 100%;
+}
+.carousel .slide img {
+}
+
+.carousel-pagination {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.carousel-dot {
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--utility-gray);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.carousel-dot.active {
+  background-color: var(--light-text-3);
+  border: 1px solid var(--a-color);
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  padding: 0;
+  margin: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--light-text);
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.1s;
+}
+
+.carousel-button_next {
+  right: 0;
+}
+
+.carousel-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: var(--light-text-2);
+  border-radius: var(--radius-rounded);
+  padding: 0.5em 0.8em;
+  color: var(--bg-dark-3);
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+  /* 40% cards version --------------------- */
+  .carousel-multi-40.carousel .slide {
+    flex: 0 0 80%;
+    padding-right: 1em;
+  }
+
+  .carousel-multi-40.carousel .slides {
+    transform: translateX(calc(-80% * var(--current-slide)));
+  }
+  @media (min-width: 768px) {
+    .carousel-multi-40.carousel .slide {
+      flex: 0 0 60%;
+      padding-right: 2em;
+    }
+  
+    .carousel-multi-40.carousel .slides {
+      transform: translateX(calc(-60% * var(--current-slide)));
+    }
+  }
+  @media (min-width: 1024px) {
+    .carousel-multi-40.carousel .slide {
+      flex: 0 0 40%;
+      padding-right: 2em;
+    }
+  
+    .carousel-multi-40.carousel .slides {
+      transform: translateX(calc(-40% * var(--current-slide)));
+    }
+  }
+/* ------------------------------------------------------------------------ */

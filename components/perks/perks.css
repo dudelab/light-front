@@ -1,0 +1,64 @@
+.perks {
+  background-color: var(--primary-color);
+  background: url(/assets/images/curly-bg.png) center/cover var(--primary-color);
+  padding: 2em;
+}
+
+.perks h2 {
+  font-weight: 600;
+  font-size: 41px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--h-color);
+  margin: 0;
+}
+.perks p {
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 1.3;
+  color: var(--p-color);
+  margin: .5em 0  2em;
+
+}
+
+.perks .cards-wrapper {
+  display: grid;
+  gap: 1.5em;
+}
+.perks .card {
+  background: linear-gradient(360deg, var(--light-text-2) 0%, var(--light-text) 100%);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--text-color-brand-700);
+  min-height: 180px;
+  padding: 1.5em;
+
+  display: grid;
+  gap: 2em;
+  align-content: space-between;
+}
+  .perks .card h3 {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--primary-color);
+    margin: 0;
+  }
+  .perks .card p {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.2;
+    color: var(--dark-text);
+    margin: 0;
+  }
+
+@media (min-width: 1024px) {
+  .perks {
+    padding: 4em;
+  }
+  .perks .cards-wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .perks .card {
+    min-height: 320px;
+  }
+}

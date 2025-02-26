@@ -1,0 +1,44 @@
+<div class="announcements-slider-card">
+  <div class="top">
+    <h2>{{ title }}</h2>
+    <div class="expiry">
+      <div>Hai tempo fino:</div>
+      <div class="h-line"></div>
+      <div class="timer">
+        <div class="days">
+          <div class="value">{{ time.days }}</div>
+          <div class="unit">days</div>
+        </div>
+        <div class="hours">
+          <div class="value">{{ time.hours }}</div>
+          <div class="unit">hrs</div>
+        </div>
+        <div class="minutes">
+          <div class="value">{{ time.minutes }}</div>
+          <div class="unit">min</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="pic">
+      <img src="{{image}}" alt="{{title}}">
+      <div v-if="tags" class="tags">
+        <span v-for="tag in tags" class="tag-chip"><i v-if="tag.icon" class="{{ tag.icon }}"> </i>{{ tag.text }}</span>
+      </div>
+    </div>
+    <div class="content">
+      <div class="details">
+        <div v-if="details.tags" class="tags">
+          <span v-for="detailTag in details.tags" class="tag-chip"><i class="{{ detailTag.icon }}"> </i>{{ detailTag.text }}</span>
+        </div>
+        <h3>{{ details.title }}</h3>
+        <p>{{ details.description }}</p>
+      </div>
+      <div class="actions">
+        <a href="{{ details.buttons.cta.link }}" class="cta-btn cta-deep">{{ details.buttons.cta.text }} <i class="fa-solid fa-arrow-up rotate-45"></i></a>
+        <a href="{{ details.buttons.secondary.link }}" class="cta-btn cta-outline">{{ details.buttons.secondary.text }} <i class="fa-solid fa-arrow-up rotate-45"></i></a>
+      </div>
+    </div>
+  </div>
+</div>

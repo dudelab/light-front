@@ -1,0 +1,16 @@
+{
+    "comments": [
+        {
+            "title": "Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.",
+            "image": "/assets/images/testimonials/person-1.png",
+            "name": "Francesca Bianchi",
+            "roles": "Data Engineer, Sisyphus"
+        },
+        {
+            "title": "Other Comment",
+            "image": "/assets/images/testimonials/person-1.png",
+            "name": "Francesca Bianchi",
+            "roles": "Data Engineer, Sisyphus"
+        }
+    ]
+}

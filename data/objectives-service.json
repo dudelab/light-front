@@ -1,0 +1,51 @@
+{
+    "objectives": [
+        {
+            "title": "Obiettivi cluster 1",
+            "description": "Ti aiutiamo a trovare e ottenere i finanziamenti giusti per le tue idee innovative.",
+            "items":         
+                [
+                    {
+                        "id": "1",
+                        "title": "Mappatura delle Opportunità di Innovazione",
+                        "text": "Aiuta le aziende a identificare e navigare nei programmi governativi o incentivi più adatti ai loro obiettivi strategici, garantendo il rispetto di tutte le regole e procedure."
+                    },
+                    {
+                        "id": "2",
+                        "title": "Supporto per i Finanziamenti Pubblici",
+                        "text": "Trasforma le idee in progetti finanziati, offrendo supporto per la preparazione della documentazione, la formazione di partenariati e la presentazione delle domande."
+                    },
+                    {
+                        "id": "3",
+                        "title": "What is your cancellation policy?",
+                        "text": "Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible."
+                    }
+
+                ]
+        },
+        {
+            "title": "Obiettivi cluster 2",
+            "description": "Non ti aiutiamo a trovare e ottenere i finanziamenti giusti per le tue idee innovative.",
+            "items":         
+                [
+                    {
+                        "id": "6",
+                        "title": "What is your cancellation policy?",
+                        "text": "Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible."
+                    },
+
+                    {
+                        "id": "4",
+                        "title": "Can other info be added to an invoice?",
+                        "text": "Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible."
+                    },
+                    {
+                        "id": "5",
+                        "title": "How does billing work?",
+                        "text": "Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible."
+                    }
+
+                ]
+        }
+    ]
+}

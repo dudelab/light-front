@@ -1,0 +1,15 @@
+<div class="card features-slider-card">
+  <div class="pic">
+    <img src="{{image}}" alt="{{title}}">
+    <div v-if="tags" class="tags">
+      <span v-for="tag in tags" class="tag-chip"><i v-if="tag.icon" class="{{ tag.icon }}"> </i>{{ tag.text }}</span>
+    </div>
+  </div>
+  <div class="content">
+    <div class="details">
+      <h3>{{ title }}</h3>
+      <p>{{ description }}</p>
+    </div>
+    <a href="{{link}}" class="cta-btn cta-dark">Esplora <i class="fa-solid fa-arrow-up rotate-45"></i></a>
+  </div>
+</div>

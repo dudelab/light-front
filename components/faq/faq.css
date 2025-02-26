@@ -1,0 +1,113 @@
+.faq{
+    margin: 90px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.faq .container{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 1192px;
+}
+
+.faq .head{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: var(--primary-color);
+    border-radius: var(--radius-sm);
+    min-height: 320px;
+}
+
+.faq .title{
+    font-size: 30px;
+    color: var(--h-color);
+    font-weight: 500;
+}
+
+.faq .cta{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.faq .label{
+    font-size: 16px;
+    color: var(--a-color);
+    line-height: 24px;
+}
+
+.faq .content{
+    display: flex;
+    flex-direction: column;
+    gap:32px;
+}
+
+.faq .item{
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid var(--utility-gray);
+    padding-top: 24px;
+}
+
+.faq .item-content{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-wrap: wrap;
+    flex: 0 0 87%;
+}
+
+.faq .item-title{
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--label-color);
+}
+
+.faq .item-text{
+    font-size: 16px;
+    font-weight: 300;
+    color: #8B94A5;
+
+    max-height: 0; /* Altezza massima iniziale */
+    overflow: hidden; /* Nasconde il contenuto in eccesso */
+    transition: max-height 0.5s ease, padding 0.5s ease; /* Transizione per max-height e padding */
+}
+
+.faq .item-icon{
+    font-size: 14px;
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: end;
+}
+
+.faq .icon-container{
+    width: 25px;
+    height: 25px;
+    color: var(--p-color);
+    border-radius: var(--radius-rounded);
+    border: 1.5px solid var(--p-color);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.faq .item-text.visible{
+    max-height: 200px;
+}
+
+
+@media(min-width: 1024px) {
+    .faq .container{
+        flex-direction: row;
+    }
+    .faq .head{
+        min-width: 400px;
+    }
+    .faq .title{
+        font-size: 48px;
+    }
+}

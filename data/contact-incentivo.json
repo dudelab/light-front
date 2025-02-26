@@ -1,0 +1,39 @@
+{
+    "title": "Co-finanziamenti pubblici per i nostri servizi",
+    "text": "MADE offre alle aziende la possibilità di accedere ai propri servizi usufruendo di importanti co-finanziamenti pubblici. ",
+    "points": ["Programmi attivi: PNRR ed EDIH .", "Agevolazioni economiche: L’impresa paga una parte del servizio, il resto è finanziato.", "Trasparenza: MADE riceve i fondi solo dopo aver documentato le attività svolte."],
+    "cta": "Calcola il possibile incentivo",
+    "background": "/assets/images/hero/hero-services-bg.png",
+    "incentivi": {
+        "A": {
+            "1": "80%",
+            "2": "80%",
+            "3": "80%",
+            "4": "90%",
+            "5": "70%",
+            "6": "70%",
+            "7": "70%",
+            "8": "70%"
+        },
+        "B": {
+            "1": "70%",
+            "2": "70%",
+            "3": "70%",
+            "4": "80%",
+            "5": "60%",
+            "6": "60%",
+            "7": "60%",
+            "8": "60%"
+        },
+        "C": {
+            "1": "40%",
+            "2": "30%",
+            "3": "40%",
+            "4": "50%",
+            "5": "40%",
+            "6": "40%",
+            "7": "50%",
+            "8": "50%"
+        }
+    }
+}

@@ -65,9 +65,9 @@ Quindi, vediamo ora come funziona il sistema.
 3. Aggiungiamo un div con `data-component="kpi-1"`.  
 `Proviamo.`
 
-4. Cerchiamo l'endpoint "kpis" nel file `js/endpoints.js` e osserviamo a quale file punta.
-5. Guardiamo com'è fatto il file `kpis.json` in /data.
-6. Aggiungiamo la prop `data-endpoint="kpis"` al div.  
+4. Cerchiamo l'endpoint "kpi1-homepage" nel file `js/endpoints.js` e osserviamo a quale file punta.
+5. Guardiamo com'è fatto il file `kpi1-homepage.json` in /data.
+6. Aggiungiamo la prop `data-endpoint="kpi1-homepage"` al div.  
 `Proviamo.`
 7. Parliamo un momento di `js/endpoints.js` e `js/api.js`.
 

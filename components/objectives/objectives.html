@@ -1,0 +1,30 @@
+<div class="objectives">
+    <div class="image" style="background-image: url(/assets/images/articles/art1.png);"></div>
+    <div class="title">Di cosa ci occupiamo, nel dettaglio</div>
+
+    <div class="objective" v-for="objective in objectives">
+        <div class="head">
+            <div class="icon">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-exclamation"></i>
+                </div>
+            </div>
+            <div class="name">{{ objective.title }}</div>
+        </div>
+        <div class="content">
+            <div class="description">{{ objective.description }}</div>
+            
+            <div class="item" v-for="item in objective.items">
+                <div class="item-content">
+                    <div id="{{item.id}}" class="item-title toggle">{{item.title}}</div>
+                    <div id="dropdown-{{item.id}}" class="item-text">{{item.text}}</div>
+                </div>
+                <div id="{{item.id}}" class="item-icon toggle">
+                    <div id="{{item.id}}" class="icon-container ">
+                        <i id="toggleIcon-{{item.id}}" class="fa-solid fa-plus toggle"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

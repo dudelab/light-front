@@ -1,0 +1,30 @@
+{
+    "title": "I vantaggi della formazione personalizzata",
+    "subtitle": "I corsi su misura di MADE4.0 sono progettati per rispondere alle esigenze specifiche della tua azienda.",
+    "cards": [
+        {
+            "title": "Supporto nel cambiamento",
+            "description": "Aiuto nell’integrazione delle competenze in azienda"
+        },
+        {
+            "title": "Monitoraggio continuo",
+            "description": "Valutazione dei progressi e adattamento del corso."
+        },
+        {
+            "title": "Praticità",
+            "description": "Formazione pratica con esercitazioni applicabili al lavoro quotidiano."
+        },
+        {
+            "title": "Adattabilità",
+            "description": "Contenuti personalizzati in base alle necessità aziendali."
+        },
+        {
+            "title": "Flessibilità",
+            "description": "Modalità online, in presenza o ibrida."
+        },
+        {
+            "title": "Agevolazioni economiche",
+            "description": "L’impresa paga una parte del servizio, il resto è finanziato."
+        }
+    ]
+}

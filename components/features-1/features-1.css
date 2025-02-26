@@ -13,21 +13,20 @@
 }
 
 .features-1 .content{
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+    display: grid;
+    gap: 2em;
 }
 
 .features-1 .feature{
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 1.5em;
 }
 
 .features-1 .icon{
     width: 56px;
     height: 56px;
-    border: 1px solid var(--gray-text-700);
+    border: 1px solid var(--utility-gray);
     border-radius: 12px;
     background-color: var(--bg-dark-2);
 
@@ -51,19 +50,19 @@
 
 @media(min-width:1024px){
     .features-1 .content{
-        flex-direction: row;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
     .features-1 .title{
-        font-size: 48px;
+        font-size: 43px;
     }
 
     .features-1 .feature{
-        flex: 0 0 33%;
+        flex: 0 0 32%;
     }
 
     .features-1 .feature .subject{
-        font-size: 30px;
+        font-size: 29px;
     }
 
     .features-1 .feature .paragraph{

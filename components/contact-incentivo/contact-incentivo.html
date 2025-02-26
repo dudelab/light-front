@@ -1,0 +1,59 @@
+<div class="contact-incentivo"  style="background: url({{background}}) center/cover;">
+    <div class="overlay"></div>
+
+    <div class="content">
+        <div class="title">{{ title }}</div>
+        <div class="text">{{ text }}</div>
+        <div class="point" v-for="point in points">
+            <div class="check"></div>
+            <div class="description">{{point}}</div>
+        </div>
+        <button id="calculate-button" class="button cta-btn">
+            {{ cta }}
+        </button>
+    </div>
+
+    <div class="popup-container hidden">
+        <div class="popup">
+            <div class="title">
+                Verifica agevolazioni
+            </div>
+            <form class="form">
+                
+                <div class="form-item">
+                    <label for="InputDim" class="form-label">La tua organizzazione è</label>
+                    <select id="InputDim" class="form-control" aria-label="Default select example">
+                        <option value="-1" selected>
+                            Dimensioni azienda
+                        </option>
+                        <option value="A">Micro e piccole imprese</option>
+                        <option value="B">Medie imprese</option>
+                        <option value="C">Grandi imprese</option>
+                    </select>
+                </div>
+                <div class="form-item">
+                    <label for="InputInt" class="form-label">Il tuo obiettivo è</label>
+                    <select id="InputInt" class="form-control" aria-label="Default select example">
+                        <option value="-1" selected>
+                            Seleziona interesse
+                        </option>
+                        <option value="1">Progettiamo la fabbrica digitale e sostenibile</option>
+                        <option value="2">Sperimentiamo la fabbrica digitale e sostenibile</option>
+                        <option value="3">Implementiamo la fabbrica digitale e sostenibile</option>
+                        <option value="4">Formazione interaziendale inferiore alle 24 ore</option>
+                        <option value="5">Formazione interaziendale superiore alle 24 ore</option>
+                        <option value="6">Formazione su commessa</option>
+                        <option value="7">Tuteliamo i brevetti tecnologici</option>
+                        <option value="8">Guidiamo le aziende nella richiesta di finanziamenti</option>
+                    </select>
+                </div>
+                <div class="actions" style="text-align: center;">
+                    <a id="result-button" class="button cta-btn">
+                        Calcola incentivo
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

@@ -1,4 +1,4 @@
-.cards-carousel-section{
+.cards-carousel{
   display: flex;
   flex-direction: column;
   margin: 80px 0;
@@ -19,19 +19,22 @@
 }
 
 .cards-carousel-subtitle {
-  max-height: 40px;
   font-size: var(--radius-xl);
   margin: 0 0 8px;
   color: var(--p-color);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
 }
 
 .cards-carousel-types{
   display: flex;
   flex-direction: row;
   gap: 0.6rem;
+  flex-wrap: wrap;
+
 }
 
 .cards-carousel-type{
@@ -67,7 +70,9 @@
 }
 
 
-
+.cards-carousel .carousel-wrapper {
+  display: flex; flex-direction: column; gap:15px;
+}
 
 .cards-carousel-container {
   display: flex;
@@ -85,7 +90,7 @@
 }
   
   .card-item {
-    flex: 0 0 280px; 
+    flex: 0 0 302px; 
     scroll-snap-align: start; 
     overflow: hidden;
     display: flex;
@@ -108,7 +113,9 @@
     flex-direction: column-reverse;
     padding: 10px;
     align-items: start;
-    height: 188px;
+    flex: 1;
+    min-height: 168px;
+
   }
 
   .card-item-image-tags{
@@ -128,10 +135,10 @@
 
   .card-item-infos{
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
     padding: 12px;
-    gap:10px;
+    gap: 10px;
+    flex: 0 0 auto;
   }
 
   .card-item-tag-container{
@@ -169,7 +176,7 @@
     padding: 2px 10px;
   }
 
-  .card-item-link{
+  .cards-carousel .card-item-link{
     color: var(--a-color);
     font-size: var(--radius-lg);
     border-radius: var(--radius-rounded);
@@ -198,6 +205,21 @@
     overflow-wrap: anywhere;
     word-break: break-word;
     
+  }
+
+  .card-item-description{
+    font-size: 14px;
+    color: var(--a-color);
+    font-weight: 300;
+    
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;  
+    text-overflow: ellipsis;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
 

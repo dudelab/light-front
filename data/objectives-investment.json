@@ -1,0 +1,37 @@
+{
+    "objectives": [
+        {
+            "title": "Opportunità di Innovazione e Finanziamenti",
+            "description": "Ti aiutiamo a trovare e ottenere i finanziamenti giusti per le tue idee innovative.",
+            "items":         
+                [
+                    {
+                        "id": "1",
+                        "title": "Mappatura delle Opportunità di Innovazione",
+                        "text": "Aiuta le aziende a identificare e navigare nei programmi governativi o incentivi più adatti ai loro obiettivi strategici, garantendo il rispetto di tutte le regole e procedure."
+                    },
+                    {
+                        "id": "2",
+                        "title": "Supporto per i Finanziamenti Pubblici",
+                        "text": "Trasforma le idee in progetti finanziati, offrendo supporto per la preparazione della documentazione, la formazione di partenariati e la presentazione delle domande."
+                    },
+                    {
+                        "id": "3",
+                        "title": "Supporto accesso ai fondi",
+                        "text": "Supporta le imprese a individuare e accedere ai finanziamenti disponibili."
+                    }
+
+                ]
+        },
+        {
+            "title": "Audit per Progetti Industria 5.0",
+            "description": "Garantiamo che i tuoi progetti rispettino le normative e massimizzino i benefici fiscali.",
+            "items":[]
+        },
+        {
+            "title": "Consulenza brevettuale",
+            "description": "Prepariamo la tua azienda per la prossima rivoluzione industriale con sostenibilità e maturità digitale.",
+            "items":[]
+        }
+    ]
+}

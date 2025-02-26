@@ -47,7 +47,7 @@
 }
 
 .footer-coda {
-  border-top: 1px solid var(--dark-text-3);
+  border-top: 1px solid var(--utility-gray);
   font-weight: 400;
   padding-top: 1em;
 
@@ -71,7 +71,7 @@
 /* ## Newsletter */
 /* ------------------------------------------------------------------------ */
   .footer-newsletter {
-    background: var(--bg-light);
+    background: var( --utility-color);
     color: var(--dark-text-2);
     padding: 1.3rem;
     border-radius: var(--radius-lg);
@@ -86,7 +86,7 @@
       margin: 0 0 5px;
     }
     .footer-newsletter p {
-      color: var(--dark-text-3);
+      color: var(--utility-gray);
       font-size: 18px;
       font-weight: 400;
       line-height: 1.6;
@@ -130,7 +130,7 @@
       margin-top: 10px;
     }
     .newsletter-privacy a {
-      color: var(--dark-text-3);
+      color: var(--utility-gray);
       font-size: 14px;
       font-weight: 400;
       text-decoration: underline;
@@ -168,10 +168,10 @@
     }
 
     .newsletter-privacy input:hover {
-      border-color: var(--dark-text-3);
+      border-color: var(--utility-gray);
     }
     .newsletter-privacy input:hover::before {
-      background-color: var(--dark-text-3);
+      background-color: var(--utility-gray);
     }
 
 

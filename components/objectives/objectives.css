@@ -1,0 +1,172 @@
+.objectives{
+    margin: 90px 0px;
+    padding: 8px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.objectives .image{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    height: 360px;
+    border-radius: var(--radius-sm);
+}
+
+.objectives .title{
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--h-color);
+    padding-bottom: 40px;
+}
+
+
+.objectives .objective{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #3E5177;
+}
+
+.objectives .head{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+}
+
+.objectives .icon{
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-rounded);
+    background-color: var(--cta-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.objectives .icon-circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid var(--p-color);
+    border-radius: var(--radius-rounded);
+    color: var(--p-color);
+    font-size: 12px;
+    padding: 8px;
+}
+
+.objectives .name{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--h-color);
+}
+
+.objectives .content{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.objectives .description{
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--h-color);
+}
+
+
+.objectives .item{
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid var(--utility-gray);
+    padding-top: 24px;
+}
+
+.objectives .item-content{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-wrap: wrap;
+    flex: 0 0 87%;
+}
+
+.objectives .item-title{
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--label-color);
+}
+
+.objectives .item-text{
+    font-size: 16px;
+    font-weight: 300;
+    color: #8B94A5;
+
+    max-height: 0; 
+    overflow: hidden; 
+    transition: max-height 0.5s ease, padding 0.5s ease; 
+}
+
+.objectives .item-icon{
+    font-size: 14px;
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: end;
+}
+
+.objectives .icon-container{
+    width: 25px;
+    height: 25px;
+    color: var(--p-color);
+    border-radius: var(--radius-rounded);
+    border: 1.5px solid var(--p-color);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.objectives .item-text.visible{
+    max-height: 200px;
+}
+
+@media(min-width:1024px) {
+    .objectives .objective{
+        flex-direction: row;
+    }
+    .objectives .head{
+        align-items: start;
+        width: 50%;
+        display: grid;
+        gap: 1em;
+        grid-template-columns: 60px 1fr;
+    }
+    .objectives .content{
+        width: 50%;
+    }
+    .objectives .image{
+        height: 500px;
+    }
+    .objectives .title{
+        font-size: 48px;
+    }
+    .objectives .name{
+        font-size: 36px;
+    }
+    .objectives .icon{
+        width: 56px;
+        height: 56px;
+    }
+    
+    .objectives .icon-circle{
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
+        padding: 10px;
+    }
+}

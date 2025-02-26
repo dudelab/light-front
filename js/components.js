@@ -1,8 +1,8 @@
 (async function initializeFramework() {
     // Load required scripts first
     await Promise.all([
-        loadAndExecuteScript('/js/api.js'),
-        loadAndExecuteScript('/js/endpoints.js')
+        loadAndExecuteScript('/js/endpoints.js'),
+        loadAndExecuteScript('/js/api.js')
     ]);
 })();
 
@@ -22,6 +22,7 @@ const COMPONENTS = {
     "header": "/components",
     "footer": "/components",
     "hero": "/components",
+    "hero-homepage": "/components",
     "kpi-1": "/components",
     "kpi-1-card": "/components",
     "logo-strip": "/components",
@@ -29,13 +30,24 @@ const COMPONENTS = {
     "contact-box": "/components",
     "cards-carousel": "/components",
     "single-card-slider": "/components",
+    "single-card-slider-feature-card": "/components",
+    "single-card-slider-announcement-card": "/components",
     "tech-areas": "/components",
     "tech-item": "/components",
     "blog-card": "/components",
     // "slider": "/components",
     "hero-1": "/components",
     "features-1": "/components",
-    "testimonials-3": "/components"
+    "testimonials-3": "/components",
+    "contact-form-1": "/components",
+    "contact-incentivo": "/components",
+    "contact-hero": "/components",
+    "perks": "/components",
+    "consulenti-link": "/components",
+    "faq": "/components",
+    "objectives": "/components",
+    "europe-link": "/components",
+    "comments": "/components" 
 };
 
 const TEMPLATE_REGEX = /\{\{\s*(.*?)\s*\}\}/g;
@@ -87,8 +99,14 @@ function loadAllComponents(component, data) {
     });
 }
 
+
 function loadScript(src, callback = () => {}) {
-    if (loadedScripts.has(src)) return callback();
+    if (loadedScripts.has(src)) { // return callback();
+        const existingScript = document.querySelector(`script[src="${src}"]`);
+        if (existingScript) {
+            existingScript.remove();
+        }
+    }
 
     const script = document.createElement('script');
     script.src = src;
@@ -243,7 +261,7 @@ async function renderComponent(template, container, instance, data, nestedCompon
     tempDiv.innerHTML = template;
     const component = tempDiv.firstElementChild;
     
-    transferClasses(container, component);
+    transferAttributes(container, component);
     
     if (data) {
         compileComponent(component, data);
@@ -258,11 +276,15 @@ async function renderComponent(template, container, instance, data, nestedCompon
     await loadAllComponents(component, data);
 }
 
-function transferClasses(source, target) {
+function transferAttributes(source, target) {
+    const originalId = source.getAttribute('id');
     const originalClasses = source.getAttribute('class');
+    if (originalId) {
+        target.setAttribute("id", originalId);
+    }
     if (originalClasses) {
         target.classList.add(...originalClasses.split(' '));
-    }
+    }    
 }
 
 function finalizeComponent(component, instance, data) {
@@ -394,6 +416,12 @@ function processVIf(component, data) {
                     context[key] = value;
                 }
             });
+
+            if (!condition.includes('.') && !condition.includes('(') && !condition.includes('=') && !(condition in context)) {
+                // If it's just a property name that doesn't exist, treat as false
+                el.parentNode.removeChild(el);
+                return;
+            }
             
             // Add special handling for array items if they exist
             if (data.item) context.item = data.item;
@@ -518,3 +546,94 @@ document.addEventListener('DOMContentLoaded', () => {
         subtree: true
     });
 });
+
+
+// COMMON COMPONENTS CLASSES
+
+class CarouselWithDots {
+    constructor(carousel) {
+        this.carousel = carousel;
+        this.slidesContainer = carousel.querySelector('[data-carousel-slides-container]');
+        this.paginationContainer = carousel.querySelector('[data-carousel-pagination]');
+        this.currentSlide = 0;
+        this.numSlides = this.slidesContainer.children.length;
+
+        this.createDots();
+        this.updateActiveDot();
+
+        this.paginationContainer.addEventListener('click', this.handleDotClick.bind(this));
+
+        // uncomment this to enable auto scroll
+        // this.enableAutoScroll();
+    }
+  
+    createDots() {
+        this.paginationContainer.innerHTML = '';
+        for (let i = 0; i < this.numSlides; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('carousel-dot');
+        this.paginationContainer.appendChild(dot);
+        }
+    }
+  
+    updateActiveDot() {
+        const dots = this.paginationContainer.children;
+        for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.remove('active');
+        }
+        dots[this.currentSlide].classList.add('active');
+    }
+  
+    handleDotClick(event) {
+        if (event.target.classList.contains('carousel-dot')) {
+            this.resetAutoScroll();
+            const dots = this.paginationContainer.children;
+            for (let i = 0; i < dots.length; i++) {
+                if (dots[i] === event.target) {
+                this.currentSlide = i;
+                this.carousel.style.setProperty('--current-slide', this.currentSlide);
+                this.updateActiveDot();
+                }
+            }
+        }
+    }
+
+    enableAutoScroll() {
+        this.autoScrollInterval = setInterval(this.autoScroll.bind(this), 4000); // Scroll every 3 seconds
+    }
+
+    autoScroll() {
+        this.currentSlide = (this.currentSlide + 1) % this.numSlides;
+        this.carousel.style.setProperty('--current-slide', this.currentSlide);
+        this.updateActiveDot();
+    }
+
+    resetAutoScroll() {
+        clearInterval(this.autoScrollInterval);
+        this.enableAutoScroll();
+    }
+}
+
+class CarouselWithButtons {
+    constructor(carousel) {
+      this.carousel = carousel;
+      this.buttonPrevious = carousel.querySelector('[data-carousel-button-previous]');
+      this.buttonNext = carousel.querySelector('[data-carousel-button-next]');
+      this.slidesContainer = carousel.querySelector('[data-carousel-slides-container]');
+      this.currentSlide = 0;
+      this.numSlides = this.slidesContainer.children.length;
+  
+      this.buttonPrevious.addEventListener('click', this.handlePrevious.bind(this));
+      this.buttonNext.addEventListener('click', this.handleNext.bind(this));
+    }
+  
+    handleNext() {
+      this.currentSlide = (this.currentSlide + 1) % this.numSlides;
+      this.carousel.style.setProperty('--current-slide', this.currentSlide);
+    }
+  
+    handlePrevious() {
+      this.currentSlide = (this.currentSlide - 1 + this.numSlides) % this.numSlides;
+      this.carousel.style.setProperty('--current-slide', this.currentSlide);
+    }
+}

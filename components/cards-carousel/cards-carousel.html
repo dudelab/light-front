@@ -1,25 +1,24 @@
-<div class="cards-carousel-section">
+<div class="cards-carousel">
     <div class="cards-carousel-header">
       <div class="cards-carousel-title">{{ title }}</div>
       <div class="cards-carousel-subtitle">
         <div class="cards-carousel-types">
-          <div v-for="type in types" 
+          <div v-for="(type, index) in types" 
                class="cards-carousel-type" 
-               data-link="{{type.link}}"
-               data-active="{{ $index === 0 }}">
+               data-link-type="{{index}}">
             {{ type.name }}
           </div>
         </div>
-        <a href="{{ types[0].link }}" class="cards-carousel-link">
-          <span class="text">Tutti i {{ types[0].name.toLowerCase() }}</span>
+        <a href="{{ types[0].link }}" data-current-type="0" class="cards-carousel-link">
+          <span class="text">Vai a {{ types[0].name.toLowerCase() }}</span>
           <i class="fa-solid fa-arrow-up rotate-45"></i>
         </a>
       </div>
     </div>
     
-    <div style="display: flex; flex-direction: column; gap:15px">
-      <div class="cards-carousel-container">
-        <div v-for="item in types[0].items" class="card-item">
+    <div class="carousel-wrapper">
+      <div class="cards-carousel-container" v-for="(type, index) in types" data-type="{{index}}">
+        <div v-for="item in type.items" class="card-item">
           <div class="card-item-image" style="background-image: url({{item.image}})">
             <div class="card-item-image-tags">
               <span v-for="tag in item.imageTag" class="card-item-image-tag">{{ tag }}</span>
@@ -36,16 +35,17 @@
                 <span v-if="item.tag" class="card-item-tag">{{ item.tag }}</span>
               </div>
             </div>
-            <div class="card-item-title">{{ item.description }}</div>
+            <div class="card-item-title">{{ item.text }}</div>
+            <div class="card-item-description">{{ item.description }}</div>
             <a class="card-item-link" href="{{ item.link }}">
-              Leggi <i class="fa-solid fa-arrow-up rotate-45"></i>
+              {{ctaLabel}} <i class="fa-solid fa-arrow-up rotate-45"></i>
             </a>
           </div>
         </div>
       </div>
       <div class="cards-carousel-controls">
-        <div class="prevBtn"><i class="fa-solid fa-chevron-left"></i></div>
-        <div class="nextBtn"><i class="fa-solid fa-chevron-right"></i></div>
+        <div class="prev"><i class="fa-solid fa-chevron-left"></i></div>
+        <div class="next"><i class="fa-solid fa-chevron-right"></i></div>
       </div>
     </div>
   </div>

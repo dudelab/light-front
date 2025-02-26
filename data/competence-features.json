@@ -1,0 +1,20 @@
+{
+    "title": "La nostra offerta formativa",
+    "features": [
+        {
+            "icon": "/assets/icons/scissors.png",
+            "subject": "Lorem ipsum",
+            "paragraph": "Lorem ipsum"
+        },
+        {
+            "icon": "/assets/icons/map.png",
+            "subject": "Lorem ipsum",
+            "paragraph": "Lorem ipsum"
+        },
+        {
+            "icon": "/assets/icons/screen.png",
+            "subject": "Lorem ipsum",
+            "paragraph": "Lorem ipsum"
+        }
+    ]
+}

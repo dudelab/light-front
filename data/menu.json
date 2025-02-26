@@ -26,7 +26,7 @@
             "items": [
               {
                 "label": "Applicare l'intelligenza artificiale",
-                "url": "#"
+                "url": "service-detail.html"
               },
               {
                 "label": "Integrare e potenziare la cyber security",
@@ -46,7 +46,7 @@
               },
               {
                 "label": "Supporto per investire nell'innovazione",
-                "url": "#"
+                "url": "investment.html"
               }
             ]
           },
@@ -55,7 +55,7 @@
             "items": [
               {
                 "label": "Formare le competenze",
-                "url": "#"
+                "url": "competence.html"
               }
             ]
           }
@@ -79,39 +79,45 @@
         },
         "categories": [
           {
-            "name": "Consulenza",
             "items": [
               {
-                "label": "Le nostre soluzioni innovative per  il futuro della tua azienda",
+                "label": "Intelligenza Artificiale",
+                "subtitle": "Come utilizzamo l’intelligenza articiale per te.",
                 "url": "#"
               },
               {
-                "label": "Efficienza, Produttività, Competitività",
+                "label": "Sviluppo di prodotto",
+                "subtitle": "Il futuro dei prodotti.",
                 "url": "#"
               },
               {
-                "label": "Co-finanziamenti pubblici per i nostri servizi",
+                "label": "Produzione Smart",
+                "subtitle": "Lavora meno e produci di più.",
                 "url": "#"
               },
               {
-                "label": "Progettare il futuro digitale",
+                "label": "Qualità 4.0",
+                "subtitle": "QA efficente.",
                 "url": "#"
               },
               {
-                "label": "Ottimizzare con sostenibilità",
+                "label": "Manutenzione",
+                "subtitle": "Controlla tutto, efficacemente.",
                 "url": "#"
               },
               {
-                "label": "Desideri confrontarti con noi?",
+                "label": "Logistica",
+                "subtitle": "Gestisci ogni flusso.",
                 "url": "#"
-              }
-            ]
-          },
-          {
-            "name": "Formazione",
-            "items": [
+              },
               {
-                "label": "Formare le competenze",
+                "label": "Prodotto Intelligente",
+                "subtitle": "Il tuo key product, ma supercharged.",
+                "url": "#"
+              },
+              {
+                "label": "Infrastrutture connesse",
+                "subtitle": "Connetti al tua azienda.",
                 "url": "#"
               }
             ]
@@ -123,19 +129,123 @@
       "id": "blog",
       "label": "Progetti e Blog",
       "url": "#",
-      "isActive": false
+      "isActive": false,
+      "hasSubmenu": true,
+      "submenu": {
+        "intro": {
+          "title": "Progetti e Blog",
+          "subtitle": "Excepteur sint occaecat cupidatat non proident. Sint cupidatat non proident. Excepteur sint occaecat non proident."
+        },
+        "categories": [
+          {
+            "items": [
+              {
+                "label": "Eventi",
+                "subtitle": "Lorem Ipsum",
+                "url": "#"
+              },
+              {
+                "label": "Progetti di successo",
+                "subtitle": "Lorem Ipsum",
+                "url": "#"
+              },
+              {
+                "label": "Blog",
+                "subtitle": "Lorem Ipsum",
+                "url": "#"
+              },
+              {
+                "label": "News",
+                "subtitle": "Lorem Ipsum",
+                "url": "#"
+              },
+              {
+                "label": "Bandi e finanziamenti",
+                "subtitle": "Lorem Ipsum",
+                "url": "#"
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "made4future",
       "label": "Made 4 Future",
       "url": "#",
-      "isActive": false
+      "isActive": false,
+      "hasSubmenu": true,
+      "submenu": {
+        "cards": [
+          {
+            "title": "Innovazione",
+            "subtitle": "Controlla tutto, efficacemente.",
+            "img": "/assets/images/menu/innovation.png",
+            "url": "#"
+          },
+          {
+            "title": "Sostenibilità",
+            "subtitle": "Controlla tutto, efficacemente.",
+            "img": "/assets/images/menu/sustainability.png",
+            "url": "#"
+          },
+          {
+            "title": "Salute e sicurezza",
+            "subtitle": "Controlla tutto, efficacemente.",
+            "img": "/assets/images/menu/safety.png",
+            "url": "#"
+          }
+        ]
+      }
     },
     {
       "id": "about",
       "label": "Chi Siamo",
       "url": "#",
-      "isActive": false
+      "isActive": false,
+      "hasSubmenu": true,
+      "submenu": {
+        "intro": {
+          "title": "Chi Siamo",
+          "subtitle": "Excepteur sint occaecat cupidatat non proident. Sint cupidatat non proident. Excepteur sint occaecat non proident."
+        },
+        "categories": [
+          {
+            "items": [
+              {
+                "label": "Competence Center",
+                "subtitle": "Lorem Ipsum",
+                "url": "#"
+              },
+              {
+                "label": "L’organizzazione e la storia di Made",
+                "subtitle": "Lorem Ipsum",
+                "url": "#"
+              },
+              {
+                "label": "Il team",
+                "subtitle": "Lorem Ipsum",
+                "url": "#"
+              },
+              {
+                "label": "I nostri partner",
+                "subtitle": "Lorem Ipsum",
+                "url": "#"
+              },
+              {
+                "label": "Comunità Digitale",
+                "subtitle": "Lorem Ipsum",
+                "url": "#"
+              },
+              {
+                "label": "MADE4.0 in Europa",
+                "subtitle": "Lorem Ipsum",
+                "url": "#"
+              }
+            ]
+          }
+        ]
+      }
     }
   ],
   "icons": {
@@ -150,20 +260,20 @@
     }
   },
   "languages": {
-    "current": "ITA",
+    "current": "IT",
     "options": [
       {
-        "code": "it",
+        "code": "IT",
         "label": "Italiano",
         "flag": "🇮🇹"
       },
       {
-        "code": "en",
+        "code": "EN",
         "label": "English",
         "flag": "🇬🇧"
       },
       {
-        "code": "fr",
+        "code": "FR",
         "label": "Français",
         "flag": "🇫🇷"
       }

@@ -1,0 +1,48 @@
+.hero-carousel {
+  position: relative;
+  overflow: hidden;
+  --current-slide: 0;
+}
+
+.hero-carousel .slides {
+  /* position: relative;
+  height: 100%; */
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto; /* Adjusts height based on content */
+}
+
+.hero-carousel .slide {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none;
+  grid-row-start: 1;
+  grid-column-start: 1;
+}
+
+.hero-carousel .slide.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.hero-carousel .carousel-pagination {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.hero-carousel .carousel-dot {
+  width: 1rem;
+  height: 1rem;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.hero-carousel .carousel-dot.active {
+  background-color: #333;
+}

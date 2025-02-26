@@ -1,0 +1,72 @@
+.comments{
+    display: flex;
+    flex-direction: column;
+    padding: 104px 0px;
+    gap: 12px;
+}
+
+.comments .comment{
+    gap: 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+.comments .title{
+    font-size: 29px;
+    font-weight: 400;
+    color: var(--h-color);
+}
+
+.comments .profile{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.comments .picture{
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 56px;
+    height: 56px;
+    background-color: white;
+    border-radius: var(--radius-rounded);
+}
+
+.comments .infos{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.comments .name{
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--h-color);
+}
+
+.comments .roles{
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--p-color);
+}
+
+.comments .controls{
+    gap: 32px;
+    display: flex;
+    flex-direction: row;
+}
+
+.controls div {
+    background-color: transparent;
+    color: #8B94A5;
+    border: 1px solid #1E2533;
+    padding: 15px 21.2px;
+    cursor: pointer;
+    border-radius: var(--radius-rounded);
+    font-size: 18px;
+    font-weight: 100;
+}
+
+@media(min-width:1024px) {
+}

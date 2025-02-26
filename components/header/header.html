@@ -18,11 +18,11 @@
                     
                     <!-- Submenu - Only rendered if hasSubmenu is true -->
                     <div v-if="item.hasSubmenu" class="submenu">
-                        <div class="submenu-wrapper">
+                        <div v-if="item.submenu?.categories" class="submenu-wrapper">
                             <div class="submenu-intro">
                                 <h2 class="submenu-title">{{item.submenu.intro.title}}</h2>
                                 <p class="submenu-subtitle">{{item.submenu.intro.subtitle}}</p>
-                                <a href="{{item.submenu.intro.cta.url}}" class="submenu-cta">
+                                <a v-if="item.submenu?.intro?.cta" href="{{item.submenu.intro.cta.url}}" class="submenu-cta">
                                     {{item.submenu.intro.cta.label}}
                                     <i class="fa-solid fa-arrow-up rotate-45"></i>
                                 </a>
@@ -30,18 +30,43 @@
                             
                             <div class="submenu-content">
                                 <div v-for="category in item.submenu.categories" class="submenu-category">
-                                    <span class="category-tag tag-chip">{{category.name}}</span>
+                                    <span v-if="category.name" class="category-tag tag-chip">{{category.name}}</span>
                                     <div class="submenu-grid">
                                         <a v-for="subitem in category.items" 
                                            href="{{subitem.url}}" 
                                            class="submenu-item">
-                                            <span>{{subitem.label}}</span>
+                                            <div>
+                                                {{subitem.label}}
+                                                <p v-if="subitem.subtitle" class="submenu-subtitle">
+                                                    {{subitem.subtitle}}
+                                                </p>
+                                            </div>
                                             <span class="icon">
                                                 <i class="fa-solid fa-arrow-up rotate-45"></i>
                                             </span>
                                         </a>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div v-if="item.submenu?.cards" class="cards-wrapper">
+                            <div v-for="card in item.submenu.cards" class="card">
+                                <a href="{{card.url}}" class="submenu-item">
+                                    <div class="info">
+                                        <div>
+                                            {{ card.title }}<br>
+                                            <p v-if="card.subtitle" class="submenu-subtitle">
+                                                {{card.subtitle}}
+                                            </p>
+                                        </div>
+                                        <span class="icon">
+                                            <i class="fa-solid fa-arrow-up rotate-45"></i>
+                                        </span>
+                                    </div>
+                                    <div class="img">
+                                        <img v-if="card.img" src="{{card.img}}" alt="">
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -81,14 +106,13 @@
     <nav class="mobile-menu">
         <ul>
             <li v-for="item in mainMenu" class="menu-item">
-                <a href="{{item.url}}">+ {{item.label}}</a>
+                <a class="main-item" href="{{item.url}}">{{item.label}}</a>
                 
                 <div v-if="item.hasSubmenu" class="submenu">
-                    <div class="submenu-wrapper">
+                    <div v-if="item.submenu?.categories" class="submenu-wrapper">
                         <div class="submenu-intro">
-                            <h2 class="submenu-title">{{item.submenu.intro.title}}</h2>
                             <p class="submenu-subtitle">{{item.submenu.intro.subtitle}}</p>
-                            <a href="{{item.submenu.intro.cta.url}}" class="submenu-cta">
+                            <a v-if="item.submenu?.intro?.cta" href="{{item.submenu.intro.cta.url}}" class="submenu-cta">
                                 {{item.submenu.intro.cta.label}}
                                 <i class="fa-solid fa-arrow-up rotate-45"></i>
                             </a>
@@ -96,12 +120,17 @@
                         
                         <div class="submenu-content">
                             <div v-for="category in item.submenu.categories" class="submenu-category">
-                                <span class="category-tag tag-chip">{{category.name}}</span>
+                                <span v-if="category.name" class="category-tag tag-chip">{{category.name}}</span>
                                 <div class="submenu-grid">
                                     <a v-for="subitem in category.items" 
                                        href="{{subitem.url}}" 
                                        class="submenu-item">
-                                        <span>{{subitem.label}}</span>
+                                        <div class="item">
+                                            {{subitem.label}}
+                                            <p v-if="subitem.subtitle" class="submenu-subtitle">
+                                                {{subitem.subtitle}}
+                                            </p>
+                                        </div>
                                         <span class="icon">
                                             <i class="fa-solid fa-arrow-up rotate-45"></i>
                                         </span>
@@ -110,26 +139,28 @@
                             </div>
                         </div>
                     </div>
+                    <div v-if="item.submenu?.cards" class="cards-wrapper">
+                        <div v-for="card in item.submenu.cards" class="card">
+                            <a href="{{card.url}}" class="submenu-item">
+                                <div class="info">
+                                    <div>
+                                        {{ card.title }}<br>
+                                        <p v-if="card.subtitle" class="submenu-subtitle">
+                                            {{card.subtitle}}
+                                        </p>
+                                    </div>
+                                    <span class="icon">
+                                        <i class="fa-solid fa-arrow-up rotate-45"></i>
+                                    </span>
+                                </div>
+                                <div class="img">
+                                    <img v-if="card.img" src="{{card.img}}" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </li>
         </ul>
-        
-        <div class="mobile-extra">
-            <button class="cta-button">
-                <i class="fas {{icons.cta.icon}}" aria-label="{{icons.cta.ariaLabel}}"></i>
-            </button>
-            <button class="search-button">
-                <i class="fas {{icons.search.icon}}" aria-label="{{icons.search.ariaLabel}}"></i>
-            </button>
-            <div class="language-selector">
-                <i class="fas fa-globe"></i>
-                <span>{{languages.current}}</span>
-                <ul class="language-dropdown">
-                    <li v-for="lang in languages.options" data-lang="{{lang.code}}">
-                        {{lang.flag}} {{lang.label}}
-                    </li>
-                </ul>
-            </div>
-        </div>
     </nav>
 </header>

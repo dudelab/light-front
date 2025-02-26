@@ -14,7 +14,7 @@
   flex-wrap: nowrap;
   padding-inline: 20px;
   overflow-x: auto;
-  scrollbar-color: var(--bg-light) var(--primary-color);
+  scrollbar-color: var( --utility-color) var(--primary-color);
   scrollbar-width: thin;
 }
 

@@ -1,0 +1,28 @@
+<div class="faq">
+    <div class="container">
+        <div class="head">
+            <div class="title">FAQ sul {{service}}</div>
+            <div class="cta">
+                <div class="label">{{label}}</div>
+                <a class="cta-btn" href="{{link}}">
+                    Contattaci
+                    <i class="fa-solid fa-arrow-up rotate-45"></i>
+                </a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="item" v-for="item in items">
+                <div class="item-content">
+                    <div id="{{item.id}}" class="item-title toggle">{{item.title}}</div>
+                    <div id="dropdown-{{item.id}}" class="item-text">{{item.text}}</div>
+                </div>
+                <div id="{{item.id}}" class="item-icon toggle">
+                    <div id="{{item.id}}" class="icon-container ">
+                        <i id="toggleIcon-{{item.id}}" class="fa-solid fa-plus toggle"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

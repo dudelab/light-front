@@ -1,27 +1,77 @@
-function getTimeRemaining(targetDate) {
-    const now = new Date();
-    const target = new Date(targetDate.split('/').reverse().join('-') + 'T00:00:00');
-    const timeDiff = target - now;
 
-    if (timeDiff <= 0) {
-        return { days: 0, hours: 0, minutes: 0, expired: true };
-    }
-
-    const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-
-    return { days, hours, minutes, expired: false };
+if (typeof ComponentRegistry !== 'undefined') {
+    ComponentRegistry.register('single-card-slider', {
+        mounted(element, data) {
+            new SingleCardSliderCarousel(element.querySelectorAll('.single-card-slider [data-carousel]')[0]);
+        }
+    });
 }
 
-// Esempio d'uso con la data del JSON
-const jsonData = {
-    "cards": [
-        {
-            "time": "13/02/2025"
-        }
-    ]
-};
+(function() {
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.single-card-slider [data-carousel]').forEach(carousel => new SingleCardSliderCarousel(carousel));
+    });
+})();
 
-const countdown = getTimeRemaining(jsonData.cards[0].time);
-console.log(`Mancano ${countdown.days} giorni, ${countdown.hours} ore e ${countdown.minutes} minuti.`);
+class SingleCardSliderCarousel {
+    constructor(carousel) {
+        this.carousel = carousel;
+        this.slidesContainer = carousel.querySelector('[data-carousel-slides-container]');
+        this.paginationContainer = carousel.querySelector('[data-carousel-pagination]');
+        this.currentSlide = 0;
+        this.numSlides = this.slidesContainer.children.length;
+
+        this.createDots();
+        this.updateActiveDot();
+
+        this.paginationContainer.addEventListener('click', this.handleDotClick.bind(this));
+
+        // this.enableAutoScroll();
+    }
+  
+    createDots() {
+        this.paginationContainer.innerHTML = '';
+        for (let i = 0; i < this.numSlides; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('carousel-dot');
+        this.paginationContainer.appendChild(dot);
+        }
+    }
+  
+    updateActiveDot() {
+        const dots = this.paginationContainer.children;
+        for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.remove('active');
+        }
+        dots[this.currentSlide].classList.add('active');
+    }
+  
+    handleDotClick(event) {
+        if (event.target.classList.contains('carousel-dot')) {
+            // this.resetAutoScroll();
+            const dots = this.paginationContainer.children;
+            for (let i = 0; i < dots.length; i++) {
+                if (dots[i] === event.target) {
+                this.currentSlide = i;
+                this.carousel.style.setProperty('--current-slide', this.currentSlide);
+                this.updateActiveDot();
+                }
+            }
+        }
+    }
+
+    enableAutoScroll() {
+        this.autoScrollInterval = setInterval(this.autoScroll.bind(this), 4000); // Scroll every 4 seconds
+    }
+
+    autoScroll() {
+        this.currentSlide = (this.currentSlide + 1) % this.numSlides;
+        this.carousel.style.setProperty('--current-slide', this.currentSlide);
+        this.updateActiveDot();
+    }
+
+    resetAutoScroll() {
+        clearInterval(this.autoScrollInterval);
+        this.enableAutoScroll();
+    }
+}
