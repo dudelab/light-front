@@ -1,7 +1,18 @@
 <div class="logo-strip">
-  <p class="description">
-    Collaboriamo con aziende leader e partner d'eccellenza per trasformare le sfide in opportunità.
-  </p>
+  <div class="container">
+    <div class="inner-container">
+      <div v-if="tag" class="tag">{{tag}}</div>
+      <h2 v-if="title" class="title">
+        {{title}}
+      </h2>
+      <p class="description">
+        {{description}}
+      </p>
+    </div>
+    <a v-if="cta" href="{{cta.ref}}" class="link">{{cta.label}}
+      <i class="fas fa-arrow-up rotate-45"></i>
+    </a>
+  </div>
   <div class="items">
     <div class="item" v-for="partner in partners">
       <a class="url" href="{{partner.url}}">

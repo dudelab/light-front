@@ -10,7 +10,7 @@ if (typeof ComponentRegistry !== 'undefined') {
 
 (function() {
     document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('.cards-carousel .carousel-wrapper').forEach(carousel => new CardsCarousel(carousel));
+        document.querySelectorAll('.cards-carousel').forEach(carousel => new initCardsCarousel(carousel));
     });
 })();
 
@@ -18,30 +18,46 @@ class initCardsCarousel {
     constructor(carousel) {
         this.carousel = carousel;
         this.currentType = this.getCurrentType();
-        this.typeButtons = carousel.querySelectorAll('.cards-carousel-type');
+        this.typeButtons = carousel.querySelectorAll('.type');
+        if (!this.typeButtons || this.typeButtons.length === 0) {
+            console.warn('Nessun pulsante di tipo trovato nel carosello');
+            return;
+        }
+        this.typeLinks = [];
 
         this.typeButtons.forEach((b) => {
+            const typeLink = b.getAttribute("data-link");
+            const typeCtaText = b.getAttribute("data-link-text");
+            this.typeLinks.push({ link: typeLink, text: typeCtaText});
+
             b.addEventListener('click', this.changeType.bind(this))
         })
         this.updateActiveButton();
         this.filterTypes();
+        this.updateCta();
     }
 
     changeType (button) {
-        const newValue = button.target.getAttribute("data-link-type");
+        const newValue = button.target.getAttribute("data-link-type") || 0;
         this.setCurrentType(newValue);
         this.updateActiveButton();
         this.filterTypes();
+        this.updateCta();
     }
 
     getCurrentType () {
         const carouselLink = this.carousel.querySelector('[data-current-type]')
-        const currentType = carouselLink.getAttribute("data-current-type");
+        let currentType = "0";
+        if (carouselLink) currentType = carouselLink.getAttribute("data-current-type");
         return currentType
     }
 
     setCurrentType (value) {
         const carouselLink = this.carousel.querySelector('[data-current-type]')
+        if (!carouselLink) {
+            console.warn('Elemento data-current-type non trovato nel carosello');
+            return;
+        }
         carouselLink.setAttribute("data-current-type", value);
         this.currentType = value;
     }
@@ -56,20 +72,40 @@ class initCardsCarousel {
         })
     }
 
+    updateCta () {
+        if (!this.typeLinks[this.currentType]?.link) return;
+        const ctaTag = this.carousel.querySelector('.header .link');
+        if (!ctaTag) {
+            console.warn('Elemento CTA link non trovato nel carosello');
+            return;
+        }
+        const ctaTextTag = ctaTag.querySelector('.text');
+        if (!ctaTextTag) {
+            console.warn('Elemento testo CTA non trovato nel carosello');
+            return;
+        }
+        ctaTag.href = this.typeLinks[this.currentType].link;
+        ctaTextTag.innerHTML = this.typeLinks[this.currentType].text;
+    }
+
     filterTypes () {
         const allSlides = this.carousel.querySelectorAll('[data-type]');
+        if (!allSlides || allSlides.length === 0) {
+            console.warn('Nessun elemento con attributo data-type trovato nel carosello');
+            return;
+        }
         allSlides.forEach((group) => {
             const currentType = group.getAttribute("data-type");
             console.log()
             if (currentType !== this.currentType) {
                 group.style.display = 'none';
-                group.classList.remove('cards-carousel-container');
-                group.classList.add('cards-carousel-container-inactive');
+                group.classList.remove('container');
+                group.classList.add('container-inactive');
             }
             if (currentType === this.currentType) {
                 group.style.display = 'flex';
-                group.classList.remove('cards-carousel-container-inactive');
-                group.classList.add('cards-carousel-container');
+                group.classList.remove('container-inactive');
+                group.classList.add('container');
             }
         })
         new CardsCarousel(this.carousel);
@@ -80,9 +116,21 @@ class initCardsCarousel {
 class CardsCarousel {
     constructor(carousel) {
         this.carousel = carousel;
-        this.container = carousel.querySelector('.cards-carousel-container');
+        this.container = carousel.querySelector('.container');
+        if (!this.container) {
+            console.warn('Contenitore non trovato nel carosello');
+            return;
+        }
         this.prevBtn = carousel.querySelector('.prev');
+        if (!this.prevBtn) {
+            console.warn('Pulsante precedente non trovato nel carosello');
+            return;
+        }
         this.nextBtn = carousel.querySelector('.next');
+        if (!this.nextBtn) {
+            console.warn('Pulsante successivo non trovato nel carosello');
+            return;
+        }
         this.scrollAmount = 0;
 
         this.prevBtn.addEventListener('click', this.prevClickHandler.bind(this));

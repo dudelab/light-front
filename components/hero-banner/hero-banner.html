@@ -1,0 +1,20 @@
+<div class="hero-banner">
+    <div class="head">
+        <h2 class="title">{{title}}</h2>
+        <p class="subtitle">{{subtitle}}</p>
+    </div>
+    <div class="content" >
+        <div class="controls">
+            <div class="prevBtn"><i class="fa-solid fa-chevron-left"></i></div>
+            <div class="nextBtn"><i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+        <div class="card-container" carousel-container>
+            <a class="card" v-for="tech in technologies" style="background-image: url({{tech.background}});" href="{{tech.link}}">
+                <div class="overlay">
+                    <div class="button"><i class="fa-solid fa-arrow-up rotate-45"></i></div>
+                </div>
+                <h3 class="text">{{tech.text}}</h3>
+            </a>
+        </div>
+    </div>
+</div>

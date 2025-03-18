@@ -1,0 +1,87 @@
+{
+    "title": "Progetti sulla formazione su misura",
+    "ctaLabel": "Esplora",
+    "types": [
+        {
+            "name": "Eventi",
+            "link": "/eventi",
+            "ctaText": "Tutti i Eventi",
+            "items": [
+                {
+                    "text": "Progetto Terna",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+                    "image": "/assets/images/projects/prj1.png",
+                    "tags": [
+                        {
+                            "text": "Made Center",
+                            "icon": ""
+                        },
+                        {
+                            "text": "2:30 hr",
+                            "icon": ""
+                        }
+                    ],
+                    "imageTag": ["Nome della tecnologia", "Nome del Settore"],
+                    "date": "12/02/25 - 18:00",
+                    "link": "/progetti/1"   
+                },
+                {
+                    "text": "Come abbiamo migliorato Fiat It",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+                    "image": "/assets/images/projects/prj2.png",
+                    "tags": [
+                        {
+                            "text": "Made Center",
+                            "icon": ""
+                        },
+                        {
+                            "text": "2:30 hr",
+                            "icon": ""
+                        }
+                    ],
+                    "imageTag": ["Nome della tecnologia", "Nome del Settore"],
+                    "date": "12/02/25 - 18:00",
+                    "link": "/progetti/2"   
+                },
+                {
+                    "text": "Nome del progetto",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+                    "image": "/assets/images/projects/prj3.png",
+                    "tags": [
+                        {
+                            "text": "Made Center",
+                            "icon": ""
+                        },
+                        {
+                            "text": "2:30 hr",
+                            "icon": ""
+                        }
+                    ],
+                    "imageTag": ["Nome della tecnologia", "Nome del Settore"],
+                    "date": "12/02/25 - 18:00",
+                    "link": "/progetti/3"   
+                },
+                {
+                    "text": "Come abbiamo migliorato Fiat It",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+                    "image": "/assets/images/projects/prj4.png",
+                    "tags": [
+                        {
+                            "text": "Made Center",
+                            "icon": ""
+                        },
+                        {
+                            "text": "2:30 hr",
+                            "icon": ""
+                        }
+                    ],
+                    "imageTag": ["Nome della tecnologia", "Nome del Settore"],
+                    "date": "12/02/25 - 18:00",
+                    "link": "/progetti/4"   
+                }
+            ]
+        }
+    ]
+
+}
+

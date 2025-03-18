@@ -1,0 +1,209 @@
+.cards-event {
+    display: flex;
+    flex-direction: column;
+    margin: 3em 0;
+    gap: 20px;
+  }
+  
+  .cards-event .header{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .cards-event .title {
+    color: var(--h-color);
+    font-weight: 500;
+    font-size: 24px;
+    margin: 0 0 6px;
+  }
+ 
+
+
+  
+  
+  .cards-event .container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 20px; 
+  }
+  
+    .cards-event .card-item {
+      flex: 0 0 302px; 
+      display: grid;
+      grid-template-rows: 200px 1fr;
+  
+      border: 1px solid var(--utility-brand);
+      border-radius: var(--radius-sm);
+      background-color: var(--h-color);
+  
+    }
+  
+  
+    .cards-event .card-item .image{
+  
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+  
+      display: flex;
+      flex-direction: column-reverse;
+      padding: 10px;
+      align-items: start;
+      flex: 1;
+      min-height: 200px;
+      height: 200px;
+      max-height: 200px;
+      border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  
+    }
+  
+  
+    .cards-event .card-item .image-tags{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+  
+    .cards-event .card-item .image-tag{
+      background-color: var(--h-color);
+      border: 1px solid var(--border-color-2);
+      color: var(--utility-gray);
+      border-radius: var(--radius-rounded);
+      padding: 2px 8px;
+      font-size: 12px;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+    }
+  
+  
+    .cards-event .card-item .infos{
+      display: grid;
+      grid-template-rows: 1fr 40px;
+      padding: 12px;
+      gap: 1em;
+    }
+    .cards-event .card-item .details {
+      display: grid;
+      gap: .6em;
+    }
+
+    
+    .cards-event .card-item .date{
+      background-color: #EEF4FF;
+      border: 1.5px solid var(--border-color-indigo-200);
+      padding: 4px 12px;
+      color: var(--text-color-indigo-700);
+      font-size: 14.5px;
+      border-radius: var(--radius-rounded);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: .5em;
+    }
+    
+    .cards-event .card-item .tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    
+    .cards-event .card-item .tag {
+      cursor:default;
+      background-color: var(--bg-brand-50);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-rounded);
+      color: var(--text-color-brand-700);
+      font-size: 14.5px;
+      padding: 2px 10px;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: .5em;
+    }
+  
+    .cards-event .card-item .link{
+      color: var(--utility-gray);
+      font-size: 14px;
+      border-radius: var(--radius-rounded);
+      border: 1px solid var(--border-color-2);
+      background-color: transparent;
+      padding: .5em 1em;
+      display: flex;
+      gap: 0.6em;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      box-shadow: 0px 1px 2px 0px var(--ColorsEffectsShadowsshadow-xs);
+
+      box-shadow: 0px -2px 0px 0px #0A0D120D inset;
+
+      box-shadow: 0px 0px 0px 1px #0A0D122E inset;
+
+    }
+  
+  
+    .cards-event .card-item .title{
+      font-size: 24px;
+      color: var(--dark-text);
+      font-weight: 500;
+      
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      overflow: hidden;  
+      text-overflow: ellipsis;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      margin: 0;
+    }
+  
+    .cards-event .card-item .description{
+      font-size: 14px;
+      color: var(--utility-gray);
+      font-weight: 300;
+      
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      overflow: hidden;  
+      text-overflow: ellipsis;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      margin: 0;
+    }
+  
+  
+  
+  
+  @media(min-width:1024px){
+  
+
+    .cards-event .title {
+      font-weight: 500;
+      font-size: 36px;
+    }
+
+    .cards-event .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .cards-event .card-item .title{
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      font-size: 24px;
+    }
+  
+    .cards-event .card-item .infos {
+      gap: 12px;
+    }
+
+  }
+
+    

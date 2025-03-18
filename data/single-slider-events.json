@@ -1,0 +1,55 @@
+{
+    "title": "Bando europeo in scadenza",
+    "image": "/assets/images/sliders/bg.png",
+    "tags": [
+      {
+        "icon": "fa-solid fa-bullhorn",
+        "text":"Consulenza"
+      },
+      {
+        "icon": "fa-solid fa-bullhorn",
+        "text":"Sectors 1"
+      },
+      {
+        "icon": "fa-solid fa-bullhorn",
+        "text":"Sectors 2"
+      },
+      {
+        "icon": "fa-solid fa-bullhorn",
+        "text":"Sectors 3"
+      },
+      {
+        "icon": "fa-solid fa-bullhorn",
+        "text":"Sectors 4"
+      }
+    ],
+    "time": {
+      "days":"12",
+      "hours":"23",
+      "minutes":"35"
+    },
+    "details": {
+      "title": "Project x",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta sequi reprehenderit tempora quidem delectus esse temporibus quas blanditiis sit accusantium, fuga dolores, perspiciatis minus ullam laboriosam. Commodi asperiores quae a.",
+      "tags": [
+        {
+          "icon": "fa-regular fa-flag",
+          "text":"Apertura candidature - 30/01/2024"
+        },
+        {
+          "icon": "fa-solid fa-hourglass",
+          "text":"Chiusura candidature - 30/01/2025"
+        }
+      ],
+      "buttons": {
+        "cta": {
+          "text": "Candidati",
+          "link": "#"
+        },
+        "secondary": {
+          "text": "Vai ai dettagli",
+          "link": "#"
+        }
+      }
+    }
+  }

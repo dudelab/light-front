@@ -23,6 +23,8 @@ const COMPONENTS = {
     "footer": "/components",
     "hero": "/components",
     "hero-homepage": "/components",
+    "hero-homepage-card-1": "/components",
+    "hero-homepage-card-2": "/components",
     "kpi-1": "/components",
     "kpi-1-card": "/components",
     "logo-strip": "/components",
@@ -47,11 +49,34 @@ const COMPONENTS = {
     "faq": "/components",
     "objectives": "/components",
     "europe-link": "/components",
-    "comments": "/components" 
+    "comments": "/components",
+    "themes": "/components",
+    "financing": "/components" ,
+    "hero-banner": "/components",
+    "banner-modal": "/components",
+    "hero-technology": "/components",
+    "processes": "/components",
+    "statistics": "/components",
+    "cards-event": "/components",
+    "competence-center-banner": "/components",
+    "moments": "/components",
+    "hero-projects": "/components",
+    "single-group-slider": "/components",
+    "single-group": "/components",
+    "double-card-slider": "/components",
+    "card-item": "/components/cards-carousel/components",
+    "europe-projects": "/components",
+    "hero-tenders": "/components",
+    "news": "/components",
+    "sectors": "/components",
+    "hero-competence-center": "/components",
+    "statistics-2": "/components",
+    "contact-incentivo-2": "/components"
 };
 
 const TEMPLATE_REGEX = /\{\{\s*(.*?)\s*\}\}/g;
 const STYLE_REGEX = /\[\s*(.*?)\s*\]/g;
+const CLASS_REGEX = /\[\[(.*?)\]\]/g;
 
 // Resource loading state
 const loadedScripts = new Set();
@@ -313,11 +338,52 @@ function processNodeAndChildren(node, data) {
         processTextContent(node, data);
         processAttributes(node, data);
         processStyles(node, data);
+        processClasses(node, data);
     }
 
     Array.from(node.children).forEach(child => {
         processNodeAndChildren(child, data);
     });
+}
+
+function processClasses(node, data) {
+    const className = node.getAttribute("class");
+    if (className && (className.includes("[[") || className.includes("{{"))) {
+        let processedClassName = className.replace(TEMPLATE_REGEX, (match, expr) => {
+            try {
+                // Create evaluation context from data
+                const context = {...data};
+                
+                // Handle ternary expressions or other complex expressions
+                const evalFunction = new Function(...Object.keys(context), `return ${expr};`);
+                const result = evalFunction.apply(null, Object.values(context));
+                
+                // Convert result to string appropriately
+                return result === undefined || result === null ? '' : String(result);
+            } catch (error) {
+                console.warn(`Error evaluating class expression: "${expr}"`, error);
+                return '';
+            }
+        });
+        
+        // Process class-specific syntax with [[condition]]
+        processedClassName = processedClassName.replace(CLASS_REGEX, (_, condition) => {
+            try {
+                // Create evaluation context from data
+                const context = {...data};
+                
+                // Evaluate the condition
+                const conditionFunction = new Function(...Object.keys(context), `return ${condition};`);
+                return conditionFunction.apply(null, Object.values(context)) ? condition : "";
+            } catch (error) {
+                console.warn(`Error evaluating class condition: "${condition}"`, error);
+                return "";
+            }
+        });
+        
+        // Update the class attribute with the processed value
+        node.setAttribute("class", processedClassName.trim().replace(/\s+/g, ' '));
+    }
 }
 
 function processTextContent(node, data) {

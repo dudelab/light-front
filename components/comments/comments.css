@@ -1,8 +1,19 @@
 .comments{
     display: flex;
     flex-direction: column;
-    padding: 104px 0px;
+    position: relative;
+    margin: 8em 0 4em;
     gap: 12px;
+    padding-bottom: 60px;
+    padding-left: 10px;
+}
+
+.comments .carousel {
+    padding-bottom: 0;
+}
+
+.comments .comments-container{
+    align-items: end;
 }
 
 .comments .comment{
@@ -15,12 +26,14 @@
     font-size: 29px;
     font-weight: 400;
     color: var(--h-color);
+    margin: 0;
 }
 
 .comments .profile{
     display: flex;
     flex-direction: row;
     gap: 16px;
+    padding-right: 170px;
 }
 
 .comments .picture{
@@ -52,12 +65,17 @@
 }
 
 .comments .controls{
+    position: absolute;
+    bottom: -20px;
+    left: 0px;
+    background-color: var(--secondary-color);
+    padding: 10px;
     gap: 32px;
     display: flex;
     flex-direction: row;
 }
 
-.controls div {
+.comments .controls div {
     background-color: transparent;
     color: #8B94A5;
     border: 1px solid #1E2533;
@@ -69,4 +87,17 @@
 }
 
 @media(min-width:1024px) {
+    .comments .title {
+        font-size: 38px;
+    }
+
+    .comments .controls{
+        bottom: 50px;
+        right: 0px;
+        left: unset;
+    }
+
+    .comments .profile{
+        padding-right: 0px;
+    }
 }

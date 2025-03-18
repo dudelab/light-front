@@ -1,0 +1,41 @@
+.hero-projects{
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    justify-content: center;
+    align-items: center;
+    margin: 120px 0 80px;
+}
+
+.hero-projects .head{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-projects .head .title{
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--h-color);
+    margin: 0;
+}
+
+.hero-projects .head .subtitle{
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--p-color);
+    margin: 0;
+}
+
+@media(min-width:1024px) {
+    .hero-projects .head .title{
+        font-size: 60px;
+        max-width: 70%;
+    }
+    .hero-projects .head .subtitle{
+        font-size: 20px;
+    }
+}

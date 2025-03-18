@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology Detail</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="/js/components.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Header -->
+        <div data-component="header" data-endpoint="menu"></div>
+        
+        <div class="breadcrumbs">
+            <a href="home.html">
+                <img src="/assets/icons/home-line.png" alt="">
+            </a>
+            <img src="/assets/icons/slash-divider.png" alt="">
+            Produzione Smart
+        </div>
+
+    
+        <div class="section-wrapper">
+            <div data-component="hero-technology" data-endpoint="hero-technology"></div>
+
+        </div>
+            
+            <div data-component="processes" data-endpoint="processes"></div>
+
+        <div class="section-wrapper">
+
+            <div data-component="cards-carousel" class="blue-cards" data-endpoint="carousel-website-contents"></div>
+            <div data-component="faq" data-endpoint="service-faq"></div>
+            <div id="consulenti-link" data-component="consulenti-link" data-endpoint="consulenti-link"></div>
+    
+        </div>
+
+
+        <!-- Footer -->
+        <div data-component="footer"></div>
+    </div>
+
+</body>
+</html>

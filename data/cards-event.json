@@ -1,0 +1,42 @@
+{
+    "title": "Eventi in primo piano",
+    "ctaLabel": "Esplora",
+    "items": [
+        {
+            "image": "/assets/images/events/card1.png",
+            "imageTag": ["Tipo di evento", "Nome del settore"],
+            "date": "24/02/2025 - 18:00",
+            "tags": [
+                {
+                    "icon": "fa-location-dot",
+                    "text": "Made Center"
+                },
+                {
+                    "icon": "fa-clock",
+                    "text": "2:30 hr"
+                }
+            ],
+            "text": "Progetto Terna", 
+            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+            "link": "#"
+        },
+        {
+            "image": "/assets/images/events/card2.png",
+            "imageTag": ["Tipo di evento", "Nome del settore"],
+            "date": "24/02/2025 - 18:00",
+            "tags": [
+                {
+                    "icon": "fa-location-dot",
+                    "text": "Made Center"
+                },
+                {
+                    "icon": "fa-clock",
+                    "text": "2:30 hr"
+                }
+            ],
+            "text": "Come abbiamo miglioraro Fiat IT", 
+            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+            "link": "#"
+        }
+    ]
+}

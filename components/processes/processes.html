@@ -1,0 +1,45 @@
+<div class="processes">
+    <div class="head">
+        <h1 class="title">{{title}}</h1>
+        <p class="subtitle">{{subtitle}}</p>
+    </div>
+
+    <div class="content">
+        <div class="types">
+            <div v-for="(type, index) in types" 
+                class="type" 
+                data-link-type="{{index}}">
+                {{type.text}}
+            </div>
+        </div>
+        <div class="inner-content" v-for="(type, index) in types" data-type="{{index}}">
+            <div class="infos">
+                <div class="text">
+                    <h2 class="title">{{type.text}}</h2>
+                    <p class="description">
+                        {{type.description}}
+                    </p>
+                    <div class="tags">
+                        <div class="tag" v-for="tag in type.tags">
+                            {{tag}}
+                        </div>
+                    </div>
+                </div>
+                <div class="image" style="background-image: url({{type.image}});"></div>
+            </div>
+            <div class="carousel-wrapper">
+                <h3 class="title">{{type.titleItems}}</h3>
+                <div class="container">
+                    <div v-for="item in type.items" class="card-item">
+                        <h4 class="title">{{item.title}}</h4>
+                        <p v-if="item.description" class="description">{{item.description}}</p>
+                    </div>
+                </div>
+                <div class="controls">
+                    <div class="prev"><i class="fa-solid fa-chevron-left"></i></div>
+                    <div class="next"><i class="fa-solid fa-chevron-right"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

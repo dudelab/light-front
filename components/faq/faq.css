@@ -1,5 +1,5 @@
 .faq{
-    margin: 90px 0px;
+    margin: 10em auto;
     display: flex;
     justify-content: center;
 }
@@ -17,6 +17,8 @@
     justify-content: space-between;
     padding: 16px;
     background-color: var(--primary-color);
+    background: url(/assets/images/elements/curly-bg-tall.png) center/cover var(--primary-color);
+    background-repeat: no-repeat;
     border-radius: var(--radius-sm);
     min-height: 320px;
 }
@@ -106,6 +108,7 @@
     }
     .faq .head{
         min-width: 400px;
+        background-size: contain;
     }
     .faq .title{
         font-size: 48px;

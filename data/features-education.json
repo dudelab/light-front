@@ -1,0 +1,20 @@
+{
+    "title": "La nostra offerta formativa",
+    "features": [
+        {
+            "icon": "/assets/icons/scissors.png",
+            "subject": "Formazione su misura",
+            "paragraph": "Corsi personalizzati per rispondere alle specifiche esigenze aziendali, con contenuti e modalità flessibili definiti in base agli obiettivi dell’impresa."
+        },
+        {
+            "icon": "/assets/icons/map.png",
+            "subject": "Formazione a catalogo",
+            "paragraph": "Un'ampia offerta di corsi su temi chiave di Industria 4.0 e 5.0 e competenze trasversali, pensata per chi desidera aggiornarsi o specializzarsi in ruoli strategici aziendali."
+        },
+        {
+            "icon": "/assets/icons/screen.png",
+            "subject": "Formazione on demand",
+            "paragraph": "Contenuti formativi brevi e interattivi, con pillole, soluzioni applicate e storie di successo, che possono essere fruiti in autonomia e secondo le proprie tempistiche."
+        }
+    ]
+}

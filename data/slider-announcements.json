@@ -2,10 +2,6 @@
   "title":"Opportunità da cogliere al volo",
   "subtitle": "Non perdere le ultime occasioni di finanziamento, verifica i bandi in scadenza.",
   "cardType": "announcement",
-  "button": {
-    "text": "Scopri tutti i servizi",
-    "link": "services.html"
-  },
   "slides": [
     {
       "title": "Bando europeo in scadenza",

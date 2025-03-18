@@ -11,12 +11,22 @@ if (typeof ComponentRegistry !== 'undefined') {
    (function() {
      function initobjectives(element, data) {
 
-        element.querySelectorAll('.toggle').forEach(toggle=>{
+        const toggles = element.querySelectorAll('.toggle');
+        if (!toggles || toggles.length === 0) {
+          console.warn('Nessun elemento toggle trovato');
+          return;
+        }
+        toggles.forEach(toggle=>{
         
             
             const myDiv = element.querySelector(`#dropdown-${toggle.id}`);
           
             const icon = element.querySelector(`#toggleIcon-${toggle.id}`);
+
+            if (!myDiv || !icon) {
+              console.warn(`Elementi mancanti per il toggle ID: ${toggle.id}`);
+              return;
+          }
             
             toggle.addEventListener('click', function() {
                 myDiv.classList.toggle('visible');

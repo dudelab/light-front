@@ -1,10 +1,12 @@
-.hero {
+.hero-homepage-card-1 {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   min-height: 300px;
-  margin: 16px;
-  padding: 20px;
+  height: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 2em 2em 82px;
   color: white;
   background-size: cover;
   background-position: center;
@@ -13,7 +15,7 @@
   z-index: 0;
   overflow: hidden;
 }
-.hero-overlay {
+.hero-homepage-card-1 .overlay {
   background-color: rgba(0, 0, 0, .4);
   background: url('/assets/images/hero/hero-overlay.png') center/cover rgba(12, 14, 18, 0.7);
   position: absolute;
@@ -24,36 +26,36 @@
   z-index: 0;
 }
 
-.hero-content {
+.hero-homepage-card-1 .content {
   max-width: 430px;
   z-index: 1;
 }
 
-.hero-title {
-  font-size: 52px;
+.hero-homepage-card-1 .title {
+  font-size: 36px;
   font-weight: 500;
   line-height: 1.2;
   margin-top: 0;
   margin-bottom: 10px;
 }
 
-.hero-subtitle {
+.hero-homepage-card-1 .subtitle {
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
-.hero-text {
+.hero-homepage-card-1 .text {
   font-size: 1.1rem;
   font-weight: 300;
   line-height: 1.5;
-  margin-bottom: 30px;
+  margin-bottom: 2.5em;
 }
 
-.hero-tags {
+.hero-homepage-card-1 .tags {
   margin-bottom: 20px;
 }
 
-.hero-tag {
+.hero-homepage-card-1 .tag {
   display: inline-block;
   background: rgba(255, 255, 255, 0.3);
   padding: 5px 10px;
@@ -63,9 +65,11 @@
 }
 
 @media (min-width: 1024px) {
-  .hero {
-    margin: 8px;
+  .hero-homepage-card-1 {
     padding: 8em 4em;
   }
 
+  .hero-homepage-card-1 .title {
+    font-size: 52px;
+  }
 }

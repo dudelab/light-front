@@ -1,0 +1,32 @@
+{
+    "title": "Produzione smart",
+    "subtitle": "Powerful, self-serve product and growth analytics to help you convert, engage, and retain more.",
+    "points": ["All features and support", "All and premium support", "All features and premium support"],
+    "slides": [
+        {
+            "image": "/assets/images/hero/hero-tech.png",
+            "title": "Robotica Collaborativa",
+            "tags": ["Tecnologie e Processi"] 
+        },
+        {
+            "image": "/assets/images/hero/hero-tech.png",
+            "title": "Robotica Collaborativa",
+            "tags": ["Tecnologie e Processi"] 
+        },
+        {
+            "image": "/assets/images/hero/hero-tech.png",
+            "title": "Robotica Collaborativa",
+            "tags": ["Tecnologie e Processi"] 
+        },
+        {
+            "image": "/assets/images/hero/hero-tech.png",
+            "title": "Robotica Collaborativa",
+            "tags": ["Tecnologie e Processi"] 
+        },
+        {
+            "image": "/assets/images/hero/hero-tech.png",
+            "title": "Robotica Collaborativa",
+            "tags": ["Tecnologie e Processi"] 
+        }
+    ]
+}

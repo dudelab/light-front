@@ -1,0 +1,24 @@
+{
+    "items": [
+        {
+            "icon": "fa-solid fa-check",
+            "value": "24+",
+            "label" : "Projects Completed"
+        },
+        {
+            "icon": "fa-solid fa-circle-exclamation",
+            "value": "+60",
+            "label" : "Partners in EU countries"
+        },
+        {
+            "icon": "fa-solid fa-euro-sign",
+            "value": "10+ Mil",
+            "label" : "Budget"
+        },
+        {
+            "icon": "fa-solid fa-circle-exclamation",
+            "value": "XX",
+            "label" : "Other KPI"
+        }
+    ]
+}

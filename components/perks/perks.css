@@ -1,6 +1,7 @@
 .perks {
   background-color: var(--primary-color);
-  background: url(/assets/images/curly-bg.png) center/cover var(--primary-color);
+  background: url(/assets/images/elements/curly-bg-tall.png) center/cover var(--primary-color);
+  background-repeat: no-repeat;
   padding: 2em;
 }
 
@@ -53,6 +54,7 @@
 
 @media (min-width: 1024px) {
   .perks {
+    background: url(/assets/images/elements/curly-bg.png) center/cover;
     padding: 4em;
   }
   .perks .cards-wrapper {

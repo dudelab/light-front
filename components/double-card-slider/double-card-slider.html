@@ -1,0 +1,17 @@
+<div class="double-card-slider">
+    <h2 class="title">{{ title }}</h2>
+    <div class="double-carousel" data-carousel>
+      <div class="double-slides" data-carousel-slides-container>
+        <div v-for="group in slideGroups" class="double-slide">
+          <div v-for="slide in group" class="blue-card" data-component="card-item" data-object="{{slide}}"></div>
+        </div>
+      </div>
+      <!-- Add more slides here -->
+      <div class="double-carousel-pagination" data-carousel-pagination>
+        <!-- Dots will be dynamically added here -->
+        <div class="double-carousel-dot"></div>
+        <div class="double-carousel-dot"></div>
+      </div>
+    </div>
+  </div>
+  

@@ -2,7 +2,7 @@
 if (typeof ComponentRegistry !== 'undefined') {
     ComponentRegistry.register('single-card-slider', {
         mounted(element, data) {
-            new SingleCardSliderCarousel(element.querySelectorAll('.single-card-slider [data-carousel]')[0]);
+            new SingleCardSliderCarousel(element.querySelectorAll('[data-carousel]')[0]);
         }
     });
 }
@@ -17,7 +17,15 @@ class SingleCardSliderCarousel {
     constructor(carousel) {
         this.carousel = carousel;
         this.slidesContainer = carousel.querySelector('[data-carousel-slides-container]');
+        if (!this.slidesContainer) {
+            console.warn('SingleCardSlider: Missing [data-carousel-slides-container] element');
+            return;
+        }
         this.paginationContainer = carousel.querySelector('[data-carousel-pagination]');
+        if (!this.paginationContainer) {
+            console.warn('SingleCardSlider: Missing [data-carousel-pagination] element');
+            return;
+        }
         this.currentSlide = 0;
         this.numSlides = this.slidesContainer.children.length;
 
@@ -30,6 +38,10 @@ class SingleCardSliderCarousel {
     }
   
     createDots() {
+        if (this.numSlides <= 1) {
+            this.paginationContainer.style.display = 'none';
+            return;
+        }
         this.paginationContainer.innerHTML = '';
         for (let i = 0; i < this.numSlides; i++) {
         const dot = document.createElement('div');

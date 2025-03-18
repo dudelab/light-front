@@ -21,6 +21,7 @@
     font-weight: 500;
     color: var(--h-color);
     padding-bottom: 40px;
+    margin: 0;
 }
 
 
@@ -29,12 +30,12 @@
     flex-direction: column;
     gap: 24px;
     padding-bottom: 40px;
-    border-bottom: 1px solid #3E5177;
+    border-bottom: 1px solid var(--utility-brand);
 }
 
 .objectives .head{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 40px 1fr;
     align-items: center;
     gap: 24px;
 }
@@ -66,6 +67,7 @@
     font-size: 20px;
     font-weight: 500;
     color: var(--h-color);
+    margin: 0;
 }
 
 .objectives .content{
@@ -78,6 +80,7 @@
     font-size: 18px;
     font-weight: 400;
     color: var(--h-color);
+    margin: 0;
 }
 
 
@@ -100,12 +103,14 @@
     font-size: 18px;
     font-weight: 400;
     color: var(--label-color);
+    margin: 0;
 }
 
 .objectives .item-text{
     font-size: 16px;
     font-weight: 300;
     color: #8B94A5;
+    margin: 0;
 
     max-height: 0; 
     overflow: hidden; 

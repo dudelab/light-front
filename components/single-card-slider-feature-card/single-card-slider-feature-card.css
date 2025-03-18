@@ -8,6 +8,7 @@
 .features-slider-card .content {
     display: grid;
     background: linear-gradient(0deg, var(--bg-dark-3) 0%, var(--bg-dark-3)) 100%, var(--primary-color);
+    background: url('/assets/images/features/card-bg.png') center/cover;
     gap: 1em;
     grid-template-rows: 1fr 36px;
     padding: 1em;

@@ -10,9 +10,14 @@ if (typeof ComponentRegistry !== 'undefined') {
    }
    (function() {
      function initConsulentiLink(element, data) {
-        const button = element.querySelector('#toggleButton');
+        const button = element.querySelector('.toggleButton');
         const container = element.querySelector('.popup-container');
-        const icon = element.querySelector('#icon');
+        const icon = element.querySelector('.icon');
+
+        if (!button || !container || !icon) {
+          console.warn('Missing required elements for consulenti-link component');
+          return;
+      }
     
         button.addEventListener('click', function() {
             container.classList.toggle('hidden'); 

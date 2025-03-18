@@ -1,0 +1,16 @@
+.europe-projects{
+    display: flex;
+    flex-direction: column;
+    margin: 90px 0;
+    padding: 90px 16px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media(min-width:1024px) {
+    .europe-projects{
+        padding: 90px 64px;
+    }
+}

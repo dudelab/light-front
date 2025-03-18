@@ -1,0 +1,102 @@
+{
+    "title":"Progetti in primo piano",
+    "slides": [
+        {
+            "companyTag": "Nome dell’impresa",
+            "companyName": "Teseao S.p.A",
+            "partnerTag": "Partner",
+            "partnerName": "Avvale",
+            "mainCard": {
+                "title": "Sistema di tracciamento",
+                "description": "TESEO è una storica azienda comasca, leader nella tessitura serica e nella produzione di tessuti di alta qualità, con un’esperienza quasi centenaria. L’azienda combina tradizione e innovazione, puntando su qualità, servizio e ricerca per soddisfare le esigenze stilistiche e produttive dei clienti.",
+                "cta": {
+                    "label": "Explore",
+                    "ref": "/track.html"
+                },
+                "image": "/assets/images/projects/success-projects/slider-group/companies/company1.png",
+                "tags": ["Nome della tecnologia", "Nome del settore"]
+            },
+            "stats": [
+                {
+                    "value": "200+",
+                    "label": "Impact criteria",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices."
+                },
+                {
+                    "value": "97%",
+                    "label": "Impact criteria",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices."
+                },
+                {
+                    "value": "34+",
+                    "label": "Impact criteria",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices."
+                }
+            ]
+        },
+        {
+            "companyTag": "Nome del’impresa",
+            "companyName": "Teseao S.p.A",
+            "partnerTag": "Partner",
+            "partnerName": "Avvale",
+            "mainCard": {
+                "title": "Sistema di tracciamento",
+                "description": "TESEO è una storica azienda comasca, leader nella tessitura serica e nella produzione di tessuti di alta qualità, con un’esperienza quasi centenaria. L’azienda combina tradizione e innovazione, puntando su qualità, servizio e ricerca per soddisfare le esigenze stilistiche e produttive dei clienti​.",
+                "cta": {
+                    "label": "Explore",
+                    "ref": "/track.html"
+                },
+                "image": "/assets/images/projects/success-projects/slider-group/companies/company1.png"
+            },
+            "stats": [
+                {
+                    "value": "200+",
+                    "label": "Impact criteria",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices."
+                },
+                {
+                    "value": "97%",
+                    "label": "Impact criteria",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices."
+                },
+                {
+                    "value": "34+",
+                    "label": "Impact criteria",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices."
+                }
+            ]
+        },
+        {
+            "companyTag": "Nome dell’impresa",
+            "companyName": "Teseao S.p.A",
+            "partnerTag": "Partner",
+            "partnerName": "Avvale",
+            "mainCard": {
+                "title": "Sistema di tracciamento",
+                "description": "TESEO è una storica azienda comasca, leader nella tessitura serica e nella produzione di tessuti di alta qualità, con un’esperienza quasi centenaria. L’azienda combina tradizione e innovazione, puntando su qualità, servizio e ricerca per soddisfare le esigenze stilistiche e produttive dei clienti​.",
+                "cta": {
+                    "label": "Explore",
+                    "ref": "/track.html"
+                },
+                "image": "/assets/images/projects/success-projects/slider-group/companies/company1.png"
+            },
+            "stats": [
+                {
+                    "value": "200+",
+                    "label": "Impact criteria",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices."
+                },
+                {
+                    "value": "97%",
+                    "label": "Impact criteria",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices."
+                },
+                {
+                    "value": "34+",
+                    "label": "Impact criteria",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices."
+                }
+            ]
+        }
+    ]
+}

@@ -127,7 +127,7 @@
 
 .features-home .tag {
   cursor: default;
-  background-color: var(--bg-dark);
+  background-color: var(--secondary-color);
   border: 1.5px solid var(--border-color);
   border-radius: 9999px;
   color: var(--light-text);

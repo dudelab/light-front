@@ -1,0 +1,80 @@
+{
+    "title": "Ultime opportunità per bandi e finanziamenti",
+    "cta": {
+        "link": "#",
+        "text": "Vedi tutti"
+    },
+    "cards":[
+        {
+            "type": "image-item",
+            "image": "/assets/images/articles/art1.png",
+            "tags":[
+                {
+                    "icon": "fa-bullhorn",
+                    "type": "status",
+                    "text": "Open"
+                },
+                {
+                    "icon": "fa-flag",
+                    "type": "",
+                    "text": "Apertura Candidature - 30/01/2024"
+                },
+                {
+                    "icon": "fa-hourglass",
+                    "type": "bordered",
+                    "text": "Chiusura Candidature - 30/01/2025"
+                }
+            ],
+            "title": "Bandi in Scadenza",
+            "description": "Il presente bando si inserisce nell’ambito interventi di attuazione legati al PNRR – Next Generation EU I2.3M4C2, secondo quanto previsto dal Decreto Ministeriale e dalla Convenzione di sovvenzione per la regolamentazione dei rapporti di attuazione, gestione e controllo relativi al programma di attività presentato da MADE e sottoscritta con il MIMIT in data 23 maggio 2023, così come integrata con l’Addendum sottoscritto in data 20 dicembre 2024.",
+            "cta": {
+                "link": "",
+                "text": "Esplora"
+            }
+        },
+        {
+            "type": "",
+            "image": "",
+            "tags":[
+                {
+                    "icon": "fa-bullhorn",
+                    "type": "status",
+                    "text": "Open"
+                },
+                {
+                    "icon": "fa-hourglass",
+                    "type": "bordered",
+                    "text": "Chiusura Candidature - 31/12/2025"
+                }
+            ],
+            "title": "Bando per la selezione di progetti di ricerca industriale, sviluppo sperimentale e studi di fattibilità (MADE 7)",
+            "description": "Il presente bando si inserisce nell’ambito interventi di attuazione legati al PNRR – Next Generation EU I2.3M4C2, secondo quanto previsto dal Decreto Ministeriale e dalla Convenzione di sovvenzione per la regolamentazione dei rapporti di attuazione, gestione e controllo relativi al programma di attività presentato da MADE e sottoscritta con il MIMIT in data 23 maggio 2023, così come integrata con l’Addendum sottoscritto in data 20 dicembre 2024",
+            "cta": {
+                "link": "",
+                "text": "Esplora"
+            }
+        },
+        {
+            "type": "",
+            "image": "",
+            "tags":[
+                {
+                    "icon": "fa-bullhorn",
+                    "type": "status",
+                    "text": "Open"
+                },
+                {
+                    "icon": "fa-hourglass",
+                    "type": "bordered",
+                    "text": "Chiusura Candidature - 15/02/2025"
+                }
+            ],
+            "title": "MADE rendicontazione SAL2 (MADEREND2)",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.t",
+            "cta": {
+                "link": "",
+                "text": "Esplora"
+            }
+        }
+    ]
+}

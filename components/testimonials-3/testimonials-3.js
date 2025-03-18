@@ -11,6 +11,11 @@ if (typeof ComponentRegistry !== 'undefined') {
    (function() {
        function initTestimonials3(element, data) {
            const testimonials = element.querySelectorAll('.testimonial');
+           if (!testimonials || testimonials.length === 0) {
+            console.warn('Nessun elemento testimonial trovato');
+            return;
+            }
+        
            
            testimonials.forEach((testimonial, index) => {
                if (index % 2 !== 0) {

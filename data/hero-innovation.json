@@ -1,0 +1,36 @@
+{
+    "title": "MADE 4 Innovazione",
+    "subtitle": "Tecnologia, strategia e visione: il nostro approccio per guidare l’innovazione e creare valore per le imprese.",
+    "slides": [
+        {
+            "image": "/assets/images/hero/hero-tech.png",
+            "title": "Robotica Collaborativa",
+            "tags": ["Progetto"] 
+        },
+        {
+            "image": "/assets/images/hero/hero-tech.png",
+            "title": "Robotica Collaborativa",
+            "tags": ["Progetto"] 
+        },
+        {
+            "image": "/assets/images/hero/hero-tech.png",
+            "title": "Robotica Collaborativa",
+            "tags": ["Progetto"] 
+        },
+        {
+            "image": "/assets/images/hero/hero-tech.png",
+            "title": "Robotica Collaborativa",
+            "tags": ["Progetto"] 
+        },
+        {
+            "image": "/assets/images/hero/hero-tech.png",
+            "title": "Robotica Collaborativa",
+            "tags": ["Progetto"] 
+        },
+        {
+            "image": "/assets/images/hero/hero-tech.png",
+            "title": "Robotica Collaborativa",
+            "tags": ["Progetto"] 
+        }
+    ]
+}

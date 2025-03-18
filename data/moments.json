@@ -1,0 +1,69 @@
+{
+    "title": "Scopri i momenti più significativi dei nostri eventi",
+    "items": [
+        {
+            "image": "/assets/images/hero/hero-investment-bg.png",
+            "date": "12/02/25 - 18:00",
+            "tags": [
+                {
+                    "icon": "fa-location-dot",
+                    "text": "Made Center"
+                },
+                {
+                    "icon": "fa-clock",
+                    "text": "2:30 hr"
+                }
+            ],
+            "title": "Robotica collaborativa",
+            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla."
+        },
+        {
+            "image": "/assets/images/hero/hero-investment-bg.png",
+            "date": "12/02/25 - 18:00",
+            "tags": [
+                {
+                    "icon": "fa-location-dot",
+                    "text": "Made Center"
+                },
+                {
+                    "icon": "fa-clock",
+                    "text": "2:30 hr"
+                }
+            ],
+            "title": "Robotica collaborativa",
+            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla."
+        },
+        {
+            "image": "/assets/images/hero/hero-investment-bg.png",
+            "date": "12/02/25 - 18:00",
+            "tags": [
+                {
+                    "icon": "fa-location-dot",
+                    "text": "Made Center"
+                },
+                {
+                    "icon": "fa-clock",
+                    "text": "2:30 hr"
+                }
+            ],
+            "title": "Robotica collaborativa",
+            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla."
+        },
+        {
+            "image": "/assets/images/hero/hero-investment-bg.png",
+            "date": "12/02/25 - 18:00",
+            "tags": [
+                {
+                    "icon": "fa-location-dot",
+                    "text": "Made Center"
+                },
+                {
+                    "icon": "fa-clock",
+                    "text": "2:30 hr"
+                }
+            ],
+            "title": "Robotica collaborativa",
+            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla."
+        }
+    ]
+}

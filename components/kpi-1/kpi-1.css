@@ -53,10 +53,9 @@
 
 .kpi-1-card {
   background-color: var(--bg-dark-3);
-  display: flex;
-  flex-direction: column;
-  padding: 30px 25px;
-  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 48px;
+  padding: var(--padding-sm);
   gap: 30px;
   border-radius: var(--radius-lg);
   border: 1px solid #101870;
@@ -74,6 +73,7 @@
   font-size: 17px;
   font-weight: 500;
   margin: 0;
+  align-self: end;
 }
 
 
@@ -93,7 +93,7 @@
     align-items: start;
     gap: 36px;
     display: grid;
-    gap: 1.5em;
+    gap: 2.3em;
     grid-template-columns: 1fr 65%;
   }
 
@@ -103,11 +103,11 @@
   }
 
   .kpi-1-title{
-    font-size: 36px;
+    font-size: 48px;
   }
 
   .kpi-1-text{
-    font-size: 14px;
+    font-size: 21px;
     line-height: 1.5;
   }
 
@@ -119,17 +119,17 @@
   }
 
   .kpi-1-card{
-    padding: 18px;
-    gap: 1.2rem;
+    padding: 2em;
+    gap: .6rem;
   }
 
   .kpi-1-card-value{
-    font-size: 45px;
+    font-size: 58px;
     line-height: 1;
   }
 
   .kpi-1-card-label{
-    font-size: 13.5px;
+    font-size: 16px;
   }
 
 }

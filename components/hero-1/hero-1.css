@@ -4,8 +4,9 @@
     min-height: 300px;
     border-radius: var(--radius-lg);
     gap: 64px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 5em;
+    margin-bottom: 3em;
+    padding-top: var(--padding-md);
 }
 
 .hero-1 .content{
@@ -75,9 +76,12 @@
 }
 
 
+@media (min-width: 768px) {
 
-
-
+    .hero-1 .title{
+        font-size: 48px;
+    }
+}
 
 @media (min-width: 1024px) {
     .hero-1 {

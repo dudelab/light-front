@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandi e finanziamenti</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="/js/components.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Header -->
+        <div data-component="header" data-endpoint="menu"></div>
+        
+        <div class="breadcrumbs">
+            <a href="home.html">
+                <img src="/assets/icons/home-line.png" alt="">
+            </a>
+            <img src="/assets/icons/slash-divider.png" alt="">
+            Bandi e finanziamenti
+        </div>
+
+    
+        <div class="section-wrapper">
+            <div class="work-in-progress" data-component="hero-tenders" data-endpoint="hero-tenders"></div> 
+            <div data-component="statistics" data-endpoint="statistics-tenders"></div>
+
+            <div class="work-in-progress m-t-lg"   data-component="single-card-slider-announcement-card" data-endpoint="single-slider-events"></div>
+
+            <div data-component="features-1" data-endpoint="features-education"></div>
+
+            <div class="component-error work-in-progress under-construction">Under construction</div>
+
+            <div data-component="single-card-slider" data-endpoint="slider-tenders" ></div>
+
+            <div data-component="cards-carousel" class="blue-cards" data-endpoint="carousel-competence"></div>
+
+            <div class="work-in-progress" data-component="testimonials-3" data-endpoint="services-testimonials"></div>
+
+            <div data-component="faq" data-endpoint="service-faq"></div>
+
+
+            
+        </div>
+
+
+        <!-- Footer -->
+        <div data-component="footer"></div>
+    </div>
+
+</body>
+</html>

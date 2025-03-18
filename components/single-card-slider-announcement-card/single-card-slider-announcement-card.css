@@ -70,7 +70,7 @@
     display: grid;
     background: var(--h-color);
     gap: 1em;
-    grid-template-rows: 1fr 36px;
+    grid-template-rows: 1fr auto;
     padding: 1em;
   }
 
@@ -126,7 +126,6 @@
 
   .announcements-slider-card .actions {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 1em;
   }
   .announcements-slider-card .cta-btn {
@@ -134,14 +133,25 @@
   }
 
 
+@media (min-width: 768px) {
+  .announcements-slider-card .content {
+    grid-template-rows: 1fr 36px;
+  }
+  .announcements-slider-card .actions {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (min-width: 1024px) {
   .announcements-slider-card .top {
     grid-template-columns: 1fr 1fr;
+    gap: 0;
   }
   .announcements-slider-card .card {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+
   .announcements-slider-card .card .pic img {
     min-height: 100%;
   }

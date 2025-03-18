@@ -1,0 +1,50 @@
+.statistics-2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.statistics-2 .item{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+    width: 100%;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--text-color-brand-700);
+    background-color: var(--primary-color);
+
+}
+
+
+
+
+.statistics-2 .item .value{
+    font-family: 'Monoska', sans-serif;
+    font-size: 50px;
+    font-weight: 300;
+    color: var(--h-color);
+    margin: 0;
+}
+
+.statistics-2 .item .label{
+    font-size: clamp(16px, 1.5vw, 18px);
+    font-weight: 500;
+    color: var(--h-color);
+    margin: 0;
+}
+
+
+
+
+@media(min-width: 1024px) {
+
+
+    .statistics-2 {
+        display: grid;
+        grid-template-columns: repeat(4, 23.7%);
+        padding: 64px 0;
+    }
+}

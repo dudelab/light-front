@@ -1,0 +1,37 @@
+<div class="single-group">
+    <div class="company-card">
+        <div class="section">
+            <div class="section-tag">{{companyTag}}</div>
+            <h4>{{companyName}}</h4>
+        </div>
+        <separator></separator>
+        <div class="section">
+            <div class="section-tag">{{partnerTag}}</div>
+            <h4>{{partnerName}}</h4>
+        </div>
+    </div>
+
+    <div class="main-card">
+        <div class="image" style="background-image: url({{mainCard.image}});">
+            <div class="tags">
+                <div class="tag" v-for="tag in mainCard.tags">{{tag}}</div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="head">
+                <h2 class="title">{{mainCard.title}}</h2>
+                <p class="description">{{mainCard.description}}</p>
+            </div>
+            <a class="link" href="{{mainCard.cta.ref}}">{{mainCard.cta.label}} <i class="fas fa-arrow-up rotate-45"></i></a>
+        </div>
+    </div>
+
+    <div class="stats-container">
+        <div class="stat-card" v-for="stat in stats">
+            <h3 class="value">{{stat.value}}</h3>
+            <p class="label">{{stat.label}}</p>
+            <p class="description">{{stat.description}}</p>
+        </div>
+
+    </div>
+</div>

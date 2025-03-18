@@ -1,0 +1,142 @@
+.sectors{
+    margin: 160px 0px 150px 0px;
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    padding: 8px 0;
+}
+
+.sectors .head{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sectors .head .title{
+    margin: 0;
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--h-color);
+}
+
+.sectors .subtitle{
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--p-color);
+}
+
+
+.sectors .carousel-wrapper {
+    position: relative;
+    padding: 12px;
+    display: flex; 
+    flex-direction: column; 
+    gap:24px;
+}
+
+.sectors .content .inner-content .carousel-wrapper .title{
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--light-text-2);
+    z-index: 1;
+    margin: 0;
+}
+
+.sectors .carousel-wrapper .container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; 
+    scroll-behavior: smooth;
+    gap: 20px;
+    margin-right: -40px;
+    padding-right: 40px;
+    z-index: 1;
+}
+
+.sectors .carousel-wrapper .container::-webkit-scrollbar {
+    display: none; 
+}
+    
+.sectors .card-item {
+    flex: 0 0 302px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 240px;
+    padding: 16px;
+
+    border: 1px solid var(--text-color-brand-700);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(360deg, #D1E0FF 0%, #84ADFF 100%);
+}
+
+.sectors .carousel-wrapper .container .card-item .title{
+    font-size: 24px;
+    color: var(--dark-text);
+    font-weight: 500;
+    margin: 0;
+}
+
+.sectors .card-item .description{
+    font-size: 16px;
+    color: var(--primary-color);
+    font-weight: 400;
+    margin: 0;
+    
+}
+    /*Pulsanti di navigazione */
+.sectors .carousel-wrapper .controls {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 12px 36px;
+    gap: 10px;
+    background-color: var(--bg-dark-3);
+    border: 1px solid var(--text-color-brand-700);
+    border-radius: var(--radius-sm);
+    height: 187px;
+    width: 100%;
+    z-index: 0;
+    bottom: -60px;
+    right: 0px;
+}
+
+.sectors .carousel-wrapper .controls div {
+    background-color: var(--dark-text);
+    color: white;
+    border: 1px solid var(--border-color-2);
+    padding: 8px 12.65px;
+    cursor: pointer;
+    border-radius: var(--radius-rounded);
+    font-size: 13px;
+    font-weight: 100;
+    height: fit-content;
+}
+
+
+@media(min-width: 1024px) {
+
+    .sectors .head{
+        padding: 16px 0;
+        gap: 24px;
+    }
+    
+    .sectors .head .title{
+        font-size: 48px;
+    }
+
+    .sectors .card-item {
+        flex: 0 0 31%;
+        height: 320px;
+    }
+
+    .sectors .content .inner-content .carousel-wrapper .title{
+        font-size: 24px;
+    }
+
+    .sectors .carousel-wrapper .container .card-item .title{
+        font-size: 30px;
+    }
+}

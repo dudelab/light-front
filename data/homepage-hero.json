@@ -1,9 +1,129 @@
 {
-  "title": "Costruiamo innovazione per il tuo successo.",
-  "text": "Da sfide complesse a storie di successo, in MADE4.0 uniamo tecnologia e strategia per far crescere la tua azienda.",
-  "cta": {
-      "text": "Di cosa ha bisogno la tua azienda?",
-      "link": "news.html"
-  },
-  "background": "/assets/images/hero/hero-bg.jpg"
+  "slides": [
+    {
+      "cardType": "plain",
+      "navigationIcon": "fa-solid fa-house",
+      "title": "Costruiamo innovazione per il tuo successo.",
+      "text": "Da sfide complesse a storie di successo, in MADE4.0 uniamo tecnologia e strategia per far crescere la tua azienda.",
+      "cta": {
+          "text": "Di cosa ha bisogno la tua azienda?",
+          "link": "news.html",
+          "icon": "fas fa-paper-plane"
+      },
+      "background": "/assets/images/hero/hero-1.png"
+    },
+    {
+      "cardType": "detailed",
+      "navigationIcon": "fa-solid fa-calendar",
+      "title": "AI Matters per la manifattura del futuro.",
+      "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+      "cta": {
+          "text": "Partecipa",
+          "link": "#"
+      },
+      "subHeader": "Eventi in evidenza",
+      "subCta": {
+        "text": "Tutti gli eventi",
+        "link": "#"
+      },
+      "updates": [
+        { 
+          "icon": "fa-solid fa-calendar",
+          "text": "24/02/2025 - 18:00",
+          "active": "true"
+        },
+        { 
+          "icon": "fa-solid fa-location-dot",
+          "text": "Made Center",
+          "active": "false"
+        },
+        { 
+          "icon": "fa-solid fa-clock",
+          "text": "2:30",
+          "active": "false"
+        }
+      ],
+      "background": "/assets/images/hero/hero-2.png"
+    },
+    {
+      "cardType": "detailed",
+      "navigationIcon": "fa-solid fa-rocket",
+      "title": "Sistema di tracciamento",
+      "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+      "cta": {
+          "text": "Partecipa",
+          "link": "#"
+      },
+      "subHeader": "Eventi in evidenza",
+      "subCta": {
+        "text": "Tutti gli eventi",
+        "link": "#"
+      },
+      "updates": [
+        { 
+          "text": "Pubblicato il 24/02/25 - 18:30",
+          "active": "true"
+        }
+      ],
+      "tags": [
+        {
+          "icon": "",
+          "text": "Tag di servizio"
+        },
+        {
+          "icon": "",
+          "text": "Tag di Tecnologie e processi"
+        },
+        {
+          "icon": "",
+          "text": "Tag di Settore industrale"
+        },
+        {
+          "icon": "",
+          "text": "Tag di Area d’impatto"
+        },
+        {
+          "icon": "",
+          "text": "Dimensione dell’impresa"
+        }
+      ],
+      "company": {
+        "tag": "Nome dell’impresa",
+        "name": "Teseao S.p.A"
+      },
+      "partner": {
+        "tag": "Partner",
+        "name": "Avvale"
+      },
+      "background": "/assets/images/hero/hero-3.png"
+    },
+    {
+      "cardType": "detailed",
+      "navigationIcon": "fa-solid fa-graduation-cap",
+      "title": "Corso per il Products Designs in today’s industries.",
+      "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+      "cta": {
+          "text": "Iscriviti",
+          "link": "#"
+      },
+      "subHeader": "Eventi in evidenza",
+      "subCta": {
+        "text": "Tutti gli eventi",
+        "link": "#"
+      },
+      "updates": [
+        { 
+          "icon": "fa-solid fa-calendar",
+          "text": "24/02/2025 - 18:00",
+          "active": "true"
+        },
+        { 
+          "icon": "fa-solid fa-location-dot",
+          "text": "Made Center",
+          "active": "false"
+        }
+      ],
+      "background": "/assets/images/hero/hero-4.png"
+    }
+  ]
 }

@@ -1,0 +1,41 @@
+.themes {
+  padding: 3em;
+  background-color: var(--primary-color);
+  background: url(/assets/images/elements/curly-bg.png) top right/cover var(--primary-color);
+  background-repeat: no-repeat;
+  display: grid;
+  gap: 2em;
+}
+
+.themes h2 {
+  /* color: var(--colors-text-text-primary-900, #F9FAFB); */
+  font-size: 46px;
+  font-weight: 500;
+  letter-spacing: -0.96px;
+}
+
+.themes .bullets {
+  display: grid;
+  gap: 3em;
+}
+
+.themes .bullets ul {
+  color: var(--a-color);
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0 1.5em;
+  margin: 0;
+}
+.themes .bullets ul li {
+  padding-block: .3em;
+}
+
+@media (min-width: 1024px) {
+  .themes {
+    padding: 80px 64px 64px;
+  }
+
+  .themes .bullets {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

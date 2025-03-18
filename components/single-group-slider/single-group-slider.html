@@ -1,0 +1,20 @@
+<div class="single-group-slider">
+
+    <h2 class="title">{{title}}</h2>
+
+    <div class="carousel" data-carousel>
+        <div class="slides" data-carousel-slides-container>
+          <div v-for="slide in slides" class="slide">
+            <div data-component="single-group" data-object="{{slide}}"></div>
+          </div>
+          <!-- Add more slides here -->
+        </div>
+        <div class="carousel-pagination" data-carousel-pagination>
+          <!-- Dots will be dynamically added here -->
+          <div class="carousel-dot"></div>
+          <div class="carousel-dot"></div>
+        </div>
+      </div>
+
+
+</div>

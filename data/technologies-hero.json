@@ -1,0 +1,46 @@
+{
+    "title": "Tecnologie e processi per la crescita della tua azienda",
+    "subtitle": "Abbiamo esperienza con diverse soluzioni e metodologie. Scopri quelle più adatte alle tue esigenze.",
+    "technologies": [
+        {
+            "background": "/assets/images/features/ai.png",
+            "link": "technology-detail.html",
+            "text": "Ai"
+        },
+        {
+            "background": "/assets/images/features/ai.png",
+            "link": "technology-detail.html",
+            "text": "Sviluppo di prodotto"
+        },
+        {
+            "background": "/assets/images/features/ai.png",
+            "link": "technology-detail.html",
+            "text": "Infrastrutture connesse"
+        },
+        {
+            "background": "/assets/images/features/ai.png",
+            "link": "technology-detail.html",
+            "text": "IoT - Smart connected products"
+        },
+        {
+            "background": "/assets/images/features/ai.png",
+            "link": "technology-detail.html",
+            "text": "Logistica"
+        },
+        {
+            "background": "/assets/images/features/ai.png",
+            "link": "technology-detail.html",
+            "text": "Manutenzione"
+        },
+        {
+            "background": "/assets/images/features/ai.png",
+            "link": "technology-detail.html",
+            "text": "Produzione Smart"
+        },
+        {
+            "background": "/assets/images/features/ai.png",
+            "link": "technology-detail.html",
+            "text": "Qualità"
+        }
+    ]
+}

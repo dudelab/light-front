@@ -1,0 +1,37 @@
+<div class="hero-technology">
+
+    <div class="carousel" data-carousel>
+        <div class="slides" data-carousel-slides-container>
+            <div v-for="slide in slides" class="slide" style="background-image: url({{slide.image}});">
+
+                <div class="image-content">
+                    <div v-if="slide.tags" class="tags">
+                      <span v-for="tag in slide.tags" class="tag">{{ tag }}</span>
+                    </div>
+                    <div class="title">{{slide.title}}</div>
+
+                </div>
+            
+              <!--
+            -->
+
+            </div>
+
+        </div>
+        <div class="carousel-pagination" data-carousel-pagination>
+            <div class="carousel-dot"></div>
+            <div class="carousel-dot"></div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="text">
+            <h2 class="title">{{title}}</h2>
+            <p class="subtitle">{{subtitle}}</p>
+            <div v-if="points" class="point" v-for="point in points">
+                <div class="check"></div>
+                <div class="description">{{point}}</div>
+            </div>
+        </div>
+    </div>
+</div>

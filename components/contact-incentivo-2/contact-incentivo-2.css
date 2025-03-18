@@ -1,0 +1,111 @@
+.contact-incentivo {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 64px;
+    
+    margin: 90px 0;
+    padding: 64px 18px;
+
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .contact-incentivo .overlay {
+    background: center/cover rgba(12,9,47, 0.75);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+  
+  .contact-incentivo .content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    z-index: 1;
+  }
+  
+  .contact-incentivo .title {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--h-color);
+  }
+
+  
+  .contact-incentivo .text {
+    font-size: 18px;
+    font-weight:300;
+    color: var(--light-text-3);
+  }
+
+
+
+
+
+  .contact-incentivo .popup-container{
+    z-index: 1;
+  }
+
+
+
+  
+  .contact-incentivo .form{
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    gap: 32px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var( --bg-dark-3);
+    background-color: var(--secondary-color);
+    height: 730px;
+    width: 100%;
+  }
+
+
+
+
+  
+
+@media (min-width: 1024px) {
+  .contact-incentivo {
+    padding: 4em;
+    flex-direction: row;
+  }
+    .contact-incentivo .popup-container{
+      min-width: 46.1%;
+      display: flex;
+    }
+
+    
+
+    
+    .contact-incentivo .form{
+      padding: 24px;
+    }
+      
+
+    .contact-incentivo .content{
+        width: 51%;
+    }
+
+    .contact-incentivo .title{
+        font-size: 48px;
+    }
+
+    .contact-incentivo .text{
+        font-size: 20px;
+    }
+
+  
+  
+  }
+
+  
+@media (min-width: 1200px) {
+  
+
+} 

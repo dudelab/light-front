@@ -7,11 +7,9 @@
       </a>
   </div>
   <div class="kpi-1-cards">
-      <div v-for="card in cards">
-        <div class="kpi-1-card">
-          <p class="kpi-1-card-value text-white">{{ card.value }}</p>
-          <p class="kpi-1-card-label text-white">{{ card.label }}</p>
-        </div>
-      </div>
+    <div v-for="card in cards" class="kpi-1-card">
+      <p class="kpi-1-card-value text-white">{{ card.value }}</p>
+      <p class="kpi-1-card-label text-white">{{ card.label }}</p>
+    </div>
   </div>
 </div>

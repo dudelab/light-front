@@ -1,0 +1,21 @@
+<div class="sectors">
+
+    <div class="head">
+        <h2 class="title">{{title}}</h2>
+        <p class="subtitle">{{subtitle}}</p>
+    </div>
+
+    <div class="carousel-wrapper">
+        <h3 class="title">{{titleItems}}</h3>
+        <div class="container">
+            <div v-for="item in items" class="card-item">
+                <h4 class="title">{{item.title}}</h4>
+                <p v-if="item.description" class="description">{{item.description}}</p>
+            </div>
+        </div>
+        <div class="controls">
+            <div class="prev"><i class="fa-solid fa-chevron-left"></i></div>
+            <div class="next"><i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+    </div>
+</div>

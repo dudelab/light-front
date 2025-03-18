@@ -1,0 +1,19 @@
+{
+    "features": [
+        {
+            "icon": "/assets/icons/check-heart.png",
+            "subject": "Step 1: Analisi dei bisogni aziendali",
+            "paragraph": "Valutazione delle esigenze aziendali e definizione degli obiettivi formativi."
+        },
+        {
+            "icon": "/assets/icons/brush.png",
+            "subject": "Step 2: Progettazione del corso personalizzato",
+            "paragraph": "Creazione di un percorso personalizzato con contenuti, modalità e tempistiche su misura."
+        },
+        {
+            "icon": "/assets/icons/user-check.png",
+            "subject": "Step 3: Erogazione e monitoraggio",
+            "paragraph": "Realizzazione del corso e valutazione dei risultati per garantire il raggiungimento degli obiettivi."
+        }
+    ]
+}

@@ -1,12 +1,12 @@
 <div class="comments carousel" comments-carousel>
     <div class="comments-container slides" comments-carousel-container>
         <div class="comment slide" v-for="comment in comments">
-            <div class="title">{{comment.title}}</div>
+            <h2 class="title">{{comment.title}}</h2>
             <div class="profile">
                 <div class="picture" style="background-image: url({{comment.image}});"></div>
                 <div class="infos">
-                    <div class="name">{{comment.name}}</div>
-                    <div class="roles">{{comment.roles}}</div>
+                    <span class="name">{{comment.name}}</span>
+                    <span class="roles">{{comment.roles}}</span>
                 </div>
             </div>
         </div>

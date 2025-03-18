@@ -74,7 +74,7 @@
           "subtitle": "Excepteur sint occaecat cupidatat non proident. Sint cupidatat non proident. Excepteur sint occaecat non proident.",
           "cta": {
             "label": "Scopri tutte le Tecnologie e i Processi",
-            "url": "#"
+            "url": "technologies.html"
           }
         },
         "categories": [
@@ -83,7 +83,7 @@
               {
                 "label": "Intelligenza Artificiale",
                 "subtitle": "Come utilizzamo l’intelligenza articiale per te.",
-                "url": "#"
+                "url": "technology-detail.html"
               },
               {
                 "label": "Sviluppo di prodotto",
@@ -142,12 +142,12 @@
               {
                 "label": "Eventi",
                 "subtitle": "Lorem Ipsum",
-                "url": "#"
+                "url": "events.html"
               },
               {
                 "label": "Progetti di successo",
                 "subtitle": "Lorem Ipsum",
-                "url": "#"
+                "url": "success-projects.html"
               },
               {
                 "label": "Blog",
@@ -157,12 +157,12 @@
               {
                 "label": "News",
                 "subtitle": "Lorem Ipsum",
-                "url": "#"
+                "url": "news.html"
               },
               {
                 "label": "Bandi e finanziamenti",
                 "subtitle": "Lorem Ipsum",
-                "url": "#"
+                "url": "tenders.html"
               }
             ]
           }
@@ -181,7 +181,7 @@
             "title": "Innovazione",
             "subtitle": "Controlla tutto, efficacemente.",
             "img": "/assets/images/menu/innovation.png",
-            "url": "#"
+            "url": "innovation.html"
           },
           {
             "title": "Sostenibilità",

@@ -1,15 +1,22 @@
 <div class="cards-carousel">
-    <div class="cards-carousel-header">
-      <div class="cards-carousel-title">{{ title }}</div>
-      <div class="cards-carousel-subtitle">
-        <div class="cards-carousel-types">
+    <div class="header">
+      <div class="title">{{ title }}</div>
+      <div class="subtitle">
+        <div v-if="types.length > 1" class="types">
           <div v-for="(type, index) in types" 
-               class="cards-carousel-type" 
-               data-link-type="{{index}}">
+               class="type" 
+               data-link-type="{{index}}"
+               data-link-text="{{type.ctaText}}"
+               data-link="{{type.link}}">
             {{ type.name }}
           </div>
         </div>
-        <a href="{{ types[0].link }}" data-current-type="0" class="cards-carousel-link">
+        <div v-if="types.length < 2" style="align-self: center;">
+          <span v-if="subtitle">{{subtitle}}</span>
+        </div>
+      </div>
+      <div class="cta-container">
+        <a v-if="ctaLabel" href="{{ types[0].link }}" data-current-type="0" class="link">
           <span class="text">Vai a {{ types[0].name.toLowerCase() }}</span>
           <i class="fa-solid fa-arrow-up rotate-45"></i>
         </a>
@@ -17,33 +24,38 @@
     </div>
     
     <div class="carousel-wrapper">
-      <div class="cards-carousel-container" v-for="(type, index) in types" data-type="{{index}}">
+      <div class="container" v-for="(type, index) in types" data-type="{{index}}">
         <div v-for="item in type.items" class="card-item">
-          <div class="card-item-image" style="background-image: url({{item.image}})">
-            <div class="card-item-image-tags">
-              <span v-for="tag in item.imageTag" class="card-item-image-tag">{{ tag }}</span>
+          <div class="image" style="background-image: url({{item.image}})">
+            <div class="image-tags">
+              <span v-for="tag in item.imageTag" class="image-tag">{{ tag }}</span>
             </div>
           </div>
-          <div class="card-item-infos">
-            <div class="card-item-tag-container">
-              <div class="card-item-date-c" v-if="item.date">
-                <div class="card-item-date">
-                  <i class="fa-solid fa-calendar"></i> {{ item.date }}
+          <div class="infos">
+            <div class="details">
+              <div v-if="item.tags || item.date" class="tag-container">
+                <div class="date-c" v-if="item.date">
+                  <div class="date">
+                    <i class="fa-solid fa-calendar"></i> {{ item.date }}
+                  </div>
+                </div>
+                <div v-if="item.tags" class="tags">
+                  <span v-for="tag in item.tags" class="tag">
+                    <i v-if="tag.icon" class="fas {{ tag.icon }}"> </i>
+                    {{ tag.text }}
+                  </span>
                 </div>
               </div>
-              <div class="card-item-tags">
-                <span v-if="item.tag" class="card-item-tag">{{ item.tag }}</span>
-              </div>
+              <div class="title">{{ item.text }}</div>
+              <div v-if="item.description" class="description">{{ item.description }}</div>
             </div>
-            <div class="card-item-title">{{ item.text }}</div>
-            <div class="card-item-description">{{ item.description }}</div>
-            <a class="card-item-link" href="{{ item.link }}">
+            <a class="link" href="{{ item.link }}">
               {{ctaLabel}} <i class="fa-solid fa-arrow-up rotate-45"></i>
             </a>
           </div>
         </div>
       </div>
-      <div class="cards-carousel-controls">
+      <div class="controls">
         <div class="prev"><i class="fa-solid fa-chevron-left"></i></div>
         <div class="next"><i class="fa-solid fa-chevron-right"></i></div>
       </div>

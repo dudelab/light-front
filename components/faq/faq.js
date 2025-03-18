@@ -11,10 +11,19 @@ if (typeof ComponentRegistry !== 'undefined') {
    (function() {
      function initFaq(element, data) {
 
-       element.querySelectorAll('.toggle').forEach(toggle=>{
+       const toggles = element.querySelectorAll('.toggle');
+       if (!toggles || toggles.length === 0) {
+        console.warn('Nessun elemento toggle trovato nella FAQ');
+        return;
+      }
+       toggles.forEach(toggle=>{
         
           const myDiv = element.querySelector(`#dropdown-${toggle.id}`);
           const icon = element.querySelector(`#toggleIcon-${toggle.id}`);
+          if (!myDiv || !icon) {
+            console.warn(`Elementi correlati non trovati per il toggle con ID: ${toggle.id}`);
+            return;
+          }
           
             toggle.addEventListener('click', function() {
                 myDiv.classList.toggle('visible');

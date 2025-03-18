@@ -1,7 +1,10 @@
 {
     "title": "Un viaggio nel nostro Competence Center",
     "subtitle": "Immergiti nelle nostre 8 aree tecnologiche attraverso innovazione, tecnologie e processi all’avanguardia.",
-    "link": "/technologies",
+    "link": {
+        "label": "Esplora tutte le aree e processi",
+        "ref": "/technologies"
+    },
     "items": [
         {
             "id": "01",

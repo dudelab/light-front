@@ -1,0 +1,23 @@
+{
+    "title": "I numeri che raccontano il nostro impatto.",
+    "text": "Scopri come i nostri percorsi formativi generano valore misurabile e risultati concreti.",
+    "cta": {},
+    "cards": [
+        {
+            "value": "200+",
+            "label": "Competenze certificate nel 2024"
+        },
+        {
+            "value": "99%",
+            "label": "Tasso di applicazione delle competenze apprese"
+        },
+        {
+            "value": "34+",
+            "label": "Corsi co-finanziati"
+        },
+        {
+            "value": "100+",
+            "label": "Dipendenti formati"
+        }
+    ]
+}

@@ -16,7 +16,7 @@ if (typeof ComponentRegistry !== 'undefined') {
     const defaultConfig = {
         speed: 1,
         height: '50px',
-        size: 0.7,
+        size: 0.8,
         spacing: 30
     };
 
@@ -79,9 +79,19 @@ if (typeof ComponentRegistry !== 'undefined') {
             const tempContainer = document.createElement('div');
             tempContainer.innerHTML = originalHTML;
             
-            return Array.from(tempContainer.querySelectorAll('.item')).map(item => {
+            const items = tempContainer.querySelectorAll('.item');
+            if (!items || items.length === 0) {
+                console.warn('No .item elements found in logo strip');
+                return [];
+            }
+
+            return Array.from(items).map(item => {
                 const img = item.querySelector('img');
                 const link = item.querySelector('a');
+                if (!img) {
+                    console.warn('Missing image element in logo strip item');
+                    return null;
+                }
                 return {
                     image: img.src,
                     url: link ? link.href : null,

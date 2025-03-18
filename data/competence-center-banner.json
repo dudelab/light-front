@@ -1,0 +1,28 @@
+{
+    "linkContent": {
+        "title": "Il nostro spazio a tua disposizione",
+        "ctaText": "Verifica la disponibilità ",
+        "popupTitle": "Raccontaci di cosa hai bisogno"
+    },
+    "title": "Porta i tuoi eventi nel nostro competence center",
+    "items": [
+        {
+            "image": "/assets/images/events/competence-center-1.png",
+            "title": "Conference Area",
+            "style": "",
+            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices."
+        },
+        {
+            "image": "/assets/images/events/competence-center-2.png",
+            "title": "Workshop Area",
+            "style": "down",
+            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices."
+        },
+        {
+            "image": "/assets/images/events/competence-center-3.png",
+            "title": "Auditorium",
+            "style": "",
+            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices."
+        }
+    ]
+}

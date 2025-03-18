@@ -1,0 +1,24 @@
+{
+    "items": [
+        {
+            "icon": "fa-solid fa-list-ul",
+            "value": "10+",
+            "label" : "Bandi published"
+        },
+        {
+            "icon": "fa-solid fa-euro-sign",
+            "value": "00 MIL",
+            "label" : "Funds made available"
+        },
+        {
+            "icon": "fa-solid fa-warehouse",
+            "value": "14",
+            "label" : "SMEs benefitted"
+        },
+        {
+            "icon": "fa-solid fa-rocket",
+            "value": "12",
+            "label" : "Industries impacted"
+        }
+    ]
+}

@@ -1,0 +1,100 @@
+.competence-center-banner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 128px 0;
+    background-color: var(--primary-color);
+
+    background-position: center;
+    background-size: cover;
+}
+
+.competence-center-banner .container{
+    display: flex;
+    flex-direction: column;
+    gap:24px;
+    padding: 8px 16px;
+    width: 100%;
+}
+
+.competence-center-banner .container .title{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--h-color);
+    margin: 0;
+}
+
+.competence-center-banner .container .item-container{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.competence-center-banner .container .item-container .item{
+    display: grid;
+    grid-template-rows: 200px 1fr;
+    height: fit-content;
+}
+
+.competence-center-banner .container .item-container .item .image{
+    background-position: center;
+    background-size: cover;
+
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.competence-center-banner .container .item-container .item .content{
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    gap: 12px;
+    background-color: var(--secondary-color);
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+
+.competence-center-banner .container .item-container .item .content .title-item{
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--light-text-3);
+    margin: 0;
+}
+
+.competence-center-banner .container .item-container .item .content .description{
+    font-size: 14px;
+    font-weight: 400;
+    color: var(---a-color);
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;  
+    text-overflow: ellipsis;
+    overflow-wrap: anywhere;
+    word-break: break-word; 
+    margin: 0;
+}
+
+.competence-center-banner .link{
+    margin: 0;
+}
+
+
+@media(min-width:1024px) {
+    .competence-center-banner .container .title{
+        font-size: 36px;
+        width: 50%;
+        align-self: center;
+    }
+    .competence-center-banner .container{
+        padding: 8px 64px;
+    }
+    .competence-center-banner .container .item-container{
+        flex-direction: row;
+        height: 372px;
+    }
+    .competence-center-banner .container .item-container .item.down{
+        align-self: flex-end;
+    }
+}

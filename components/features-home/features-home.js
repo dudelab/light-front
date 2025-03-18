@@ -17,11 +17,27 @@ class FeaturesHomeCarousel {
     constructor(carousel) {
         this.carousel = carousel;
         this.container = carousel.querySelector('.features-container');
+        if (!this.container) {
+            console.warn('FeaturesHomeCarousel: Elemento .features-container non trovato');
+            return;
+        }
         this.prevBtn = carousel.querySelector('.prev');
+        if (!this.prevBtn) {
+            console.warn('FeaturesHomeCarousel: Pulsante .prev non trovato');
+            return;
+        }
         this.nextBtn = carousel.querySelector('.next');
+        if (!this.nextBtn) {
+            console.warn('FeaturesHomeCarousel: Pulsante .next non trovato');
+            return;
+        }
         this.scrollAmount = 0;
 
         const cards = this.container.querySelectorAll('.card');
+        if (!cards || cards.length === 0) {
+            console.warn('FeaturesHomeCarousel: Nessuna card trovata nel container');
+            return;
+        }
         if (cards.length > 0) {
             cards[cards.length - 1].classList.add('last-item');
         }

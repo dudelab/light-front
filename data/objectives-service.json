@@ -1,8 +1,11 @@
 {
+    "title": "Di cosa ci occupiamo, nel dettaglio",
+    "image": "/assets/images/articles/art1.png",
     "objectives": [
         {
             "title": "Obiettivi cluster 1",
             "description": "Ti aiutiamo a trovare e ottenere i finanziamenti giusti per le tue idee innovative.",
+            "icon": "fa-calendar",
             "items":         
                 [
                     {
@@ -26,6 +29,7 @@
         {
             "title": "Obiettivi cluster 2",
             "description": "Non ti aiutiamo a trovare e ottenere i finanziamenti giusti per le tue idee innovative.",
+            "icon": "fa-user",
             "items":         
                 [
                     {

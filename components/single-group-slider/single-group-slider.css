@@ -1,0 +1,19 @@
+.single-group-slider{
+    margin: 120px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px
+}
+
+.single-group-slider .title{
+    color: var(--h-color);
+    font-size: 30px;
+    font-weight: 500;
+    margin: 0;
+}
+
+@media(min-width:1024px) {
+    .single-group-slider .title{
+        font-size: 48px;
+    }
+}

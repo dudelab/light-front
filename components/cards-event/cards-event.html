@@ -1,0 +1,30 @@
+<div class="cards-event">
+    <div class="header">
+        <div class="title">{{ title }}</div>
+    </div>
+    
+    <div class="container" >
+      <div v-for="item in items" class="card-item">
+        <div class="image" style="background-image: url({{item.image}})">
+          <div class="image-tags">
+            <span v-for="tag in item.imageTag" class="image-tag">{{ tag }}</span>
+          </div>
+        </div>
+        <div class="infos">
+          <div class="details">
+            <div class="tags" v-if="item.tags">
+                <div class="date">
+                    <i class="fa-solid fa-calendar"></i> {{ item.date }}
+                </div>
+            <span class="tag" v-for="tag in item.tags"><i v-if="tag.icon" class="fas {{tag.icon}}"></i> {{ tag.text }}</span>
+            </div>
+            <h2 class="title">{{ item.text }}</h2>
+            <p v-if="item.description" class="description">{{ item.description }}</p>
+          </div>
+          <a class="link" href="{{ item.link }}">
+            {{ctaLabel}} <i class="fa-solid fa-arrow-up rotate-45"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,124 @@
+{
+    "title": "Tecnologie e processi in questo ambito",
+    "subtitle": "Approfondisci come lavoriamo e quali esperienze abbiamo maturato.",
+    "types": [
+        {
+            "text": "Sistemi di assistenza all’operatore",
+            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices. Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+            "image": "/assets/images/technologies/qualita2.png",
+            "tags": ["Nome del Settore", "Nome del Settore", "Nome del Settore"],
+            "titleItems": "Aree tecnologica dedicata e asset fisici",
+            "items": [
+                {
+                    "title": "Stampa 3d metallica",
+                    "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give."
+                    
+                },
+                {
+                    "title": "Tomografia digitale computerizzata",
+                    "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give."
+                    
+                },
+                {
+                    "title": "Stampa 3d metallica",
+                    "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give."
+                    
+                },
+                {
+                    "title": "Stampa 3d metallica",
+                    "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give."
+                    
+                }
+            ]
+        },
+        {
+            "text": "Robotica collaborativa",
+            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices. Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+            "image": "/assets/images/projects/prj1.png",
+            "tags": ["Nome del Settore", "Nome del Settore", "Nome del Settore"],
+            "titleItems": "Aree tecnologica dedicata e asset fisici",
+            "items": [
+                {
+                    "title": "Stampa 3d metallica 2",
+                    "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give."
+                    
+                },
+                {
+                    "title": "Tomografia digitale computerizzata",
+                    "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give."
+                    
+                },
+                {
+                    "title": "Stampa 3d metallica",
+                    "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give."
+                    
+                },
+                {
+                    "title": "Stampa 3d metallica",
+                    "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give."
+                    
+                }
+            ]
+        },
+        {
+            "text": "Manifattura adattiva",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices. Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+                    "image": "/assets/images/projects/prj1.png",
+                    "tags": ["Nome del Settore", "Nome del Settore", "Nome del Settore"],
+                    "titleItems": "Aree tecnologica dedicata e asset fisici",
+            "items": [
+                {
+                    "title": "Stampa 3d metallica",
+                    "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give."
+                    
+                },
+                {
+                    "title": "Tomografia digitale computerizzata",
+                    "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give."
+                    
+                },
+                {
+                    "title": "Stampa 3d metallica",
+                    "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give."
+                    
+                },
+                {
+                    "title": "Stampa 3d metallica",
+                    "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give."
+                    
+                }
+            ]
+        },
+        {
+            "text": "Monitoraggio e controllo",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices. Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+                    "image": "/assets/images/projects/prj1.png",
+                    "tags": ["Nome del Settore", "Nome del Settore", "Nome del Settore"],
+                    "titleItems": "Aree tecnologica dedicata e asset fisici",
+            "items": [
+                {
+                    "title": "Stampa 3d metallica",
+                    "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give."
+                    
+                },
+                {
+                    "title": "Tomografia digitale computerizzata",
+                    "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give."
+                    
+                },
+                {
+                    "title": "Stampa 3d metallica",
+                    "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give."
+                    
+                },
+                {
+                    "title": "Stampa 3d metallica",
+                    "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give."
+                    
+                }
+            ]
+        }
+    ]
+
+}
+

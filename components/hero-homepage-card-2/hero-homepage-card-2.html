@@ -1,0 +1,23 @@
+<div class="hero-homepage-card-2" style="background: url([background]) center/cover;">
+  <div class="content">
+    <div class="details">
+      <div class="subheader">
+        <div class="sub-title">{{ subHeader }}</div>
+        <a v-if="subCta" class="link" href="{{ subCta.link }}">
+          {{ subCta.text }} <i class="fa-solid fa-arrow-up rotate-45"></i>
+        </a>
+      </div>
+      <div v-if="updates" class="updates">
+        <span v-for="update in updates" class="tag-chip"><i v-if="update.icon" class="{{ update.icon }}"> </i>{{ update.text }}</span>
+      </div>
+      <h2 class="title">{{ title }}</h2>
+      <p class="text">{{ text }}</p>
+      <div v-if="tags" class="tags">
+        <span v-for="tag in tags" class="tag-chip"><i v-if="tag.icon" class="{{ tag.icon }}"> </i>{{ tag.text }}</span>
+      </div>
+    </div>
+      <a class="button cta-btn cta-deep" href="{{cta.link}}">
+        <i v-if="cta.icon" class="{{cta.icon}}" aria-label="Invia"></i>{{ cta.text }}
+      </a>
+  </div>
+</div>

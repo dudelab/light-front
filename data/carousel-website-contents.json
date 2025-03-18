@@ -1,0 +1,115 @@
+{
+    "title": "Contenuti connessi al servizio",
+    "ctaLabel": "Esplora",
+    "types": [
+        {
+            "name": "Progetti",
+            "link": "/progetti",
+            "ctaText": "Tutti i Progetti",
+            "items": [
+                {
+                    "text": "Progetto Terna",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+                    "image": "/assets/images/projects/prj1.png",
+                    "tags": [],
+                    "imageTag": ["Nome della tecnologia", "Nome del Settore"],
+                    "date": "",
+                    "link": "/progetti/1"   
+                },
+                {
+                    "text": "Come abbiamo migliorato Fiat It",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+                    "image": "/assets/images/projects/prj2.png",
+                    "tags": [],
+                    "imageTag": ["Nome della tecnologia", "Nome del Settore"],
+                    "date": "",
+                    "link": "/progetti/2"   
+                },
+                {
+                    "text": "Nome del progetto",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+                    "image": "/assets/images/projects/prj3.png",
+                    "tags": [],
+                    "imageTag": ["Nome della tecnologia", "Nome del Settore"],
+                    "date": "",
+                    "link": "/progetti/3"   
+                },
+                {
+                    "text": "Come abbiamo migliorato Fiat It",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+                    "image": "/assets/images/projects/prj4.png",
+                    "tags": [],
+                    "imageTag": ["Nome della tecnologia", "Nome del Settore"],
+                    "date": "",
+                    "link": "/progetti/4"   
+                }
+            ]
+        },
+        {
+            "name": "Corsi",
+            "link": "/corsi",
+            "ctaText": "Tutti i Corsi",
+            "items": [
+                {
+                    "text": "Come abbiamo migliorato Fiat It",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+                    "image": "/assets/images/articles/art1.png",
+                    "tags": [],
+                    "imageTag": ["Nome della tecnologia", "Nome del Settore"],
+                    "date": "",
+                    "link": "/corsi/1"   
+                }
+            ]
+        },
+        {
+            "name": "Eventi",
+            "link": "/eventi",
+            "ctaText": "Tutti gli Eventi",
+            "items": [
+                {
+                    "text": "Come abbiamo migliorato Fiat It",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+                    "image": "/assets/images/articles/art1.png",
+                    "tags": [],
+                    "imageTag": ["Nome della tecnologia", "Nome del Settore"],
+                    "date": "",
+                    "link": "/eventi/1"   
+                }
+            ]
+        },
+        {
+            "name": "Articoli",
+            "link": "/articoli",
+            "ctaText": "Tutti gli Articoli",
+            "items": [
+                {
+                    "text": "Come abbiamo migliorato Fiat It",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+                    "image": "/assets/images/articles/art1.png",
+                    "tags": [],
+                    "imageTag": ["Nome della tecnologia", "Nome del Settore"],
+                    "date": "",
+                    "link": "/articoli/1"   
+                }
+            ]
+        },
+        {
+            "name": "Tecnologia",
+            "link": "techs.html",
+            "ctaText": "Tutta la Tecnologia",
+            "items": [
+                {
+                    "text": "Come abbiamo migliorato Fiat It",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+                    "image": "/assets/images/articles/art1.png",
+                    "tags": [],
+                    "imageTag": ["Nome della tecnologia", "Nome del Settore"],
+                    "date": "",
+                    "link": "/tecnologia/1"   
+                }
+            ]
+        }
+    ]
+
+}
+

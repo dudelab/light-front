@@ -1,0 +1,21 @@
+<div class="card-item">
+    <div class="image" style="background-image: url({{image}})">
+      <div class="image-tags">
+        <span v-for="tag in imageTag" class="image-tag">{{ tag }}</span>
+      </div>
+    </div>
+    <div class="infos">
+      <div class="details">
+        <div v-if="tag" class="tag-container">
+          <div class="tags">
+            <span class="tag"><i class="fas fa-earth-africa"></i>{{ tag }}</span>  
+          </div>
+        </div>
+        <div class="title">{{ text }}</div>
+        <div v-if="description" class="description">{{ description }}</div>
+      </div>
+      <a class="link" href="{{ link }}">
+        {{ctaLabel}} <i class="fa-solid fa-arrow-up rotate-45"></i>
+      </a>
+    </div>
+  </div>

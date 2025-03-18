@@ -1,5 +1,5 @@
 <div class="features-1">
-    <div class="title">{{title}}</div>
+    <div v-if="title" class="title">{{title}}</div>
     <div class="content">
         <div class="feature" v-for="feature in features">
             <div class="icon" style="background-image: url({{feature.icon}});"></div>

@@ -1,23 +1,24 @@
 <div class="objectives">
-    <div class="image" style="background-image: url(/assets/images/articles/art1.png);"></div>
-    <div class="title">Di cosa ci occupiamo, nel dettaglio</div>
+    <div class="image" style="background-image: url({{image}});"></div>
+    <h2 class="title">{{title}}</h2>
 
     <div class="objective" v-for="objective in objectives">
         <div class="head">
             <div class="icon">
-                <div class="icon-circle">
+                <div class="icon-circle" v-if="!objective.icon">
                     <i class="fa-solid fa-exclamation"></i>
                 </div>
+                <i class="fa-solid {{objective.icon}}"></i>
             </div>
-            <div class="name">{{ objective.title }}</div>
+            <h3 class="name">{{ objective.title }}</h3>
         </div>
         <div class="content">
-            <div class="description">{{ objective.description }}</div>
+            <p class="description">{{ objective.description }}</p>
             
             <div class="item" v-for="item in objective.items">
                 <div class="item-content">
-                    <div id="{{item.id}}" class="item-title toggle">{{item.title}}</div>
-                    <div id="dropdown-{{item.id}}" class="item-text">{{item.text}}</div>
+                    <h4 id="{{item.id}}" class="item-title toggle">{{item.title}}</h4>
+                    <p id="dropdown-{{item.id}}" class="item-text">{{item.text}}</p>
                 </div>
                 <div id="{{item.id}}" class="item-icon toggle">
                     <div id="{{item.id}}" class="icon-container ">

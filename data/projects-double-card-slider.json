@@ -1,0 +1,45 @@
+{
+    "title": "Progetti Europei",
+    "slideGroups": [
+        [
+            {
+                "image": "/assets/images/articles/art1.png",
+                "imageTag": ["Nome della tecnologia", "Nome del settore"],
+                "tag": "Progetto Europeo",
+                "text": "Progetto Terna",
+                "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+                "ctaLabel": "Esplora",
+                "link": "/project-detail.html"
+            },
+            {
+                "image": "/assets/images/articles/art2.png",
+                "imageTag": ["Nome della tecnologia", "Nome del settore"],
+                "tag": "Progetto Europeo",
+                "text": "Come abbiamo migliorato Fiat IT",
+                "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+                "ctaLabel": "Esplora",
+                "link": "/project-detail.html"
+            }
+        ],
+        [
+            {
+                "image": "/assets/images/articles/art3.png",
+                "imageTag": ["Nome della tecnologia", "Nome del settore"],
+                "tag": "Progetto Europeo",
+                "text": "Progetto Terna",
+                "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+                "ctaLabel": "Esplora",
+                "link": "/project-detail.html"
+            },
+            {
+                "image": "/assets/images/articles/art2.png",
+                "imageTag": ["Nome della tecnologia", "Nome del settore"],
+                "tag": "Progetto Europeo",
+                "text": "Come abbiamo migliorato Fiat IT",
+                "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices.",
+                "ctaLabel": "Esplora",
+                "link": "/project-detail.html"
+            }
+        ]
+    ]
+}

@@ -4,11 +4,11 @@
     <div class="content">
         <div class="title">{{ title }}</div>
         <div class="text">{{ text }}</div>
-        <div class="point" v-for="point in points">
+        <div v-if="points" class="point" v-for="point in points">
             <div class="check"></div>
             <div class="description">{{point}}</div>
         </div>
-        <button id="calculate-button" class="button cta-btn">
+        <button v-if="cta" id="calculate-button" class="button cta-btn">
             {{ cta }}
         </button>
     </div>
@@ -16,7 +16,7 @@
     <div class="popup-container hidden">
         <div class="popup">
             <div class="title">
-                Verifica agevolazioni
+                Verifica agevolazioni <span class="result"> </span>
             </div>
             <form class="form">
                 

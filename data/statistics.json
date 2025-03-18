@@ -1,0 +1,24 @@
+{
+    "items": [
+        {
+            "icon": "fa-arrow-trend-up",
+            "value": "20+",
+            "label" : "Events held"
+        },
+        {
+            "icon": "fa-users",
+            "value": "200+",
+            "label" : "Participants attended"
+        },
+        {
+            "icon": "fa-microphone",
+            "value": "15+",
+            "label" : "Speakers invited"
+        },
+        {
+            "icon": "fa-star-of-life",
+            "value": "50+",
+            "label" : "Collaborations"
+        }
+    ]
+}

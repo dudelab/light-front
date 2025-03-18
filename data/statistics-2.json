@@ -1,0 +1,20 @@
+{
+    "items": [
+        {
+            "value": "2’500",
+            "label" : "Mq di superficie"
+        },
+        {
+            "value": "€7 mil",
+            "label" : "Investiti in tecnologia"
+        },
+        {
+            "value": "8",
+            "label" : "Aree tecnologiche"
+        },
+        {
+            "value": "+1200",
+            "label" : "Visitatori l'anno"
+        }
+    ]
+}

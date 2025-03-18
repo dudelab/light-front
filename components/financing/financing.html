@@ -1,0 +1,27 @@
+<div class="financing">
+    <div class="head">
+        <div class="title">{{title}}</div>
+        <a href="{{cta.link}}" class="cta-btn button">
+            {{cta.text}}
+            <i class="fa-solid fa-arrow-up rotate-45"></i>
+        </a>
+    </div>
+    <div class="content">
+        <div v-for="card in cards" class="card {{card.type}}">
+            <div class="image" style="background-image: url({{card.image}});"></div>
+            <div class="infos">
+                <div class="inner-container">
+                    <div class="tags">
+                        <div v-for="tag in card.tags" class="tag {{tag.type}}"><i v-if="tag.icon" class="fa-solid {{ tag.icon }}"> </i> {{tag.text}}</div>
+                    </div>
+                    <div class="title">{{card.title}}</div>
+                    <div class="description">{{card.description}}</div>
+                </div>
+                <a href="{{card.cta.link}}" class="cta-btn button">
+                    {{card.cta.text}}
+                    <i class="fa-solid fa-arrow-up rotate-45"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

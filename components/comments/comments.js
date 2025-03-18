@@ -15,13 +15,24 @@ if (typeof ComponentRegistry !== 'undefined') {
 
 class CommentSliderCarousel {
     constructor(carousel) {
+        if (!carousel) {
+            console.warn('Elemento carousel non trovato');
+            return;
+        }
         this.carousel = carousel;
         this.slidesContainer = carousel.querySelector('[comments-carousel-container]');
+        if (!this.slidesContainer) {
+            throw new Error('Container delle slide non trovato');
+        }
         this.currentSlide = 0;
         this.numSlides = this.slidesContainer.children.length;
 
         const prevBtn = carousel.querySelector('.prevBtn');
         const nextBtn = carousel.querySelector('.nextBtn');
+        if (!prevBtn || !nextBtn) {
+            console.warn('Pulsanti di navigazione non trovati');
+            return;
+        }
 
         prevBtn.addEventListener('click', this.handlePrevClick.bind(this))
         nextBtn.addEventListener('click', this.handleNextClick.bind(this))

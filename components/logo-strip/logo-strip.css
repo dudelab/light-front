@@ -1,11 +1,67 @@
 .logo-strip {
   margin-block: 40px;
-}
-.logo-strip .description {
   display: flex;
-  justify-content: center;
-  margin: 4em 0 3em;
+  flex-direction: column;
+  gap: 32px;
 }
+
+.logo-strip .container{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.logo-strip .container .inner-container{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.logo-strip .tag{
+  text-align: center;
+  padding: 2px 8px;
+  border-radius: var(--radius-rounded);
+  border: 1px solid var(--border-color-2);
+  background-color: var(--dark-text);
+  color: var(--a-color);
+  font-size: 12px;
+  font-weight: 400;
+  width: fit-content;
+}
+
+.logo-strip .title {
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--h-color);
+  margin: 0;
+}
+
+.logo-strip.centered .container{
+  justify-content: center;
+}
+
+.logo-strip .description {
+  margin: 0;
+  font-size: 16px;
+}
+
+.logo-strip .link{
+  text-align: center;
+    text-decoration: none;
+    color: var(--dark-text);
+    background-color: var(--light-text-2);
+    border-radius: var(--radius-rounded);
+    padding: 8px 12px;
+    line-height: 20px;
+    display: flex;
+    width: fit-content;
+    white-space: nowrap;
+;
+    gap: 0.5em;
+    align-items: center;
+    justify-content: center;
+}
+
 .logo-strip .items {
   display: flex;
   gap: 1em;
@@ -31,5 +87,20 @@
     gap: 2em;
     grid-template-columns: repeat(8, auto);
     justify-content: center;
+  }
+
+  .logo-strip .container{
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 0;
+  }
+
+  .logo-strip .title{
+    font-size: 48px;
+  }
+
+  .logo-strip .link{
+    align-self: end;
   }
 }
